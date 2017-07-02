@@ -1,0 +1,31 @@
+﻿<Page x:Class="ProjetoTCC.Assets.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1110"
+      Title="MainPage" Background="White">
+
+    <Grid>
+        <Rectangle Fill="#FF9B9B9B" HorizontalAlignment="Left" Height="162" Margin="211,100,0,0" VerticalAlignment="Top" Width="758"/>
+        <Rectangle Fill="#FFBFBFBF" HorizontalAlignment="Left" Height="162" Margin="714,100,0,0" VerticalAlignment="Top" Width="255"/>
+        <Calendar HorizontalAlignment="Left" Margin="19,97,0,0" VerticalAlignment="Top"/>
+        <lvc:CartesianChart  Width="400"  Margin="19,375,0,25" HorizontalAlignment="Left" Series="{Binding SeriesCollection}" Background="#FFF0F0F0" Loaded="CartesianChart_Loaded" />
+        <Rectangle Fill="#FFBFBFBF" HorizontalAlignment="Left" Height="90" Margin="19,275,0,0" VerticalAlignment="Top" Width="400"/>
+        <Label x:Name="label" Content="Relatório Mensal" HorizontalAlignment="Left" Margin="76,289,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FF002A66"/>
+        <Label x:Name="label_Copy" Content="     Total em Vendas Hoje:            00002" HorizontalAlignment="Left" Margin="287,122,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Width="681" FontFamily="Segoe UI Light"/>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="18,14,-164,0" VerticalAlignment="Top" Width="1256" Fill="#FFC9BA99"/>
+        <Label x:Name="label_Copy2" Content="Painel Inicial" HorizontalAlignment="Left" Margin="44,25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FF4D3408" Width="548"/>
+        <Rectangle Fill="#FFBFBFBF" HorizontalAlignment="Left" Height="90" Margin="430,275,-162,0" VerticalAlignment="Top" Width="842"/>
+        <Rectangle Fill="#FFE0E0E0" HorizontalAlignment="Left" Height="162" Margin="980,100,-163,0" VerticalAlignment="Top" Width="293"/>
+        <lvc:CartesianChart  Width="845"  Margin="430,375,0,25" HorizontalAlignment="Left" Series="{Binding SeriesCollectionB}" Background="#FFF0F0F0" Loaded="CartesianChart_Loaded" />
+        <Label x:Name="label_Copy3" Content="Relatório de vendas por categoria" HorizontalAlignment="Left" Margin="456,289,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FF002A66"/>
+        <Label x:Name="label_Copy4" Content="Total em Vendas Semana:            00208" HorizontalAlignment="Left" Margin="285,178,0,0" VerticalAlignment="Top" FontSize="36" Foreground="White" Width="681" FontFamily="Segoe UI Light"/>
+        <Image x:Name="___MainApplication_component_neonzinho_png" Margin="982,124,28,456" Height="120" Width="100" Source="/ProjetoTCC;component/neonzinho.png" />
+
+    </Grid>
+</Page>

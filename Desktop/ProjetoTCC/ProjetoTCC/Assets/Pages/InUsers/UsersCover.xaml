@@ -1,0 +1,59 @@
+﻿<Page x:Class="ProjetoTCC.Assets.Pages.InUsers.UsersCover"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages.InUsers"
+           mc:Ignorable="d" 
+      d:DesignHeight="577" d:DesignWidth="1194"
+      Title="UsersCover">
+
+
+ 
+    <Grid Background="White">
+        <ListView Margin="10" Name="icUsuarios">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="300" Height="180" Background="#F1F1F1" Margin="0,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.45*" />
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition Width="0.25*" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Height="30" VerticalAlignment="Top" Fill="#FF9C77" Margin="3" Grid.ColumnSpan="3"/>
+                        <TextBlock Foreground="#041462" FontSize="20" Margin="15,5,0,0"  HorizontalAlignment="Left" Grid.Column="0"  Text="{Binding CARGO}" />
+                        <TextBlock Text="." FontSize="40"  Grid.Column="1" HorizontalAlignment="Left"  Margin="11,-20,0,0"/>
+                        <TextBlock FontSize="20" Margin="0,5,10,0" Opacity="0.8" HorizontalAlignment="Right" Grid.Column="1"  Text="{Binding NOME}" />
+                        <TextBlock FontSize="20" Margin="0,5,0,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding SOBRENOME}" />
+
+                        <Image Margin="0,40,0,0" Source="{Binding LOCAL_IMAGEM}">
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
+                            </Image.Clip>
+                        </Image>
+                        <Rectangle Margin="3,40,3,15" RadiusX="5" RadiusY="5" Fill="#D9D9D9" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        <TextBlock FontSize="16" Margin="0,50,15,0" Opacity="1" FontWeight="Bold" HorizontalAlignment="Right" Grid.Column="1"  Text="Cidade:" />
+                        <TextBlock FontSize="16" Margin="-6,50,5,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding CIDADE}" />
+                        <TextBlock FontSize="16" Margin="0,80,15,0" Opacity="1" FontWeight="Bold" HorizontalAlignment="Right" Grid.Column="1"  Text="Idade:" />
+                        <TextBlock FontSize="16" Margin="-6,80,5,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding IDADE}" />
+
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+                        
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseDoubleClick" Handler="listViewItem_MouseDoubleClick" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Page>

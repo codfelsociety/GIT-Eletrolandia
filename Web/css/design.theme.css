@@ -1,0 +1,27 @@
+﻿
+
+/*Área Superior / Banner Area*/
+#top_area {
+    background-color: #2B2B2B;
+}
+/*Barra de navegação*/
+#nav_bar {
+    background-color: #49473B;
+}
+
+/*Botão de Pesquisa*/
+#btnsearch {
+    background-color: #585735;
+    border-color: #b19564;
+}
+.hidden {
+    display:none;
+}
+
+/*Plano de fundo do site*/
+body {
+   background-image: url(https://wallpaperbrowse.com/media/images/High-Definition-Ultra-HD-Wallpaper.jpg); 
+   background-attachment:fixed;
+   background-size:cover;
+   background-position:center;
+}

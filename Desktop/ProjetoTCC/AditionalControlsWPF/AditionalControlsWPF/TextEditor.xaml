@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="AditionalControlsWPF.TextEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AditionalControlsWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Background="#C1FFFF">
+            <Menu  Background="#001454" FontFamily="Segoe MDL2 Assets" FontSize="16" Padding="15,0,0,0">
+                <Menu.Resources>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                    </Style>
+                </Menu.Resources>
+                <MenuItem x:Name="mitBold" Header="" Height="40" Click="mitBold_Click"/>
+                <MenuItem x:Name="mitItalic" Header="" Height="40" Click="mitItalic_Click"/>
+                <MenuItem Header="" Height="40"/>
+                <MenuItem Header="" Height="40"/>
+                <MenuItem Header="" Height="40"/>
+                <MenuItem Header="" Height="40"/>
+                <!--<MenuItem  IsManipulationEnabled="False" Height="40">
+                    <MenuItem.Header>
+                        <WrapPanel>
+                            <Label Foreground="White" FontSize="15" FontFamily="Segoe UI Light">Fonte:</Label>
+                            <ComboBox Name="cbxFontFamily" FontFamily="Segoe UI Light"  Padding="3,0,0,3" ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" Height="24" Width="90" SelectionChanged="cbxFontFamily_SelectionChanged">
+                               
+                            </ComboBox>
+                        </WrapPanel>
+                    </MenuItem.Header>
+                </MenuItem>-->
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="1" Background="Beige">
+            <RichTextBox x:Name="txtEditor" FontSize="16" Padding="10,15,10,10" TextChanged="txtEditor_TextChanged" SelectionChanged="txtEditor_SelectionChanged"/>
+        </Grid>
+    </Grid>
+</UserControl>

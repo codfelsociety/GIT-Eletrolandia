@@ -1,0 +1,57 @@
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.g.cs
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.cache
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.lref
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.dll
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.pdb
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.baml
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.g.resources
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.Properties.Resources.resources
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csproj.GenerateResource.Cache
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
+C:\Users\CODFELSOCIETY12\Desktop\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.g.cs
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.lref
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.baml
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.g.resources
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.Properties.Resources.resources
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csproj.GenerateResource.Cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\DoubleNumericUpDown.g.cs
+C:\Users\CODFELSOCIETY12\Desktop\TCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\DoubleNumericUpDown.baml
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\MultiSelectComboBox.g.cs
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.g.cs
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.cache
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.lref
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\MultiSelectComboBox.baml
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.baml
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\Themes\Generic.baml
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.g.resources
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.dll
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\bin\Debug\AditionalControlsWPF.pdb
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\ImagePicker.g.cs
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\MultiSelectComboBox.g.cs
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.g.cs
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\TextEditor.g.cs
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.cache
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.lref
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\ImagePicker.baml
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\MultiSelectComboBox.baml
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.baml
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\TextEditor.baml
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\Themes\Generic.baml
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.g.resources
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
+D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb

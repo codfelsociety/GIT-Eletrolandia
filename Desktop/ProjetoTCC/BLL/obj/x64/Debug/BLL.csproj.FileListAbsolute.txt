@@ -1,0 +1,55 @@
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\x64\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\x64\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\x64\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\x64\Debug\BLL.pdb
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\BLL.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\BLL.pdb
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\DAO.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\DAO.pdb
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\Cliente\Desktop\Projeto\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Cliente\Desktop\Projeto\BLL\obj\x64\Debug\BLL.dll
+C:\Users\Cliente\Desktop\Projeto\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\Cliente\Desktop\Projeto\BLL\bin\x64\Debug\BLL.dll
+C:\Users\Cliente\Desktop\Projeto\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\Cliente\Desktop\Projeto\BLL\bin\x64\Debug\DAO.dll
+C:\Users\Cliente\Desktop\Projeto\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\Cliente\Desktop\Projeto\BLL\bin\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\SUPREME\ProjectTCC\BLL\bin\x64\Debug\BLL.dll
+D:\Documentos\SUPREME\ProjectTCC\BLL\bin\x64\Debug\BLL.pdb
+D:\Documentos\SUPREME\ProjectTCC\BLL\bin\x64\Debug\DAO.dll
+D:\Documentos\SUPREME\ProjectTCC\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\SUPREME\ProjectTCC\BLL\bin\x64\Debug\DAO.pdb
+D:\Documentos\SUPREME\ProjectTCC\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Documentos\SUPREME\ProjectTCC\BLL\obj\x64\Debug\BLL.dll
+D:\Documentos\SUPREME\ProjectTCC\BLL\obj\x64\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.pdb

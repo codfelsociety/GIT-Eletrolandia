@@ -1,0 +1,8 @@
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\Release\BLL.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\Release\BLL.pdb
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\Release\DAO.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\Release\Oracle.DataAccess.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\Release\DAO.pdb
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\Release\BLL.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\Release\BLL.pdb

@@ -1,0 +1,6 @@
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\bin\Release\DAO.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\bin\Release\DAO.pdb
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\bin\Release\Oracle.DataAccess.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\obj\Release\DAO.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\DAO\obj\Release\DAO.pdb

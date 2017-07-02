@@ -1,0 +1,44 @@
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\bin\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\bin\x64\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\bin\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\bin\x64\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\obj\x64\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\DAO\obj\x64\Debug\DAO.pdb
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\DAO.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\DAO.pdb
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.dll
+A:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\bin\x64\Debug\DAO.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\bin\x64\Debug\DAO.pdb
+D:\Documentos\SUPREME\ProjectTCC\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\obj\x64\Debug\DAO.dll
+D:\Documentos\SUPREME\ProjectTCC\DAO\obj\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache

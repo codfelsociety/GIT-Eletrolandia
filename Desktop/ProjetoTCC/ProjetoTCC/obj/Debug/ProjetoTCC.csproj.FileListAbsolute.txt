@@ -1,0 +1,13 @@
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\bin\Debug\ProjetoTCC.exe.config
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\bin\Debug\ProjetoTCC.exe
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\bin\Debug\ProjetoTCC.pdb
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\MainWindow.g.cs
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\App.g.cs
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC_MarkupCompile.cache
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC_MarkupCompile.lref
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\MainWindow.baml
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC.g.resources
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC.Properties.Resources.resources
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC.csproj.GenerateResource.Cache
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC.exe
+D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\ProjetoTCC\obj\Debug\ProjetoTCC.pdb

@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logoel"
+    android:gravity="center_vertical" >
+
+    <Button
+        android:id="@+id/btnVoltarTelaSN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Voltar ao Início" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Somos uma Loja de Eletrônicos, localizado na Cidade de Barueri, estado de São Paulo. Esta, por sua vez é uma loja física criada pelo Jurandir Salazar Jamber Careta, um pequeno empresário, que vem cada vez mais fazendo sucesso. É uma loja que visa a venda de eletrônicos tais como: celulares, notebooks, videogames, computadores, e periféricos em geral."
+        android:textColor="#ffffff"
+        android:textSize="19sp" />
+
+</RelativeLayout>

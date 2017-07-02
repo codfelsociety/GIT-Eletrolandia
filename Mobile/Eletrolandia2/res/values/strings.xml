@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eletrolandia2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tela2_produtos">Tela2Produtos</string>
+    <string name="title_activity_tela3_sobre_nos">Tela3SobreNos</string>
+    <string name="title_activity_tela4_fale_conosco">Tela4FaleConosco</string>
+    <string name="title_activity_tela5_avalie_app">Tela5AvalieApp</string>
+
+</resources>

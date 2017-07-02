@@ -1,0 +1,66 @@
+﻿<Application x:Class="ProjetoTCC.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProjetoTCC"
+               xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--#region Dicionários de Idiomas-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/Locale/App/Resources.pt-BR.xaml" />
+                <ResourceDictionary Source="Assets/Locale/App/Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--#endregion Dicionários de Idiomas-->
+            <!--#region Configurações Internas Gerais de Interface-->
+
+            <!-- IMPORTANTE: Altere Valores(Value) dentro ou entre tags(<>).-->
+
+            <!-- Qualidade das Imagens/Ícones -->
+            <Style TargetType="Image">
+                <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+            </Style>
+
+            <!-- Largura da Barra Lateral Expandida -->
+            <sys:Double x:Key="leftMenuWidthExpanded">300</sys:Double>
+
+            <!-- Largura da Barra Lateral Fechada -->
+            <sys:Double x:Key="leftMenuWidthNormal">48</sys:Double>
+
+
+            <!--#endregion Configurações Internas Gerais de Interface-->
+
+            <!--#region    Estilos Padrões de Controles Gerais-->
+            <Style x:Key="defaultButton" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Opacity" Value="0.8"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+            </Style>
+            <!--#endregion Estilos Padrões de Controles Gerais-->
+
+
+
+
+
+
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

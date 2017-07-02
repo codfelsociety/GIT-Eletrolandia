@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cinza"
+    tools:context="br.com.itb.teem.eletrolandia.Tela1Inicial" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Bem Vindo a Eletrolândia, Conheça o nosso"
+        android:textColor="#ffffff"
+        android:textColorHint="#9900CC" />
+
+    <Button
+        android:id="@+id/btnSobreNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="71dp"
+        android:text="Sobre Nós" />
+
+    <Button
+        android:id="@+id/btnFaleConosco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSobreNos"
+        android:layout_alignRight="@+id/textView2"
+        android:text="Fale Conosco" />
+
+    <Button
+        android:id="@+id/btnVoltarTA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="Avalie o Aplicativo" />
+
+    <Button
+        android:id="@+id/btnBuscarProdutosTI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnFaleConosco"
+        android:layout_centerHorizontal="true"
+        android:text="Buscar Produtos" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Aplicativo"
+        android:textColor="#ffffff"
+        android:textColorHint="#9900CC" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnSobreNos"
+        android:layout_below="@+id/textView8"
+        android:text="e Aproveite!!"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FF0033" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/logo" />
+
+</RelativeLayout>

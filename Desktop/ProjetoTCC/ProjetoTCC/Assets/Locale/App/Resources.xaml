@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ProjetoTCC.Assets.Locale.App"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="strHome">Home</sys:String>
+    <sys:String x:Key="strProducts">Products</sys:String>
+    <sys:String x:Key="strAdd">Add</sys:String>
+    <sys:String x:Key="strEdit">Edit</sys:String>
+    <sys:String x:Key="strDelete">Delete</sys:String>
+    <sys:String x:Key="strReport">Report</sys:String>
+    <sys:String x:Key="strSettings">Settings</sys:String>
+    <sys:String x:Key="strLanguage">Language</sys:String>
+    <sys:String x:Key="strQuery">Query</sys:String>
+    <sys:String x:Key="strOptions">Options</sys:String>
+    <sys:String x:Key="strSuppliers">Suppliers</sys:String>
+    <sys:String x:Key="strOrders">Orders</sys:String>
+    <sys:String x:Key="strUsers">Users</sys:String>
+    <sys:String x:Key="strClients">Clients</sys:String>
+    <sys:String x:Key="strSales">Sales</sys:String>
+
+</ResourceDictionary>

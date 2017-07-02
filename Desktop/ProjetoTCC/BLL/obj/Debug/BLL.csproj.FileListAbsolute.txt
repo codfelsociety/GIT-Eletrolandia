@@ -1,0 +1,24 @@
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\Debug\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\Debug\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\bin\Debug\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\Debug\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC\Projeto\BLL\obj\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\BLL.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\DAO.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\Oracle.DataAccess.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\DAO.pdb
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.dll
+D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.pdb

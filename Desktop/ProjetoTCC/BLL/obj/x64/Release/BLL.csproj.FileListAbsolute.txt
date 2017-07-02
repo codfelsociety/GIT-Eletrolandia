@@ -1,0 +1,32 @@
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\x64\Release\BLL.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\x64\Release\BLL.pdb
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\x64\Release\DAO.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\x64\Release\Oracle.DataAccess.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\bin\x64\Release\DAO.pdb
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\x64\Release\BLL.dll
+C:\Users\felip\Desktop\PROJETOS\TCC 2\BLL\obj\x64\Release\BLL.pdb
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\bin\x64\Release\BLL.dll
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\bin\x64\Release\BLL.pdb
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\bin\x64\Release\DAO.dll
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\bin\x64\Release\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\bin\x64\Release\DAO.pdb
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\obj\x64\Release\BLL.dll
+C:\Users\CODFELSOCIETY12\Documents\Visual Studio 2015\Projects\TCC 2\BLL\obj\x64\Release\BLL.pdb
+E:\TCC 2\BLL\bin\x64\Release\BLL.dll
+E:\TCC 2\BLL\bin\x64\Release\BLL.pdb
+E:\TCC 2\BLL\bin\x64\Release\DAO.dll
+E:\TCC 2\BLL\bin\x64\Release\Oracle.DataAccess.dll
+E:\TCC 2\BLL\bin\x64\Release\DAO.pdb
+E:\TCC 2\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
+E:\TCC 2\BLL\obj\x64\Release\BLL.dll
+E:\TCC 2\BLL\obj\x64\Release\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\BLL.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\DAO.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\Oracle.DataAccess.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\DAO.pdb
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.dll
+C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.pdb
