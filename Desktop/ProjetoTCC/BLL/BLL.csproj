@@ -65,7 +65,11 @@
   <ItemGroup>
     <Compile Include="Artigo.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="Cidade.cs" />
+    <Compile Include="Contato.cs" />
     <Compile Include="Data\Produtos.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Estado.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Frete.cs" />
     <Compile Include="Marca.cs" />

@@ -53,3 +53,11 @@ D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\bin\x64\Debug\DAO.pdb
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.dll
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\BLL\obj\x64\Debug\BLL.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Debug\BLL.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Debug\BLL.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Debug\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Debug\DAO.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Debug\BLL.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Debug\BLL.pdb

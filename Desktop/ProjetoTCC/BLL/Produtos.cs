@@ -75,7 +75,7 @@ namespace BLL
             cmd = new OracleCommand("insert_produto", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_produto", "NUMBER").Value = CodProduto;
-            cmd.Parameters.Add("p_cod_subcategoria", "NUMBER").Value = CodArtigo;
+            cmd.Parameters.Add("p_cod_artigo", "NUMBER").Value = CodArtigo;
             cmd.Parameters.Add("p_cod_marca", "NUMBER").Value = CodMarca;
             cmd.Parameters.Add("p_cod_frete", "NUMBER").Value = CodFrete;
             cmd.Parameters.Add("p_cod_barras", "NUMBER").Value = CodBarras;
@@ -104,7 +104,7 @@ namespace BLL
             cmd.Parameters.Add("p_cod_produto", "NUMBER").Value = CodProduto;
             cmd.Parameters.Add("p_data", "VARCHAR2").Value = DataCadastro;
             cmd.Parameters.Add("p_custo", "NUMBER").Value = Custo;
-            cmd.Parameters.Add("p_preco_venda", "NUMBER").Value = Preco;
+            cmd.Parameters.Add("p_preco", "NUMBER").Value = Preco;
             cmd.ExecuteNonQuery();
             if (ImagemProduto.Rows != null)
             {
@@ -174,7 +174,7 @@ namespace BLL
         {
             if (tipo == 0)
             {
-                SQL = "SELECT valor_max FROM max_seq WHERE cod = 1";
+                SQL = "SELECT valor FROM max_seq WHERE cod_seq = 1";
                 int d = ClasseConexao.ExecutarComandoRetorno(SQL);
                 return d + 1;
             }
@@ -182,7 +182,7 @@ namespace BLL
             {
                 SQL = "SELECT seq_produtos.NEXTVAL FROM dual";
                 int d = ClasseConexao.ExecutarComandoRetorno(SQL);
-                SQL = "UPDATE max_seq SET valor_max=" + d.ToString() + " WHERE nome_seq = 'seq_produtos'";
+                SQL = "UPDATE max_seq SET valor=" + d.ToString() + " WHERE nome= 'seq_produtos'";
                 ClasseConexao con = new ClasseConexao();
                 con.ExecutarComando(SQL);
                 return d;
@@ -196,7 +196,7 @@ namespace BLL
         }
         public static void CarregarEspecs(int cod_artigo)
         {
-            SQL = "SELECT ES.COD_ESPECIFICACAO AS COD_ESPEC, ES.DESCRICAO AS DESCRICAO, ES.TIPO_VALOR AS TIPO " +
+            SQL = "SELECT ES.COD_ESPECIFICACAO AS COD_ESPEC, ES.DESCRICAO AS DESCRICAO, ES.TIPO AS TIPO " +
                   "FROM ESPECIFICACAO ES " +
                   "JOIN ESPECIFICACAO_ARTIGO EA " +
                   "ON EA.COD_ESPECIFICACAO = ES.COD_ESPECIFICACAO " +
@@ -219,14 +219,14 @@ namespace BLL
         public DataTable PreencherTabela()
         {
             SQL = @"SELECT prod.cod_produto AS cod,  img.imagem as IMGPATH, prod.nome, art.descricao AS artigo, cat.descricao AS categoria,
-                           mar.descricao AS marca, prod.estoque,logprod.custo, logprod.preco_venda AS preco, 
-                            (logprod.preco_venda - logprod.custo) * prod.estoque AS lucro_total, prod.ativo AS status,prod.data_cadastro AS data
-                            FROM produto prod
+                           mar.descricao AS marca, prod.estoque,logprod.custo, logprod.preco AS preco, 
+                            (logprod.preco - logprod.custo) * prod.estoque AS lucro_total, prod.ativo AS status,prod.data_cadastro AS data
+                            FROM produtos prod
                             JOIN artigo art
-                            ON art.cod_artigo = prod.cod_subcategoria
+                            ON art.cod_artigo = prod.cod_artigo
                             JOIN marca mar
                             ON mar.cod_marca = prod.cod_marca
-                            JOIN categoria_produto cat
+                            JOIN categoria cat
                             ON cat.cod_categoria = art.cod_categoria
                             JOIN 
                             (SELECT inn.* FROM (SELECT log2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_log_prod DESC)) As Rank 
@@ -244,7 +244,7 @@ namespace BLL
             ClasseConexao.Conexao();
             cmd = new OracleCommand("UpdateProduto", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("p_cod_subcategoria", "NUMBER").Value = CodArtigo;
+            cmd.Parameters.Add("p_cod_artigo", "NUMBER").Value = CodArtigo;
             cmd.Parameters.Add("p_cod_marca", "NUMBER").Value = CodMarca;
             cmd.Parameters.Add("p_cod_barras", "NUMBER").Value = CodBarras;
             cmd.Parameters.Add("p_nome", "VARCHAR2").Value = Nome;
@@ -263,7 +263,7 @@ namespace BLL
             cmd.Parameters.Add("p_cod_produto", "NUMBER").Value = CodProduto;
             cmd.Parameters.Add("p_data", "VARCHAR2").Value = DateTime.Now.ToString();
             cmd.Parameters.Add("p_custo", "NUMBER").Value = Custo;
-            cmd.Parameters.Add("p_preco_venda", "NUMBER").Value = Preco;
+            cmd.Parameters.Add("p_preco", "NUMBER").Value = Preco;
             cmd.ExecuteNonQuery();
             ClasseConexao.Conexao();
             cmd = new OracleCommand("DeleteImagens", ClasseConexao.connection);
@@ -317,12 +317,12 @@ namespace BLL
             List<DataTable> p = new List<DataTable>();
             SQL = $@"SELECT prod.COD_BARRAS, prod.NOME, prod.DESCRICAO, prod.ESTOQUE,
                         prod.ESTOQUE_MIN, prod.ESTOQUE_MAX, prod.ATIVO, prod.ON_LINE,
-                        prod.LIMITADO,  prod.DATA_CADASTRO, prod.COD_SUBCATEGORIA,
-                        art.COD_CATEGORIA, prod.COD_MARCA, logp.CUSTO, logp.PRECO_VENDA,  fr.PESO, fr.ALTURA,
-                        fr.COMPRIMENTO, fr.LARGURA, fr.FRAGIL, fr.ISFREE, fr.COD_FRETE
+                        prod.LIMITADO,  prod.DATA_CADASTRO, prod.cod_artigo,
+                        art.COD_CATEGORIA, prod.COD_MARCA, logp.CUSTO, logp.preco,  fr.PESO, fr.ALTURA,
+                        fr.COMPRIMENTO, fr.LARGURA, fr.FRAGIL, fr.gratis, fr.COD_FRETE
                         FROM PRODUTO prod
                         JOIN ARTIGO art
-                        ON prod.COD_SUBCATEGORIA = art.COD_ARTIGO
+                        ON prod.cod_artigo = art.COD_ARTIGO
                         JOIN LOG_PRODUTO logp
                         ON logp.COD_PRODUTO = prod.COD_PRODUTO
                         JOIN FRETE fr
@@ -388,21 +388,21 @@ namespace BLL
 
         public static void CarregarGrid()
               {
-                   SQL ="SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco_venda AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_CATEGORIA_PRODUTO = PRO.COD_CATEGORIA_PRODUTO JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM";
-                   SQL = "SELECT PRO.COD, PRO.IMAGE_PATH AS IMAGE, PRO.NOME, CAT.DESCRICAO AS CATEGORIA,PRO.PRECO_VENDA AS PREÇO, PRO.PRECO_FORN AS PRÉ_PREÇO, PRO.QUANT_ESTOQUE AS ESTOQUE, PRO.DESCRICAO AS DESCRIÇÃO FROM CATEGORIAS CAT JOIN PRODUTOS PRO ON CAT.COD_CATEGORIA_PRODUTO = PRO.COD_CATEGORIA_PRODUTO";
+                   SQL ="SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM";
+                   SQL = "SELECT PRO.COD, PRO.IMAGE_PATH AS IMAGE, PRO.NOME, CAT.DESCRICAO AS CATEGORIA,PRO.preco AS PREÇO, PRO.PRECO_FORN AS PRÉ_PREÇO, PRO.QUANT_ESTOQUE AS ESTOQUE, PRO.DESCRICAO AS DESCRIÇÃO FROM CATEGORIAS CAT JOIN PRODUTOS PRO ON CAT.COD_categoria = PRO.COD_categoria";
                   SQL = "SELECT COD_PRODUTO, NOME, imagem,CATEGORIA, ARTIGO, MARCA, FORNECEDOR, PRECO, CUSTO, ESTOQUE, ESTOQUE_MIN, ESTOQUE_MAX FROM PRODUTO";
                  // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
                   //dtProdutos = d;
               }
               public static void CarregarRelatorio()
               {
-                  SQL = "SELECT COD_PRODUTO AS COD, NOME, QUANT_ESTOQUE AS ESTOQUE, CUSTO, PRECO_VENDA AS PRECO FROM PRODUTOS";
+                  SQL = "SELECT COD_PRODUTO AS COD, NOME, QUANT_ESTOQUE AS ESTOQUE, CUSTO, preco AS PRECO FROM PRODUTOS";
       //DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
                   //dtRelatorioProdutos = d;
               }
               public static void CarregarCategoria()
               {
-                  SQL = "SELECT COD_CATEGORIA_PRODUTO AS COD_CATEGORIA, DESCRICAO FROM CATEGORIAS";
+                  SQL = "SELECT COD_categoria AS COD_CATEGORIA, DESCRICAO FROM CATEGORIAS";
                  // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
                //   dtCategorias = d;
               }
@@ -422,20 +422,20 @@ namespace BLL
      
               public void ConsultarPorCod()
               {
-                  SQL = "SELECT pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, pro.cod_categoria_produto AS COD_CATEGORIA,pro.cod_fornecedor as COD_FORN,pro.custo AS CUSTO, pro.preco_venda AS PRECO, pro.tipo_margem AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_CATEGORIA_PRODUTO = PRO.COD_CATEGORIA_PRODUTO JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.cod_produto =" + CodProduto;
+                  SQL = "SELECT pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, pro.cod_categoria AS COD_CATEGORIA,pro.cod_fornecedor as COD_FORN,pro.custo AS CUSTO, pro.preco AS PRECO, pro.tipo_margem AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.cod_produto =" + CodProduto;
                   //DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
                  // dtConsultaCod = d;
               }
               public void ConsultarPorNome()
               {
-                  SQL = "SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco_venda AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_CATEGORIA_PRODUTO = PRO.COD_CATEGORIA_PRODUTO JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.Nome =" + Nome;
+                  SQL = "SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.Nome =" + Nome;
                 //  DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
                  // dtConsultaNome = d;
               }
               public void Editar()
               {
                   con = new ClasseConexao();
-                  SQL = "UPDATE PRODUTOS SET COD_BARRAS ="+ CodBarras+ ",imagem ='" + imagem +"',NOME ='"+Nome+"', COD_CATEGORIA_PRODUTO=" +Cod_Categoria_Produto+ ",COD_FORNECEDOR ="+Cod_Fornecedor+",CUSTO='"+Custo+"',PRECO_VENDA='"+Preco_Venda+"', TIPO_MARGEM=" + Tipo_Margem + ",QUANT_ESTOQUE =" + Estoque + ",QUANT_ESTOQUE_MIN =" + EstoqueMin + ", QUANT_ESTOQUE_MAX =" + EstoqueMin + ",PESO='" + Peso + "',COMPRIMENTO ='" + Comprimento + "',LARGURA ='" + Largura + "',ALTURA ='" + Altura + "', ESPECIFICACAO ='" + Especificacao + "' WHERE COD_PRODUTO =" + CodProduto;
+                  SQL = "UPDATE PRODUTOS SET COD_BARRAS ="+ CodBarras+ ",imagem ='" + imagem +"',NOME ='"+Nome+"', COD_categoria=" +Cod_categoria+ ",COD_FORNECEDOR ="+Cod_Fornecedor+",CUSTO='"+Custo+"',preco='"+preco+"', TIPO_MARGEM=" + Tipo_Margem + ",QUANT_ESTOQUE =" + Estoque + ",QUANT_ESTOQUE_MIN =" + EstoqueMin + ", QUANT_ESTOQUE_MAX =" + EstoqueMin + ",PESO='" + Peso + "',COMPRIMENTO ='" + Comprimento + "',LARGURA ='" + Largura + "',ALTURA ='" + Altura + "', ESPECIFICACAO ='" + Especificacao + "' WHERE COD_PRODUTO =" + CodProduto;
                //   con.ExecutarComando(SQL);
 
               }

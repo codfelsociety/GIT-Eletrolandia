@@ -42,3 +42,11 @@ D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\bin\x64\Debug\pt-BR\M
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb

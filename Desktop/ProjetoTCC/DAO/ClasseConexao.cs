@@ -7,7 +7,7 @@ namespace DAO
 {
     public class ClasseConexao
     {
-        public static string strConexao = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=Notebook)(PORT=1521)))(CONNECT_DATA=(SID=XE)));User ID=FELIPE;Password=123456;";
+        public static string strConexao = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SID=XE)));User ID=ADM;Password=123456";
         public static OracleConnection connection = new OracleConnection(strConexao);
         private static OracleCommand cmd;
         private static OracleDataAdapter da;

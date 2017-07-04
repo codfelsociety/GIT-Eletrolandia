@@ -8,7 +8,7 @@
       xmlns:aditionalControls="clr-namespace:AditionalControlsWPF;assembly=AditionalControlsWPF"
 
       mc:Ignorable="d" Language="pt-BR"
-      d:DesignHeight="600" d:DesignWidth="1000"
+      d:DesignHeight="644" d:DesignWidth="1288"
       Title="ProductView" TextOptions.TextRenderingMode="Aliased" TextOptions.TextFormattingMode="Ideal" Loaded="Page_Loaded">
 
     <Grid Name="master" Background="#ECECEC">
@@ -175,13 +175,13 @@
                             <!--#endregion-->
                             <!--#region Category-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,133,10,0" >Categoria</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,133,12,0"/>
-                            <ComboBox x:Name="cbxCategoria" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,135,14,0" SelectionChanged="cbxCategoria_SelectionChanged"></ComboBox>
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,133,19,0"/>
+                            <ComboBox x:Name="cbxCategoria" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,135,21,0" SelectionChanged="cbxCategoria_SelectionChanged" SelectedIndex="1" DropDownOpened="cbxCategoria_DropDownOpened"></ComboBox>
                             <!--#endregion-->
                             <!--#region Article-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,172,10,0" >Artigo</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,172,12,0"/>
-                            <ComboBox x:Name="cbxArtigo" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,174,14,0"  SelectionChanged="cbxArtigo_SelectionChanged">
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,172,19,0"/>
+                            <ComboBox x:Name="cbxArtigo" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,174,21,0"  SelectionChanged="cbxArtigo_SelectionChanged" DropDownOpened="cbxArtigo_DropDownOpened">
                             </ComboBox>
                             <!--#endregion-->
                             <!--#region Provider-->
@@ -191,8 +191,8 @@
                             <!--#endregion-->
                             <!--#region Brand-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,250,10,0" >Marca</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,250,12,0"/>
-                            <ComboBox x:Name="cbxMarca" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,252,14,0" SelectionChanged="cbxMarca_SelectionChanged"></ComboBox>
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,250,19,0"/>
+                            <ComboBox x:Name="cbxMarca" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,252,21,0" SelectionChanged="cbxMarca_SelectionChanged" DropDownOpened="cbxMarca_DropDownOpened"></ComboBox>
                             <!--#endregion-->
                             <Rectangle x:Name="recValores" Style="{StaticResource SplitRectangle}" Margin="1.5,289,3,3" Fill="#B8FFC0" Height="86" Grid.ColumnSpan="18" Grid.Column="1"/>
                             <!--#region Cost-->
@@ -244,10 +244,59 @@
                             <!--#endregion -->
                             <!--#region Weight-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,560,10,0" >Frete Grátis ?</Label>
-                          
+
                             <RadioButton Name="rbFreteSim" GroupName="rbFrete" Content="Sim" IsChecked="true" Grid.Column="8" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="3,570,13,0"></RadioButton>
                             <RadioButton Name="rbFreteNao" GroupName="rbFrete"  Content="Não" Grid.Column="10" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="2,570,13,0"></RadioButton>
+                            <Button x:Name="btnNovaCategoria" Background="#FFF9F9F9" Padding="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="19,134,12,0" Height="29" Grid.Column="17" BorderBrush="#FFCFFFA7" Click="btnNovaCategoria_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Height" Value="50"/>
+                                    </Style>
+                                </Button.Style>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Width="20" Margin="-20"  Source="/ProjetoTCC;component/Assets/Icons/plus.png" />
+                                </Grid>
+                            </Button>
                             <!--#endregion -->
+                            <Button x:Name="btnnovoartigo" Background="#FFF9F9F9" Padding="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="19,173,12,0" Height="29" Grid.Column="17" BorderBrush="#FFCFFFA7" Click="btnnovoartigo_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Height" Value="50"/>
+                                    </Style>
+                                </Button.Style>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Width="20" Margin="-20"  Source="/ProjetoTCC;component/Assets/Icons/plus.png" />
+                                </Grid>
+                            </Button>
+                            <Button x:Name="btnAdicionarNovaMarca" Background="#FFF9F9F9" Padding="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="19,251,12,0" Height="29" Grid.Column="17" BorderBrush="#FFCFFFA7" Click="btnAdicionarNovaMarca_Click">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Height" Value="50"/>
+                                    </Style>
+                                </Button.Style>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image  Width="20" Margin="-20"  Source="/ProjetoTCC;component/Assets/Icons/plus.png" />
+                                </Grid>
+                            </Button>
+
                         </Grid>
                     </ScrollViewer>
                     <ScrollViewer  VerticalAlignment="Top" Height="583" Margin="1.5,3,3,8" Grid.Column="2" VerticalScrollBarVisibility="Auto">
@@ -333,6 +382,14 @@
                                             <Setter Property="DisplayMemberPath" Value="VALOR"/>
                                             <Setter Property="SelectedValuePath" Value="COD_PRE"/>
                                             <Setter Property="SelectedIndex" Value="0"/>
+                                            <Setter Property="Padding" Value="6,3,0,0"/>
+                                        </Style>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="Width" Value="200"/>
+                                            <Setter Property="Height" Value="30"/>
+                                            <Setter Property="Margin" Value="0,7,0,0"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalAlignment" Value="Right"/>
                                             <Setter Property="Padding" Value="6,3,0,0"/>
                                         </Style>
                                         <Style TargetType="Label" >
@@ -461,7 +518,7 @@
                                     <Setter Property="Grid.ColumnSpan" Value="6"/>
                                     <Setter Property="Margin" Value="1.5,0,3,4"/>
                                     <Setter Property="BorderThickness" Value="0"/>
-                                
+
                                     <Setter Property="Cursor" Value="Hand"/>
                                     <Setter Property="VerticalAlignment" Value="Bottom"/>
                                     <Setter Property="Height" Value="50"/>
@@ -474,10 +531,10 @@
                                         <ColumnDefinition Width="0.6*"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Width="30" Source="/ProjetoTCC;component/Assets/Icons/plus.png" >
-                                   
+
                                     </Image>
                                     <Label  Grid.Column="1" Content="Salvar" Foreground="#FF0E5503">
-                                       
+
                                         <Label.Style>
                                             <Style TargetType="Label">
                                                 <Setter Property="FontSize" Value="20"/>

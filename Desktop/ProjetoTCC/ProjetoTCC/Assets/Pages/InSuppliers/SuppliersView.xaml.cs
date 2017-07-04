@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BLL;
 namespace ProjetoTCC.Assets.Pages.InSuppliers
 {
     /// <summary>
@@ -23,46 +23,79 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
         public SuppliersView()
         {
             InitializeComponent();
+            LoadEstado();
+        }
+        public void LoadEstado()
+        {
+            cbEstado.ItemsSource = Estado.Carregar().DefaultView;
+        }
+        public void LoadCidade()
+        {
+            cbCidade.ItemsSource = Cidade.Carregar(Convert.ToInt32(cbEstado.SelectedValue)).DefaultView;
+            cbCidade.SelectedIndex = 0;
+        }
+        private void cbEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadCidade();
         }
 
-        private void NumericUpDown_Loaded(object sender, RoutedEventArgs e)
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void richTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        #region Alterar
+        private void AlterarFornecedor()
         {
-
+            Fornecedor forn = new Fornecedor();
+            forn.CodEndereco = CadastrarEndereco();
+            forn.CodContato = CadastrarContato();
+            forn.Nome = txtNome.Text;
+            forn.Cnpj = new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray());
+            forn.InsEstadual = new String(txtEstadual.Text.Where(Char.IsNumber).ToArray());
+            forn.Descricao = txtDescricao.Text;
+            forn.Alterar();
         }
-
-        private void btnAddImage_Click(object sender, RoutedEventArgs e)
+        #endregion Alterar
+        #region Cadastrar
+        private void CadastrarFornecedor()
         {
-
+            Fornecedor forn = new Fornecedor();
+            forn.CodEndereco = CadastrarEndereco();
+            forn.CodContato = CadastrarContato();
+            forn.Nome = txtNome.Text;
+            forn.Cnpj = new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray());
+            forn.InsEstadual = new String(txtEstadual.Text.Where(Char.IsNumber).ToArray());
+            forn.Descricao = txtDescricao.Text;
+            forn.Cadastrar();
         }
-
-        private void btnRemoveImage_Click(object sender, RoutedEventArgs e)
+        private int CadastrarEndereco()
         {
-
+            Endereco end = new Endereco();
+            int cod = end.ProxCodEndereco();
+            end.CodEndereco = cod;
+            end.Cidade = Convert.ToInt32(cbCidade.SelectedValue);
+            end.Estado = Convert.ToInt32(cbEstado.SelectedValue);
+            end.Tipo = 1;
+            end.Bairro = txtBairro.Text;
+            end.Numero = nudNumero.Value;
+            end.Rua = txtRua.Text;
+            end.Cep = new String(txtCep.Text.Where(Char.IsNumber).ToArray());
+            end.Complemento = "";
+            end.Cadastrar();
+            return cod;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private int CadastrarContato()
         {
-
+            Contato con = new Contato();
+            int cod = con.ProxCodContato();
+            con.CodContato = cod;
+            con.Telefone = Convert.ToInt32(new String(txtTelefone.Text.Where(Char.IsNumber).ToArray()));
+            con.Celular = Convert.ToInt32(new String(txtCelular.Text.Where(Char.IsNumber).ToArray()));
+            con.Email = txtEmail.Text;
+            con.Cadastrar();
+            return cod;
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void WindowsFormsHost_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
-        {
-
-        }
+        #endregion Cadastrar
     }
 }

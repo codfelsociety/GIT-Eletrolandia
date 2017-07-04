@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\
 AditionalControlsWPF
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 52057605143
 
-12-1462201368
+12-163727139
 17-227209337
 ImagePicker.xaml;MultiSelectComboBox.xaml;NumericUpDown.xaml;TextEditor.xaml;Themes\Generic.xaml;
 
-True
+False
 

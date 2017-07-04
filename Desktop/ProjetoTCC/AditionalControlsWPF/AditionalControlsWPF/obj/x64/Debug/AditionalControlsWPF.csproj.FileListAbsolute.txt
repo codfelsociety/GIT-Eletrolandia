@@ -103,3 +103,21 @@ D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\AditionalControlsWPF\Adit
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.dll
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.pdb
 D:\Documentos\Visual Studio 2017\ProjetoTCC\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\bin\x64\Debug\AditionalControlsWPF.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\bin\x64\Debug\AditionalControlsWPF.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\ImagePicker.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\MultiSelectComboBox.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\NumericUpDown.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\TextEditor.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF_MarkupCompile.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF_MarkupCompile.lref
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\ImagePicker.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\MultiSelectComboBox.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\NumericUpDown.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\TextEditor.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\Themes\Generic.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.g.resources
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\AditionalControlsWPF.pdb

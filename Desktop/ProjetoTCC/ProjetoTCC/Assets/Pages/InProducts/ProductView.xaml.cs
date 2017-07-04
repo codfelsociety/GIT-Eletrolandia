@@ -102,22 +102,33 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         }
         public void LoadMarca()
         {
+            int i = cbxMarca.SelectedIndex;
             cbxMarca.DisplayMemberPath = "DESCRICAO";
             cbxMarca.SelectedValuePath = "COD_MARCA";
             cbxMarca.ItemsSource = Marca.Load();
+            cbxMarca.SelectedIndex = i;
+
         }
         public void LoadCategoria()
         {
+            int i = cbxCategoria.SelectedIndex;
             cbxCategoria.DisplayMemberPath = "DESCRICAO";
             cbxCategoria.SelectedValuePath = "COD_CATEGORIA";
             cbxCategoria.ItemsSource = Categoria.Load();
+            cbxCategoria.SelectedIndex = i;
         }
         public void LoadArtigo()
         {
+            int i = cbxArtigo.SelectedIndex;
+            if(i < 0)
+            {
+                i = 0;
+            }
             cbxArtigo.SelectedValuePath = "COD_ARTIGO";
             cbxArtigo.DisplayMemberPath = "DESCRICAO";
             cbxArtigo.ItemsSource = Artigo.Load((int)cbxCategoria.SelectedValue);
-            cbxArtigo.SelectedIndex = 0;
+            cbxArtigo.SelectedIndex = i;
+
         }
         public void LoadFornecedor()
         {
@@ -133,11 +144,12 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         }
         private void cbxCategoria_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             try { LoadArtigo(); } catch (Exception) { }
         }
         private void cbxArtigo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try { PopulateEspecifications(); } catch (Exception) { }
+            PopulateEspecifications();
         }
         #endregion Selection Changed
         #region Text Changed
@@ -179,24 +191,24 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
 
-             if (Validar())
-             {
-                 try
-                 {
-                     if(OPR == 'I')
-                     {
-                         SaveInProdutos();
-                     }
-                     if(OPR == 'U')
-                     {
-                         AlterarProduto();
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-                     MessageBox.Show(ex.Message, "Parece que algo de errado não está certo.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                 }
-             }
+            if (Validar())
+            {
+                try
+                {
+                    if (OPR == 'I')
+                    {
+                        SaveInProdutos();
+                    }
+                    if (OPR == 'U')
+                    {
+                        AlterarProduto();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Parece que algo de errado não está certo.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
         }
         private bool Validar()
         {
@@ -339,10 +351,6 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                 {
                     TextBox txt = new TextBox();
                     txt.Name = ("txt" + row[1].ToString()).Replace(" ", string.Empty);
-                    txt.Width = 200;
-                    txt.Height = 23;
-                    txt.VerticalContentAlignment = VerticalAlignment.Center;
-                    txt.HorizontalAlignment = HorizontalAlignment.Right;
                     SpecPanel.Children.Add(txt);
                 }
             }
@@ -363,7 +371,7 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                 frete.CodFrete = codFrete;
                 frete.Cadastrar();
             }
-            if(OPR == 'U')
+            if (OPR == 'U')
             {
                 frete.CodFrete = FRETE;
                 frete.Alterar();
@@ -467,7 +475,43 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(master.ActualWidth.ToString() + " " + master.ActualHeight.ToString());
-            
+
+        }
+
+        private void btnNovaCategoria_Click(object sender, RoutedEventArgs e)
+        {
+            popupcategoria p = new popupcategoria();
+            p.Show();
+        }
+
+        private void cbxCategoria_DropDownOpened(object sender, EventArgs e)
+        {
+            LoadCategoria();
+        }
+
+        private void btnnovoartigo_Click(object sender, RoutedEventArgs e)
+        {
+            popupartigo p = new popupartigo();
+            p.CodCategoria = (int)cbxCategoria.SelectedValue;
+            DataRowView dv = (DataRowView)cbxCategoria.SelectedItem;
+            p.Categoria = dv[1].ToString();
+            p.Show();
+        }
+
+        private void cbxArtigo_DropDownOpened(object sender, EventArgs e)
+        {
+            LoadArtigo();
+        }
+
+        private void btnAdicionarNovaMarca_Click(object sender, RoutedEventArgs e)
+        {
+            popupmarca p = new popupmarca();
+            p.Show();
+        }
+
+        private void cbxMarca_DropDownOpened(object sender, EventArgs e)
+        {
+            LoadMarca();
         }
     }
 }
