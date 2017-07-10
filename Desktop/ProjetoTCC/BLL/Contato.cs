@@ -12,13 +12,13 @@ namespace BLL
     public class Contato
     {
         private int _codContato;
-        private int _telefone;
-        private int _celular;
+        private long _telefone;
+        private long _celular;
         private string _email;
 
         public int CodContato { get => _codContato; set => _codContato = value; }
-        public int Telefone { get => _telefone; set => _telefone = value; }
-        public int Celular { get => _celular; set => _celular = value; }
+        public long Telefone { get => _telefone; set => _telefone = value; }
+        public long Celular { get => _celular; set => _celular = value; }
         public string Email { get => _email; set => _email = value; }
 
         private static OracleCommand cmd;
@@ -36,8 +36,8 @@ namespace BLL
             cmd = new OracleCommand("insert_contato", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_contato", OracleDbType.Int32).Value = CodContato;
-            cmd.Parameters.Add("p_telefone", OracleDbType.Int32).Value = Telefone;
-            cmd.Parameters.Add("p_celular", OracleDbType.Int32).Value = Celular;
+            cmd.Parameters.Add("p_telefone", OracleDbType.Int64).Value = Telefone;
+            cmd.Parameters.Add("p_celular", OracleDbType.Int64).Value = Celular;
             cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = Email;
             cmd.ExecuteNonQuery();
         }
@@ -48,8 +48,8 @@ namespace BLL
             cmd = new OracleCommand("update_contato", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_contato", OracleDbType.Int32).Value = CodContato;
-            cmd.Parameters.Add("p_telefone", OracleDbType.Int32).Value = Telefone;
-            cmd.Parameters.Add("p_celular", OracleDbType.Int32).Value = Celular;
+            cmd.Parameters.Add("p_telefone", OracleDbType.Int64).Value = Telefone;
+            cmd.Parameters.Add("p_celular", OracleDbType.Int64).Value = Celular;
             cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = Email;
             cmd.ExecuteNonQuery();
         }

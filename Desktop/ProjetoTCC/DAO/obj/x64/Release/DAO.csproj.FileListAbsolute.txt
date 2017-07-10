@@ -26,3 +26,11 @@ C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\bin\x64\Release\Oracle.DataAccess.dll
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Release\DAO.csprojResolveAssemblyReference.cache
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Release\DAO.dll
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\DAO\obj\x64\Release\DAO.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Release\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Release\DAO.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Release\Oracle.DataAccess.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Release\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Release\DAO.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Release\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Release\DAO.pdb

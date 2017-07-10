@@ -5,10 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages.InUsers"
       xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:custom="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:aditionalControls="clr-namespace:AditionalControlsWPF;assembly=AditionalControlsWPF"
       mc:Ignorable="d" Language="pt-BR"
-      d:DesignHeight="500" d:DesignWidth="700"
-      Title="UsersView" TextOptions.TextRenderingMode="Auto" TextOptions.TextFormattingMode="Display">
+      d:DesignHeight="644" d:DesignWidth="1288"
+      Title="UsersView" TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Ideal">
     <Page.Resources>
         <Style TargetType="{x:Type Rectangle}" x:Key="SplitRectangle">
             <Setter Property="VerticalAlignment" Value="Top"/>
@@ -88,7 +89,7 @@
                 <Setter Property="Height" Value="31"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
             </Style>
-            
+
             <Style TargetType="TextBox">
                 <Setter Property="Padding" Value="4"/>
                 <Setter Property="BorderThickness" Value="0"/>
@@ -158,131 +159,63 @@
                             </Grid.ColumnDefinitions>
 
                             <Rectangle Style="{StaticResource SplitRectangle}" Margin="3,3,1.5,3" Height="40"  Grid.Column="0" Grid.ColumnSpan="20" Fill="#ECECEC"/>
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="3,46,1.5,3" Height="640"  Grid.Column="0" Grid.ColumnSpan="20" />
+                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="4,46,0,0" Height="536"  Grid.Column="0" Grid.ColumnSpan="20" />
                             <!--#region Data Cadastro-->
                             <Label Margin="3,8,0,0" HorizontalAlignment="Center"  Grid.Column="0" Grid.ColumnSpan="5">Data Cadastro</Label>
                             <Rectangle Grid.Column="5" Grid.ColumnSpan="7" Margin="0,8,0,0"/>
-                            <TextBox IsEnabled="False" HorizontalContentAlignment="Center"  Grid.Column="5" Grid.ColumnSpan="7" Foreground="#777" Text="11/07/2017 12:44:04"  Margin="2,10,2,2"/>
+                            <TextBox x:Name="txtDataCadastro" IsEnabled="False" HorizontalContentAlignment="Center"  Grid.Column="5" Grid.ColumnSpan="7" Foreground="#777" Text="11/07/2017 12:44:04"  Margin="2,10,2,2"/>
                             <!--#endregion-->
                             <!--#region ID COD-->
                             <Label Margin="0,8,0,0" HorizontalContentAlignment="Center" Grid.Column="11" Grid.ColumnSpan="3">ID</Label>
                             <Rectangle Grid.Column="15" Grid.ColumnSpan="5" Margin="0,8,10,0"/>
-                            <TextBox IsEnabled="False" HorizontalContentAlignment="Center" Grid.Column="15" Foreground="#777" Text="0000002" Grid.ColumnSpan="5" Margin="2,10,12,2"></TextBox>
+                            <TextBox x:Name="txtID" IsEnabled="False" HorizontalContentAlignment="Center" Grid.Column="15" Foreground="#777" Text="0000002" Grid.ColumnSpan="5" Margin="2,10,12,2"></TextBox>
                             <!--#endregion-->
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="2,206,3,0" Fill="#FFFFDFDF" Height="82" Grid.ColumnSpan="18" Grid.Column="1"/>
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="2,296,3,0" Fill="#FFFFFBD1" Height="206" Grid.ColumnSpan="18" Grid.Column="1"/>
+                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="21,170,16,0" Fill="#FFFFFBD1" Height="206" Grid.ColumnSpan="20"/>
                             <!--#region  Nome-->
-                            <Label Grid.Column="1" Grid.ColumnSpan="7"  Margin="0,55,10,0">Nome</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,55,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11"  Margin="2,57,14,0"></TextBox>
+                            <Label Grid.Column="1" Grid.ColumnSpan="3"  Margin="0,60,9,0">Nome</Label>
+                            <Rectangle Grid.Column="3" Grid.ColumnSpan="9" Margin="28,60,9,0"/>
+                            <TextBox x:Name="txtNome" Grid.Column="4" Grid.ColumnSpan="8"  Margin="0,62,11,0" TabIndex="0"></TextBox>
                             <!--#endregion-->
 
                             <!--#region  cnpj-->
-                            <Label Grid.Column="1" Grid.ColumnSpan="7"  Margin="0,94,10,0" >Sobrenome</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,94,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11"  Margin="2,96,14,0"></TextBox>
                             <!--#endregion-->
                             <!--#region Address-->
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,133,10,0" >Gênero</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,133,12,0"/>
-                            <ComboBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,135,14,0"></ComboBox>
                             <!--#endregion-->
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="6,416,8,0" Fill="#FFFFFEF3" Height="78" Grid.ColumnSpan="17" Grid.Column="2"/>
+                            <Rectangle x:Name="recSenhas" Style="{StaticResource SplitRectangle}" Margin="6,290,8,0" Fill="#FFFFFEF3" Height="78" Grid.ColumnSpan="17" Grid.Column="2"/>
                             <!--#region E-mail-->
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,303,10,0" Content="Usuário" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,303,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,305,14,0"></TextBox>
+                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,177,10,0" Content="Usuário" />
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,177,12,0"/>
+                            <TextBox x:Name="txtUsuario" MaxLength="30" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,179,14,0" TabIndex="4"></TextBox>
                             <!--#endregion-->
                             <!--#region Telefone-->
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,342,10,0" Content="E-mail" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,342,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,344,14,0"></TextBox>
+                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,216,10,0" Content="E-mail" />
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,216,12,0"/>
+                            <TextBox x:Name="txtEmail" Grid.Column="8" MaxLength="30" Grid.ColumnSpan="11" Margin="2,218,14,0" TabIndex="5"></TextBox>
                             <!--#endregion-->
                             <!--#region Celular-->
-                            <Label Grid.Column="4" Grid.ColumnSpan="4" Margin="0,381,10,0" Content="Cargo" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,381,12,0"/>
-                            <ComboBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,383,14,0"></ComboBox>
-                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,212,10,0" Content="CPF" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,212,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,214,14,0"/>
-                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,250,10,0" Content="RG" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,250,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,252,14,0"/>
-                            <Label Grid.Column="4" Grid.ColumnSpan="4" Margin="0,421,10,0" Content="Senha" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,421,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,423,14,0"/>
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,458,10,0" Content="Confirma Senha" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,458,12,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,460,14,0"/>
-                            <Label Grid.Column="1" Grid.ColumnSpan="7"  Margin="0,172,10,0" Content="Idade" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,172,12,0"/>
-                            <aditionalControls:NumericUpDown Grid.Column="8" Margin="1,173,13,0" VerticalAlignment="Top" Grid.ColumnSpan="11" />
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="2,510,2,-26" Fill="#FFD1EAFF" Height="159" Grid.ColumnSpan="18" Grid.Column="1"/>
-                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,517,10,0" Content="CEP" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,517,11,0"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,519,13,0"/>
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,555,10,0" Content="Estado" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,555,11,0"/>
-                            <ComboBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,557,13,0"/>
-                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,593,10,0" Content="Cidade" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,593,11,0"/>
-                            <ComboBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,595,13,0"/>
-                            <Label Grid.Column="2" Grid.ColumnSpan="6" Margin="0,631,10,-19" Content="Endereço" />
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,631,11,-19"/>
-                            <TextBox Grid.Column="8" Grid.ColumnSpan="11" Margin="2,633,13,-17"/>
+                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,255,7,0" Content="Acesso" Width="64" />
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,255,12,0"/>
+                            <ComboBox x:Name="cbAcesso" SelectedIndex="0" DisplayMemberPath="DESCRICAO" SelectedValuePath="COD" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,257,14,0" TabIndex="6"></ComboBox>
+                            <Label Grid.Column="5" Grid.ColumnSpan="3" Margin="0,294,10,0" Content="Senha" />
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,295,12,0"/>
+                            <PasswordBox x:Name="txtSenha" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,297,14,320" Background="{x:Null}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TabIndex="5" />
+                            <Label Grid.Column="3" Grid.ColumnSpan="5" Margin="0,331,10,0" Content="Confirma Senha" />
+                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,332,12,0"/>
+                            <aditionalControls:ImagePicker x:Name="imgUsuario" Grid.ColumnSpan="8" HorizontalAlignment="Left" Margin="4,59,0,0" VerticalAlignment="Top" Height="105" Width="226" Grid.Column="12" BorderBrush="#FF7A7979"/>
+                            <Label Grid.ColumnSpan="4"  Margin="0,96,8,0" Content="Sobrenome" Width="93"/>
+                            <Rectangle Grid.Column="3" Grid.ColumnSpan="9" Margin="28,95,9,0"/>
+                            <TextBox x:Name="txtSobrenome" Grid.Column="4" Grid.ColumnSpan="8"  Margin="0,97,11,0" TabIndex="1"/>
+                            <Label Grid.ColumnSpan="2"  Margin="0,131,7,0" Content="Sexo" Width="45" Grid.Column="2"/>
+                            <Rectangle Grid.ColumnSpan="9" Grid.Column="3" HorizontalAlignment="Left" Height="32" Margin="28,131,0,0" VerticalAlignment="Top" Width="245" Stroke="{x:Null}" Fill="#FF5B5B5B"/>
+                            <RadioButton x:Name="rbMasculino" Content="Masculino" IsChecked="True" Grid.Column="4" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="98" Foreground="White" GroupName="Sexo" TabIndex="2"/>
+                            <RadioButton x:Name="rbFeminino" Content="Feminino" Grid.Column="7" HorizontalAlignment="Left" Margin="21,140,0,0" VerticalAlignment="Top" Grid.ColumnSpan="4" Width="101" Foreground="White" GroupName="Sexo" TabIndex="3"/>
+                            <Button x:Name="btnSalvar" Grid.Column="0" Grid.ColumnSpan="7" Margin="4,0,26,4" BorderThickness="0" Foreground="#006FA3" FontSize="20" Background="White" Cursor="Hand" VerticalAlignment="Bottom" Height="50" Content="Salvar" Click="btnSalvar_Click" />
+                            <Button x:Name="btnLimpar" Grid.Column="7" Grid.ColumnSpan="7" Margin="2,0,27,4"  BorderThickness="0" Foreground="#006FA3" FontSize="20" Background="White" Cursor="Hand"  VerticalAlignment="Bottom" Height="50" Content="Limpar"/>
+                            <PasswordBox x:Name="txtConfirmaSenha" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,334,14,283" Background="{x:Null}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TabIndex="7" />
 
 
                             <!--#endregion-->
 
-
-
-                        </Grid>
-                    </ScrollViewer>
-                    <ScrollViewer  VerticalAlignment="Top" Height="170" Margin="1.5,3,3,8" Grid.Column="2" VerticalScrollBarVisibility="Auto">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                                <ColumnDefinition Width="0.05*"/>
-                            </Grid.ColumnDefinitions>
-                            <Rectangle Style="{StaticResource SplitRectangle}" Margin="0,0,1,0" Height="170"  Grid.Column="0" Grid.ColumnSpan="11"/>
-
-
-                            <ListView Height="150" ScrollViewer.VerticalScrollBarVisibility="Hidden" BorderThickness="4" BorderBrush="#B8B8B8" Grid.Column="0" Grid.ColumnSpan="8" Margin="8,10,2,0" Name="listImages" VerticalAlignment="Top" >
-                                <ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                                <ListView.Resources>
-                                    <Style TargetType="ScrollBar">
-                                        <Setter Property="Height" Value="10"/>
-                                    </Style>
-                                </ListView.Resources>
-                            </ListView>
-                            <Button x:Name="btnAddImage_Copy1" Click="btnAddImage_Click" Margin="-20,30,12,0" VerticalAlignment="Top" Grid.ColumnSpan="4" BorderThickness="0" Background="{x:Null}" Grid.Column="8" Width="50" Height="50">
-                                <Image x:Name="___MainApplication_component_moderngreenplus_png2_Copy"  Source="/ProjetoTCC;component/moderngreenplus.png" Stretch="Fill" />
-                            </Button>
-                            <Button x:Name="btnAddImage_Codpy1" Click="btnAddImage_Click" Margin="-20,90,12,0" VerticalAlignment="Top" Grid.ColumnSpan="4" BorderThickness="0" Background="{x:Null}" Grid.Column="8" Width="50" Height="50">
-                                <Image x:Name="___MainApplication_component_cancelar_icone_png" Height="50" Source="/ProjetoTCC;component/cancelar_icone.png" Stretch="None" Width="50"/>
-                            </Button>
 
 
                         </Grid>
@@ -310,10 +243,6 @@
                             <ColumnDefinition Width="0.05*"/>
                             <ColumnDefinition Width="0.05*"/>
                         </Grid.ColumnDefinitions>
-                        <Rectangle Style="{StaticResource SplitRectangle}"  Margin="1.5,0,3,4" Fill="White" VerticalAlignment="Bottom" Height="50"  Grid.Column="0" Grid.ColumnSpan="20"/>
-                        <Button Grid.Column="0" Grid.ColumnSpan="6" Margin="1.5,0,3,4" BorderThickness="0" Foreground="#006FA3" FontSize="20" Background="White" Cursor="Hand" VerticalAlignment="Bottom" Height="50" Content="Salvar" />
-                        <Button Grid.Column="7" Grid.ColumnSpan="6" Margin="1.5,0,3,4"  BorderThickness="0" Foreground="#006FA3" FontSize="20" Background="White" Cursor="Hand"  VerticalAlignment="Bottom" Height="50" Content="Limpar"/>
-                        <Button Grid.Column="14" Grid.ColumnSpan="6" Margin="1.5,0,3,4" BorderThickness="0" Foreground="#006FA3" FontSize="20" Background="White" Cursor="Hand" VerticalAlignment="Bottom" Height="50" Content="Cancelar"/>
 
                     </Grid>
 

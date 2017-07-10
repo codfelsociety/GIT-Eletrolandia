@@ -5,10 +5,12 @@ CREATE TABLE max_seq(
     CONSTRAINT max_seq_pk PRIMARY KEY(cod_seq)
 );
 INSERT INTO max_seq VALUES(1,'seq_produtos',0);
+INSERT INTO max_seq VALUES(2,'seq_usuario',0);
 INSERT INTO max_seq VALUES(3,'seq_fornecedor',0);
 
 CREATE SEQUENCE seq_produtos;
 CREATE SEQUENCE seq_cliente;
+CREATE SEQUENCE seq_venda;
 CREATE SEQUENCE seq_fornecedor;
 CREATE SEQUENCE seq_especificacao;
 CREATE SEQUENCE seq_marca;
@@ -22,3 +24,7 @@ CREATE SEQUENCE seq_prod_forn;
 CREATE SEQUENCE seq_log_produto;
 CREATE SEQUENCE seq_endereco;
 CREATE SEQUENCE seq_contato;
+CREATE SEQUENCE seq_usuario;
+CREATE SEQUENCE seq_pagamento;
+CREATE SEQUENCE seq_venda_produto;
+CREATE SEQUENCE seq_mensagem;

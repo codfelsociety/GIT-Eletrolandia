@@ -13,7 +13,7 @@ namespace BLL
     {
         private int _codEndereco;
         private int _tipo;
-        private string _cep;
+        private long _cep;
         private int _cidade;
         private int _estado;
         private string _bairro;
@@ -23,7 +23,7 @@ namespace BLL
 
         public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
         public int Tipo { get => _tipo; set => _tipo = value; }
-        public string Cep { get => _cep; set => _cep = value; }
+        public long Cep { get => _cep; set => _cep = value; }
         public int Cidade { get => _cidade; set => _cidade = value; }
         public int Estado { get => _estado; set => _estado = value; }
         public string Bairro { get => _bairro; set => _bairro = value; }
@@ -47,7 +47,7 @@ namespace BLL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_endereco", OracleDbType.Int32).Value = CodEndereco;
             cmd.Parameters.Add("p_tipo", OracleDbType.Int32).Value = Tipo;
-            cmd.Parameters.Add("p_cep", OracleDbType.Varchar2).Value = Cep;
+            cmd.Parameters.Add("p_cep", OracleDbType.Int64).Value = Cep;
             cmd.Parameters.Add("p_cidade", OracleDbType.Int32).Value = Cidade;
             cmd.Parameters.Add("p_estado", OracleDbType.Int32).Value = Estado;
             cmd.Parameters.Add("p_bairro", OracleDbType.Varchar2).Value = Bairro;
@@ -64,7 +64,7 @@ namespace BLL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_endereco", OracleDbType.Int32).Value = CodEndereco;
             cmd.Parameters.Add("p_tipo", OracleDbType.Int32).Value = Tipo;
-            cmd.Parameters.Add("p_cep", OracleDbType.Varchar2).Value = Cep;
+            cmd.Parameters.Add("p_cep", OracleDbType.Int64).Value = Cep;
             cmd.Parameters.Add("p_cidade", OracleDbType.Int32).Value = Cidade;
             cmd.Parameters.Add("p_estado", OracleDbType.Int32).Value = Estado;
             cmd.Parameters.Add("p_bairro", OracleDbType.Varchar2).Value = Bairro;

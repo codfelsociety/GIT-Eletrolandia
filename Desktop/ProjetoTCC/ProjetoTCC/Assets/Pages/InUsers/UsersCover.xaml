@@ -9,9 +9,9 @@
       Title="UsersCover">
 
 
- 
+
     <Grid Background="White">
-        <ListView Margin="10" Name="icUsuarios">
+        <ListView Margin="10" Padding="-3,0,0,0" Name="icUsuarios" SelectionChanged="icUsuarios_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel />
@@ -20,31 +20,37 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="300" Height="180" Background="#F1F1F1" Margin="0,0,0,5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.45*" />
-                            <ColumnDefinition Width="0.3*" />
-                            <ColumnDefinition Width="0.25*" />
-                        </Grid.ColumnDefinitions>
-                        <Rectangle Height="30" VerticalAlignment="Top" Fill="#FF9C77" Margin="3" Grid.ColumnSpan="3"/>
-                        <TextBlock Foreground="#041462" FontSize="20" Margin="15,5,0,0"  HorizontalAlignment="Left" Grid.Column="0"  Text="{Binding CARGO}" />
-                        <TextBlock Text="." FontSize="40"  Grid.Column="1" HorizontalAlignment="Left"  Margin="11,-20,0,0"/>
-                        <TextBlock FontSize="20" Margin="0,5,10,0" Opacity="0.8" HorizontalAlignment="Right" Grid.Column="1"  Text="{Binding NOME}" />
-                        <TextBlock FontSize="20" Margin="0,5,0,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding SOBRENOME}" />
-
-                        <Image Margin="0,40,0,0" Source="{Binding LOCAL_IMAGEM}">
+                    <Grid Height="110"  Margin="0,0,0,5">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="50" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="WhiteSmoke" Offset="0"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Image Margin="5,5,0,0" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="100" Source="{Binding PICTURE}">
                             <Image.Clip>
-                                <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
+                                <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
                             </Image.Clip>
+
                         </Image>
-                        <Rectangle Margin="3,40,3,15" RadiusX="5" RadiusY="5" Fill="#D9D9D9" Grid.Column="1" Grid.ColumnSpan="2"/>
-                        <TextBlock FontSize="16" Margin="0,50,15,0" Opacity="1" FontWeight="Bold" HorizontalAlignment="Right" Grid.Column="1"  Text="Cidade:" />
-                        <TextBlock FontSize="16" Margin="-6,50,5,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding CIDADE}" />
-                        <TextBlock FontSize="16" Margin="0,80,15,0" Opacity="1" FontWeight="Bold" HorizontalAlignment="Right" Grid.Column="1"  Text="Idade:" />
-                        <TextBlock FontSize="16" Margin="-6,80,5,0" HorizontalAlignment="Left" Grid.Column="2" Opacity="0.8" Text="{Binding IDADE}" />
-
-
-
+                        <WrapPanel  Margin="110,12,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <TextBlock Margin="0,5,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="#FF444444" Text="{Binding NOME}"></TextBlock>
+                            <TextBlock Margin="8,5,10,0" FontSize="18" FontFamily="Yu Gothic UI Semibold" Foreground="#FF444444" Text="{Binding ACESSO}" ></TextBlock>
+                        </WrapPanel>
+                        <WrapPanel  Margin="110,40,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <TextBlock Margin="0,5,10,0" FontSize="18" FontFamily="Segoe UI" Foreground="#FF444444" FontStyle="Italic" Text="{Binding EMAIL}"></TextBlock>
+                        </WrapPanel>
+                        <WrapPanel  Margin="110,68,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <TextBlock Margin="0,5,10,0" FontSize="18" FontFamily="Segoe UI Light" Foreground="#FF170047" FontStyle="Normal" Text="{Binding USERNAME}"></TextBlock>
+                        </WrapPanel>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

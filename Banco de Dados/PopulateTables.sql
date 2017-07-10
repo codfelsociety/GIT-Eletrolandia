@@ -1,3 +1,9 @@
+INSERT INTO acesso VALUES(1, 'Administrador');
+INSERT INTO acesso VALUES(2, 'Caixa');
+
+INSERT INTO sexo VALUES(1, 'Masculino', 'M');
+INSERT INTO sexo VALUES(2, 'Feminino', 'F');
+
 INSERT INTO categoria VALUES(SEQ_CATEGORIA.NEXTVAL, 'Hardware');
 INSERT INTO categoria VALUES(SEQ_CATEGORIA.NEXTVAL, 'Mobile');
 INSERT INTO categoria VALUES(SEQ_CATEGORIA.NEXTVAL, 'Periféricos');
@@ -9541,3 +9547,4 @@ INSERT INTO estado VALUES(25, 'Sergipe', 'SE');
 INSERT INTO estado VALUES(26, 'São Paulo', 'SP');
 INSERT INTO estado VALUES(27, 'Tocantins', 'TO');
 
+commit;

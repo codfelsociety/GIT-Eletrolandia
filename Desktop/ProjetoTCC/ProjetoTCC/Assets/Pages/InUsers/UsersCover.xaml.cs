@@ -25,23 +25,25 @@ namespace ProjetoTCC.Assets.Pages.InUsers
         public UsersCover()
         {
             InitializeComponent();
-            //Funcionarios.CarregarGrid();
-           // icUsuarios.ItemsSource = Funcionarios.dtUsuarios.DefaultView;
+            icUsuarios.ItemsSource = Usuario.RetornarUsuarioInterface().DefaultView;
         }
         private void listViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataRowView row = (DataRowView)icUsuarios.SelectedItems[0];
-            string COD = Convert.ToString(row["COD"]);
-            string nome = Convert.ToString(row["NOME"]);
-            string sobrenome = Convert.ToString(row["SOBRENOME"]);
-            string idade = Convert.ToString(row["IDADE"]);
-            string cidade = Convert.ToString(row["CIDADE"]);
-
-
-
-            MessageBox.Show( "COD: " + COD + "\nNOME: " + nome + " " + sobrenome + "\n" + "IDADE: " + idade + "\nCIDADE: " + cidade);
-            
-
+            string info = "";
+            info += "\nCod:                "+ row["COD"].ToString();
+            info += "\nNome:             "+ row["NOME"].ToString();
+            info += "\nEmail:              "+ row["EMAIL"].ToString();
+            info += "\nUsername:      "+ row["USERNAME"].ToString();
+            info += "\nAcesso:           "+ row["ACESSO"].ToString();
+            info += "\nSexo:               "+ row["SEXO"].ToString();
+            MessageBox.Show(info);
+        }
+        public static int COD;
+        private void icUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           DataRowView row =  (DataRowView)icUsuarios.SelectedItem;
+            COD = (int)row["COD"];
         }
     }
 }

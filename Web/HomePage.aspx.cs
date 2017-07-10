@@ -20,9 +20,11 @@ public partial class Pages_HomePage : System.Web.UI.Page
     public DataRow r;
     protected void BindData()
     {
-        ConnectionClass.Conexao();
-        string SQL = @"SELECT img.imagem as image, prod.nome, prod.cod_produto AS COD, prod.cod_barras, logprod.preco_venda as PRECO
-                                FROM produto prod
+        try
+        {
+            ConnectionClass.Conexao();
+            string SQL = @"SELECT img.imagem as image, prod.nome, prod.cod_produto AS COD, prod.cod_barras, logprod.preco
+                                FROM produtos prod
                                 JOIN
                                 (SELECT inn.* FROM(SELECT log2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_log_prod DESC)) As Rank
                                   FROM log_produto log2) inn WHERE inn.Rank = 1) logprod
@@ -31,11 +33,12 @@ public partial class Pages_HomePage : System.Web.UI.Page
                                 (SELECT inn.*FROM(SELECT img2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_produto DESC)) As Rank
                                 FROM imagem_produto img2) inn WHERE inn.Rank = 1) img
                                   ON prod.cod_produto = img.cod_produto";
-        DataTable dt = ConnectionClass.RetornarDataTable(SQL);
-        r = dt.Rows[0];
+            DataTable dt = ConnectionClass.RetornarDataTable(SQL);
+            r = dt.Rows[0];
 
-        listaProdutos.DataSource = dt;
-        listaProdutos.DataBind();
+            listaProdutos.DataSource = dt;
+            listaProdutos.DataBind();
+        } catch { }
     }
     public byte[] ProcessImage(object myValue)
     {

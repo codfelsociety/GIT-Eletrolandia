@@ -14,12 +14,6 @@ namespace DAO
         private static DataSet ds;
         private static string SQL;
 
-       /*private static OracleDataReader dr;
-          private static OracleParameter p;
-          private static OracleParameter q;
-          private static string dado;
-          private static DataTable dt;*/
-
         public static string Conexao()
         {
             string info = "";

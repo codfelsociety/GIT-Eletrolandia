@@ -24,7 +24,7 @@ namespace ProjetoTCC.Assets.Pages
         public OrdersPage()
         {
             InitializeComponent();
-            string SQL = $@"SELECT entrega.cod_tipo,info.nome || ' '|| info.sobrenome AS Nome,
+          /*  string SQL = $@"SELECT entrega.cod_tipo,info.nome || ' '|| info.sobrenome AS Nome,
                                 info.sexo, info.cpf, info_contato.telefone, info_contato.email,  
                                 endereço.cidade, endereço.estado, endereço.número, endereço.tipo
                                 FROM entrega
@@ -37,7 +37,7 @@ namespace ProjetoTCC.Assets.Pages
 
             DataView dv = DAO.ClasseConexao.RetornarDataTable(SQL).DefaultView;
      
-            DataGridEntregas.ItemsSource =  dv;
+            DataGridEntregas.ItemsSource =  dv;*/
 
         }
 

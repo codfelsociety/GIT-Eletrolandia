@@ -32,15 +32,6 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                 LoadArtigo();
                 LoadFornecedor();
                 LoadMarca();
-                txtName.Text = "TEST" + txtCod.Text;
-                txtCodBarras.Text = "01234";
-                cbxMarca.SelectedValue = 2;
-                txtCusto.Number = 50;
-                txtPreco.Number = 60;
-                txtPeso.Text = txtAltura.Text = txtLargura.Text = txtComprimento.Text = "10";
-                nudEstoque.Value = 10;
-                nudEstoqueMin.Value = 5;
-                nudEstoqueMax.Value = 20;
             }
             if (OPR == 'U')
             {
@@ -198,10 +189,12 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                     if (OPR == 'I')
                     {
                         SaveInProdutos();
+                        MessageBox.Show("Novo produto cadastrado");
                     }
                     if (OPR == 'U')
                     {
                         AlterarProduto();
+                        MessageBox.Show("Produto Alterado.");
                     }
                 }
                 catch (Exception ex)
@@ -223,14 +216,16 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             {
                 txtName.BorderThickness = new Thickness(0);
             }
-            if (txtCusto.Number > txtPreco.Number || txtPreco.Number == 0 || txtCusto.Number == 0)
+            if (txtCusto.Number >= txtPreco.Number || txtPreco.Number == 0 || txtCusto.Number == 0)
             {
                 recValores.Stroke = Brushes.OrangeRed;
                 recValores.StrokeThickness = 1;
                 Color color = (Color)ColorConverter.ConvertFromString("#FCC1C1");
                 Brush vermelho = new SolidColorBrush(color);
                 recValores.Fill = vermelho;
+                MessageBox.Show("O preço do produto deve ser superior ao custo.");
                 validado = false;
+               
             }
             else
             {

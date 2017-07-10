@@ -6,22 +6,26 @@
 }
 /*Barra de navegação*/
 #nav_bar {
-    background-color: #49473B;
+    background-color: #1d2631;
 }
 
 /*Botão de Pesquisa*/
 #btnsearch {
-    background-color: #585735;
-    border-color: #b19564;
+    background-color: #276280;
+    border-color: #4da6d3;
 }
 .hidden {
     display:none;
 }
 
-/*Plano de fundo do site*/
+#footer {
+    background-color: #1d2631;
+    color: white;
+}
+/*Plano de fundo do site
 body {
-   background-image: url(https://wallpaperbrowse.com/media/images/High-Definition-Ultra-HD-Wallpaper.jpg); 
+   background-image: url(../Images/background.jpg); 
    background-attachment:fixed;
    background-size:cover;
    background-position:center;
-}
+}*/

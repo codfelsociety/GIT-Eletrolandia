@@ -4,13 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages.InCaixa"
+          xmlns:custom="http://schemas.xceed.com/wpf/xaml/toolkit"
+
       xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:AditionalControlsWPF="clr-namespace:AditionalControlsWPF;assembly=AditionalControlsWPF" x:Class="ProjetoTCC.Assets.Pages.InCaixa.CaixaView"
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="690" d:DesignWidth="1288"
       Title="CaixaView">
     <Page.Resources>
-        <Style x:Key="Body_Content_DataGrid_Centering" TargetType="{x:Type DataGridCell}">
+        <Style x:Key="Body_Content_DataGrid_Centering"  TargetType="{x:Type DataGridCell}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGridCell}">
@@ -104,7 +106,7 @@
                 <DataGridTemplateColumn CellStyle="{StaticResource img}"  Header="" Width="45" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding LOCAL_IMAGEM}"/>
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding IMAGEM}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -191,7 +193,7 @@
                                 <ImageBrush ImageSource="/ProjetoTCC;component/Assets/Imagens/default_new_image.jpg" Stretch="UniformToFill"/>
                             </Rectangle.Fill>
                         </Rectangle>
-                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding LOCAL_IMAGEM}"/>
+                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="{Binding IMAGEM}"/>
                         <TextBlock FontSize="25" Margin="15,15,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="1"  Grid.Column="1"  Text="{Binding NOME}" />
                         <TextBlock FontSize="20" Margin="15,40,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="1"  Grid.Column="1"  Text="{Binding COD_BARRAS}" />
                         <TextBlock FontSize="20" Margin="15,75,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="1" FontWeight="SemiBold" Grid.Column="1"  Text="COD:" />
@@ -211,7 +213,7 @@
         </ListView>
 
         <AditionalControlsWPF:NumericUpDown x:Name="txtQuantidade" HorizontalAlignment="Left" Margin="964,415,0,0" VerticalAlignment="Top" Height="52" Width="296" FontSize="36" ValueChanged="txtQuantidade_ValueChanged"/>
-        <Grid HorizontalAlignment="Left" Height="616" Margin="25,42,0,0" VerticalAlignment="Top" Width="1239" Background="#FFE2E2E2" Visibility="Hidden">
+        <Grid x:Name="gridPagamento" Visibility="Hidden" HorizontalAlignment="Left" Height="616" Margin="25,42,0,0" VerticalAlignment="Top" Width="1239" Background="#FFE2E2E2" >
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="19" ShadowDepth="0"/>
             </Grid.Effect>
@@ -219,22 +221,22 @@
             <Label x:Name="label1_Copy" Content="TOTAL:" HorizontalAlignment="Left" Margin="43,202,0,0" VerticalAlignment="Top" Height="52" Width="131" FontSize="30" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
             <Label x:Name="label1_Copy1" Content="R$ 0,00" HorizontalAlignment="Left" Margin="253,202,0,0" VerticalAlignment="Top" Height="52" Width="131" FontSize="30" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
             <Label x:Name="label1_Copy2" Content="Pagamento:" HorizontalAlignment="Left" Margin="34,20,0,0" VerticalAlignment="Top" Height="59" Width="222" FontSize="36" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
-            <Button x:Name="btnNext_Copy" Content="Dinheiro" HorizontalAlignment="Left" Margin="32,259,0,0" VerticalAlignment="Top" Width="133" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FF66B953" Foreground="#FF141D13" BorderBrush="{x:Null}" Click="btnNext_Click"/>
-            <Button x:Name="btnNext_Copy1" Content="Crédito" HorizontalAlignment="Left" Margin="170,259,0,0" VerticalAlignment="Top" Width="105" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FFFFC053" Foreground="#FF131D13" BorderBrush="{x:Null}" Click="btnNext_Click"/>
+            <Button x:Name="btnDinheiro" Content="Dinheiro" HorizontalAlignment="Left" Margin="32,259,0,0" VerticalAlignment="Top" Width="133" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FF66B953" Foreground="#FF141D13" BorderBrush="{x:Null}" Click="btnDinheiro_Click"/>
+            <Button x:Name="btnCredito" Content="Crédito" HorizontalAlignment="Left" Margin="170,259,0,0" VerticalAlignment="Top" Width="105" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FFFFC053" Foreground="#FF131D13" BorderBrush="{x:Null}" Click="btnCredito_Click"/>
             <Rectangle Fill="#FF959595" HorizontalAlignment="Left" Height="52" Margin="34,550,0,0" VerticalAlignment="Top" Width="350"/>
             <Label x:Name="label1_Copy3" Content="TROCO:" HorizontalAlignment="Left" Margin="44,550,0,0" VerticalAlignment="Top" Height="52" Width="131" FontSize="30" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
-            <Label x:Name="label1_Copy4" Content="R$ 0,00" HorizontalAlignment="Left" Margin="254,550,0,0" VerticalAlignment="Top" Height="52" Width="131" FontSize="30" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
-            <Grid HorizontalAlignment="Left" Height="50" Margin="33,320,0,0" VerticalAlignment="Top" Width="350" Background="#FFC1C1C1">
-                <Label x:Name="label1_Copy5" Content="Val. Recebido:" HorizontalAlignment="Left" Margin="2,7,0,0" VerticalAlignment="Top" Height="36" Width="153" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
-                <AditionalControlsWPF:CurrencyTextBox x:Name="currencyTextBox_Copy" HorizontalAlignment="Left" Margin="159,7,0,0" TextWrapping="Wrap" Text="CurrencyTextBox" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="184" FontSize="22" Padding="5,0"/>
+            <Label x:Name="lblTroco" Content="R$ 0,00" HorizontalAlignment="Left" Margin="254,550,0,0" VerticalAlignment="Top" Height="52" Width="131" FontSize="30" FontWeight="Bold" FontStyle="Italic" Foreground="#FF1B1B1B"/>
+            <Grid x:Name="gridVista" HorizontalAlignment="Left" Height="50" Margin="33,320,0,0" VerticalAlignment="Top" Width="350" Background="#FFC1C1C1" Visibility="Hidden">
+                <Label x:Name="label1_Copy5" Content="Val. Recebido:" HorizontalAlignment="Left" Margin="2,7,0,0" VerticalAlignment="Top" Height="36" Width="157" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
+                <AditionalControlsWPF:CurrencyTextBox x:Name="txtValorRecebido" HorizontalAlignment="Left" Margin="159,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="184" FontSize="22" Padding="5,0" TextChanged="txtValorRecebido_TextChanged"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="143" Margin="33,377,0,0" VerticalAlignment="Top" Width="350" Background="#FFC1C1C1">
-                <Label x:Name="label1_Copy7" Content="Val. à Pagar:" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Height="36" Width="153" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
-                <AditionalControlsWPF:CurrencyTextBox x:Name="currencyTextBox" HorizontalAlignment="Left" Margin="158,11,0,0" TextWrapping="Wrap" Text="CurrencyTextBox" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="185" TextChanged="currencyTextBox_TextChanged" FontSize="22" Padding="5,0"/>
+            <Grid x:Name="gridPrazo" HorizontalAlignment="Left" Height="143" Margin="33,377,0,0" VerticalAlignment="Top" Width="350" Background="#FFC1C1C1" Visibility="Hidden">
+                <Label x:Name="label1_Copy7" Content="Val. à Pagar:" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Height="43" Width="153" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
+                <AditionalControlsWPF:CurrencyTextBox x:Name="txtValPagar" HorizontalAlignment="Left" Margin="158,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="185" TextChanged="currencyTextBox_TextChanged" FontSize="22" Padding="5,0"/>
                 <Label x:Name="label1_Copy8" Content="Em" HorizontalAlignment="Left" Margin="98,53,0,0" VerticalAlignment="Top" Height="36" Width="56" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
-                <AditionalControlsWPF:NumericUpDown HorizontalAlignment="Left" Margin="159,53,0,0" VerticalAlignment="Top" Width="109" Height="36" BorderBrush="#FF819EFF"  BorderThickness="1" FontSize="22"/>
+                <AditionalControlsWPF:NumericUpDown x:Name="nudXvezes" HorizontalAlignment="Left" Margin="159,53,0,0" VerticalAlignment="Top" Width="109" Height="36" BorderBrush="#FF819EFF"  BorderThickness="1" FontSize="22" Loaded="NumericUpDown_Loaded"/>
                 <Label x:Name="label1_Copy9" Content="vezes" HorizontalAlignment="Left" Margin="273,53,0,0" VerticalAlignment="Top" Height="36" Width="67" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
-                <AditionalControlsWPF:CurrencyTextBox x:Name="currencyTextBox_Copy1" HorizontalAlignment="Left" Margin="158,96,0,0" TextWrapping="Wrap" Text="CurrencyTextBox" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="185" TextChanged="currencyTextBox_TextChanged" FontSize="22" Padding="5,0"/>
+                <AditionalControlsWPF:CurrencyTextBox x:Name="txtXde" HorizontalAlignment="Left" Margin="158,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="{x:Null}" Height="36" Width="185" TextChanged="currencyTextBox_TextChanged" FontSize="22" Padding="5,0" SpellCheck.IsEnabled="True"/>
                 <Label x:Name="label1_Copy10" Content="De" HorizontalAlignment="Left" Margin="98,96,0,0" VerticalAlignment="Top" Height="36" Width="56" FontSize="24" Foreground="#FF1B1B1B" FontFamily="Berlin Sans FB" HorizontalContentAlignment="Right"/>
             </Grid>
             <Rectangle Fill="#FFC1C0C0" HorizontalAlignment="Left" Height="43" Margin="33,101,0,0" VerticalAlignment="Top" Width="350"/>
@@ -248,9 +250,9 @@
                 <Label x:Name="label3" Content="CPF:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.908,1.288" FontSize="24"/>
                 <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="36" Margin="73,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="365" FontSize="22" Padding="5,0,0,0"/>
             </Grid>
-            <Button x:Name="btnNext_Copy2" Content="Débito" HorizontalAlignment="Left" Margin="279,259,0,0" VerticalAlignment="Top" Width="105" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FF8D98C7" Foreground="#FF131D13" BorderBrush="{x:Null}" Click="btnNext_Click"/>
-            <Button x:Name="btnNext_Copy3" Content="Confirmar" HorizontalAlignment="Left" Margin="998,527,0,0" VerticalAlignment="Top" Width="227" Height="75" FontSize="36" FontFamily="Malgun Gothic" Background="#FF5D5D5D" Foreground="#FFECECEC" BorderBrush="{x:Null}" Click="btnNext_Click"/>
-            <Button x:Name="btnNext_Copy4" Content="x" HorizontalAlignment="Left" Margin="1199,4,0,0" VerticalAlignment="Top" Width="36" Height="36" FontSize="22" FontFamily="Malgun Gothic" Background="#FFF05555" Foreground="#FFECECEC" BorderBrush="#FF550000" Click="btnNext_Click" Padding="1,-6,1,1"/>
+            <Button x:Name="btnDebito" Content="Débito" HorizontalAlignment="Left" Margin="279,259,0,0" VerticalAlignment="Top" Width="105" Height="54" FontSize="24" FontFamily="Microsoft JhengHei UI" Background="#FF8D98C7" Foreground="#FF131D13" BorderBrush="{x:Null}" Click="btnDebito_Click"/>
+            <Button x:Name="btnConfirmar" Content="Confirmar" HorizontalAlignment="Left" Margin="998,527,0,0" VerticalAlignment="Top" Width="227" Height="75" FontSize="36" FontFamily="Malgun Gothic" Background="#FF5D5D5D" Foreground="#FFECECEC" BorderBrush="{x:Null}" Click="btnConfirmarPagamento"/>
+            <Button x:Name="btnFecharGrid" Content="x" HorizontalAlignment="Left" Margin="1199,4,0,0" VerticalAlignment="Top" Width="36" Height="36" FontSize="22" FontFamily="Malgun Gothic" Background="#FFF05555" Foreground="#FFECECEC" BorderBrush="#FF550000" Padding="1,-6,1,1" Click="btnFecharGrid_Click"/>
             <Expander x:Name="expander" Header="À entregar" HorizontalAlignment="Left" Height="445" Margin="398,28,0,0" VerticalAlignment="Top" Width="818" FontSize="28" Background="{x:Null}">
                 <Grid Background="White">
                     <Grid HorizontalAlignment="Left" Height="57" Margin="12,12,0,0" VerticalAlignment="Top" Width="794" Background="#FFDBDCCF">

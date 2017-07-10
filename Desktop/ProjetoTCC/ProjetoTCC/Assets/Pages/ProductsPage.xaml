@@ -95,7 +95,7 @@
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../Icons/delete.png"/>
-                        <Label Content="{DynamicResource strDelete}"/>
+                        <Label Content="Desativar"/>
                     </DockPanel>
                 </Button.Content>
             </Button>
@@ -105,8 +105,6 @@
                     <Label Content="{DynamicResource strReport}"/>
                 </DockPanel>
             </Button>
-            <TextBox Style="{StaticResource txtSearch}" Grid.Column="5" MaxWidth="300" MinWidth="300" Margin="-250,0,60,0" HorizontalAlignment="Right"/>
-            <Button Grid.Column="4" Style="{StaticResource btnSearch}" Content="" MaxWidth="50" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0" Width="50" Click="Button_Click" ></Button>
         </Grid>
         <Frame Name="InProductPage" Grid.Row="2" ></Frame>
     </Grid>

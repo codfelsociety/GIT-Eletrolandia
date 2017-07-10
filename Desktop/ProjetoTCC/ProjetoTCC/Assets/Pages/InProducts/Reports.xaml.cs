@@ -26,8 +26,8 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         private void SimpleReport_Click(object sender, RoutedEventArgs e)
         {
             DAO.ClasseConexao.Conexao();
-            string SQL = $@"SELECT prod.nome, logp.custo, logp.preco_venda
-                                    FROM produto prod
+            string SQL = $@"SELECT prod.nome, logp.custo, logp.preco
+                                    FROM produtos prod
                                     JOIN 
                                     (SELECT inn.* FROM (SELECT log2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_log_prod DESC)) As Rank 
                                      FROM log_produto log2) inn WHERE inn.Rank=1) logp
@@ -49,6 +49,11 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             ReportViewer.LocalReport.ReportEmbeddedResource = "ProjetoTCC.Reports.Report1.rdlc";
 
             ReportViewer.RefreshReport();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

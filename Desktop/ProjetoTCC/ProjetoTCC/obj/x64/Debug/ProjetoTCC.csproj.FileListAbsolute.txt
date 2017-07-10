@@ -282,3 +282,11 @@ D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\bin\x64\Debug\ro\Xce
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\bin\x64\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\bin\x64\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\bin\x64\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\InSuppliers\SuppliersUpdate.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\InSuppliers\SuppliersUpdate.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\InUsers\UsersUpdate.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\InUsers\UsersUpdate.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Login.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Login.baml
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\Mensagem.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC\obj\x64\Debug\Assets\Pages\Mensagem.baml

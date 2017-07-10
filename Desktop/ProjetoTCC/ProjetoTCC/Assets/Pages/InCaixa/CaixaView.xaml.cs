@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
             InitializeComponent();
             listViewPesquisa.Visibility = Visibility.Hidden;
             txtQuantidade.Value = 1;
-            dtListaAdicionados.Columns.Add("LOCAL_IMAGEM");
+            dtListaAdicionados.Columns.Add("IMAGEM", typeof(ImageSource));
             dtListaAdicionados.Columns.Add("COD_PRODUTO");
             dtListaAdicionados.Columns.Add("NOME");
             dtListaAdicionados.Columns.Add("PRECO_UNIT");
@@ -47,15 +48,31 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
                 PRECO = ConverterDecimal(row["PRECO_UNIT"].ToString());
                 txtPreco.Text = "R$ " + string.Format("{0:#.00}", PRECO);
                 txtTotalItem.Text = "R$ " + string.Format("{0:#.00}", PRECO * txtQuantidade.Value);
-                LOCAL_IMAGEM = Convert.ToString(row["LOCAL_IMAGEM"]);
-                imgProduto.Source = new BitmapImage(new Uri(@LOCAL_IMAGEM));
+                ImageSource imgSource = LoadImage(row["IMAGEM"] as byte[]);
+                imgProduto.Source = imgSource;
                 btnAdicionar.IsEnabled = true;
             }
             catch (Exception) { }
         }
 
 
-
+        private static BitmapImage LoadImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(imageData))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
+        }
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -81,14 +98,14 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
 
         private void txtPesquisa_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string SQL = $@"SELECT img.local_imagem, prod.nome, prod.cod_produto AS COD, prod.cod_barras, logprod.preco_venda as  PRECO
-                                FROM produto prod
+            string SQL = $@"SELECT img.imagem, prod.nome, prod.cod_produto AS COD, prod.cod_barras, logprod.preco as  PRECO
+                                FROM produtos prod
                                 JOIN 
                                 (SELECT inn.* FROM (SELECT log2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_log_prod DESC)) As Rank 
                                   FROM log_produto log2) inn WHERE inn.Rank=1) logprod
                                 ON  prod.cod_produto = logprod.cod_produto
                                 LEFT JOIN
-                                (SELECT inn.* FROM (SELECT img2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY local_imagem DESC)) As Rank 
+                                (SELECT inn.* FROM (SELECT img2.*, (ROW_NUMBER() OVER(PARTITION BY cod_produto ORDER BY cod_produto DESC)) As Rank 
                                 FROM imagem_produto img2) inn WHERE inn.Rank=1) img
                                 ON prod.cod_produto = img.cod_produto
                                 WHERE upper(prod.nome) LIKE upper('%{txtPesquisa.Text.ToString()}%')";
@@ -96,7 +113,7 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
         }
         public int COD;
         public decimal PRECO;
-        public string LOCAL_IMAGEM;
+        public string IMAGEM;
         public string NOME;
         public decimal TOTAL = 0;
         DataRowView row;
@@ -122,8 +139,8 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
             {
                 txtTotalItem.Text = "R$ 0,00";
             }
-            LOCAL_IMAGEM = Convert.ToString(row["LOCAL_IMAGEM"]);
-            imgProduto.Source = new BitmapImage(new Uri(@LOCAL_IMAGEM));
+            ImageSource imgSource = LoadImage(row["IMAGEM"] as byte[]);
+            imgProduto.Source = imgSource;
             btnAdicionar.IsEnabled = true;
         }
 
@@ -169,7 +186,7 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
                 }
                 if (ok == null)
                 {
-                    dtListaAdicionados.Rows.Add(LOCAL_IMAGEM, COD, NOME, "R$ " + string.Format("{0:#.00}", PRECO), txtQuantidade.Value, "R$ " + string.Format("{0:#.00}", PRECO * txtQuantidade.Value));
+                    dtListaAdicionados.Rows.Add(IMAGEM, COD, NOME, "R$ " + string.Format("{0:#.00}", PRECO), txtQuantidade.Value, "R$ " + string.Format("{0:#.00}", PRECO * txtQuantidade.Value));
                     DataGridAdicionados.ItemsSource = dtListaAdicionados.DefaultView;
                     TOTAL += PRECO * txtQuantidade.Value;
                     lblTotal.Content = "R$ " + string.Format("{0:#.00}", TOTAL);
@@ -203,10 +220,7 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
 
 
         }
-        private void btnNext_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
@@ -218,6 +232,52 @@ namespace ProjetoTCC.Assets.Pages.InCaixa
         private void currencyTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            gridPagamento.Visibility = Visibility.Visible;
+        }
+
+        private void NumericUpDown_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtValorRecebido_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnConfirmarPagamento(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFecharGrid_Click(object sender, RoutedEventArgs e)
+        {
+            gridPagamento.Visibility = Visibility.Hidden;
+        }
+        string tipo_pagamento;
+        private void btnDinheiro_Click(object sender, RoutedEventArgs e)
+        {
+            tipo_pagamento = "Dinheiro";
+            gridVista.Visibility = Visibility.Visible;
+            gridPrazo.Visibility = Visibility.Hidden;
+        }
+
+        private void btnCredito_Click(object sender, RoutedEventArgs e)
+        {
+            tipo_pagamento = "Credito";
+            gridPrazo.Visibility = Visibility.Visible;
+            gridVista.Visibility = Visibility.Hidden;
+        }
+
+        private void btnDebito_Click(object sender, RoutedEventArgs e)
+        {
+            tipo_pagamento = "Debito";
+            gridVista.Visibility = Visibility.Visible;
+            gridPrazo.Visibility = Visibility.Hidden;
         }
     }
     

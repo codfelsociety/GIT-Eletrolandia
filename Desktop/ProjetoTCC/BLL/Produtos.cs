@@ -309,7 +309,7 @@ namespace BLL
         }
         public int RetornarFrete(int codprod)
         {
-            SQL = $"SELECT COD_FRETE FROM PRODUTO WHERE COD_PRODUTO = {codprod}";
+            SQL = $"SELECT COD_FRETE FROM PRODUTOS WHERE COD_PRODUTO = {codprod}";
             return Convert.ToInt32(ClasseConexao.RetornarDataTable(SQL).Rows[0][0]);
         }
         public List<DataTable> PreCarregar()
@@ -320,7 +320,7 @@ namespace BLL
                         prod.LIMITADO,  prod.DATA_CADASTRO, prod.cod_artigo,
                         art.COD_CATEGORIA, prod.COD_MARCA, logp.CUSTO, logp.preco,  fr.PESO, fr.ALTURA,
                         fr.COMPRIMENTO, fr.LARGURA, fr.FRAGIL, fr.gratis, fr.COD_FRETE
-                        FROM PRODUTO prod
+                        FROM PRODUTOS prod
                         JOIN ARTIGO art
                         ON prod.cod_artigo = art.COD_ARTIGO
                         JOIN LOG_PRODUTO logp
@@ -351,101 +351,5 @@ namespace BLL
             int x = Convert.ToInt32(ClasseConexao.RetornarDataTable(SQL).Rows[0][0].ToString());
             return x;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-
-        public static void CarregarGrid()
-              {
-                   SQL ="SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM";
-                   SQL = "SELECT PRO.COD, PRO.IMAGE_PATH AS IMAGE, PRO.NOME, CAT.DESCRICAO AS CATEGORIA,PRO.preco AS PREÇO, PRO.PRECO_FORN AS PRÉ_PREÇO, PRO.QUANT_ESTOQUE AS ESTOQUE, PRO.DESCRICAO AS DESCRIÇÃO FROM CATEGORIAS CAT JOIN PRODUTOS PRO ON CAT.COD_categoria = PRO.COD_categoria";
-                  SQL = "SELECT COD_PRODUTO, NOME, imagem,CATEGORIA, ARTIGO, MARCA, FORNECEDOR, PRECO, CUSTO, ESTOQUE, ESTOQUE_MIN, ESTOQUE_MAX FROM PRODUTO";
-                 // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                  //dtProdutos = d;
-              }
-              public static void CarregarRelatorio()
-              {
-                  SQL = "SELECT COD_PRODUTO AS COD, NOME, QUANT_ESTOQUE AS ESTOQUE, CUSTO, preco AS PRECO FROM PRODUTOS";
-      //DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                  //dtRelatorioProdutos = d;
-              }
-              public static void CarregarCategoria()
-              {
-                  SQL = "SELECT COD_categoria AS COD_CATEGORIA, DESCRICAO FROM CATEGORIAS";
-                 // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-               //   dtCategorias = d;
-              }
-              public static void CarregarFornecedor()
-              {
-                    SQL = "SELECT COD_FORNECEDOR, NOME FROM FORNECEDORES";
-                   // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                  //  dtFornecedores = d;
-              }
-              public static void CarregarArtigo()
-              {
-                  SQL = "SELECT COD_ARTIGO, DESCRICAO FROM ARTIGO";
-                 // DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                 // dtArtigos = d;
-              }
-
-     
-              public void ConsultarPorCod()
-              {
-                  SQL = "SELECT pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, pro.nome AS NOME, pro.cod_categoria AS COD_CATEGORIA,pro.cod_fornecedor as COD_FORN,pro.custo AS CUSTO, pro.preco AS PRECO, pro.tipo_margem AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.cod_produto =" + CodProduto;
-                  //DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                 // dtConsultaCod = d;
-              }
-              public void ConsultarPorNome()
-              {
-                  SQL = "SELECT pro.cod_produto AS COD, pro.data_cadastro AS DATA_CADASTRO, pro.cod_barras AS COD_BARRAS, pro.imagem AS IMAGEM, CAT.DESCRICAO AS CATEGORIA,FORN.NOME AS FORNECEDOR,pro.custo AS CUSTO, pro.preco AS PRECO, TP.DESCRICAO AS TIPO_MARGEM, pro.quant_estoque AS ESTOQUE, pro.quant_estoque_min AS ESTOQUE_MIN, pro.quant_estoque_max AS ESTOQUE_MAX, pro.peso AS PESO, pro.comprimento AS COMPRIMENTO, pro.largura AS LARGURA, pro.altura AS ALTURA, pro.especificacao AS ESPECIFICACOES FROM PRODUTOS PRO JOIN CATEGORIAS CAT ON CAT.COD_categoria = PRO.COD_categoria JOIN FORNECEDORES FORN ON FORN.COD_FORNECEDOR = PRO.COD_FORNECEDOR JOIN TIPO_MARGEM TP ON TP.COD_TIPO_MARGEM = PRO.TIPO_MARGEM WHERE pro.Nome =" + Nome;
-                //  DataTable d = ClasseConexao.RetornarDataTableCMD(SQL);
-                 // dtConsultaNome = d;
-              }
-              public void Editar()
-              {
-                  con = new ClasseConexao();
-                  SQL = "UPDATE PRODUTOS SET COD_BARRAS ="+ CodBarras+ ",imagem ='" + imagem +"',NOME ='"+Nome+"', COD_categoria=" +Cod_categoria+ ",COD_FORNECEDOR ="+Cod_Fornecedor+",CUSTO='"+Custo+"',preco='"+preco+"', TIPO_MARGEM=" + Tipo_Margem + ",QUANT_ESTOQUE =" + Estoque + ",QUANT_ESTOQUE_MIN =" + EstoqueMin + ", QUANT_ESTOQUE_MAX =" + EstoqueMin + ",PESO='" + Peso + "',COMPRIMENTO ='" + Comprimento + "',LARGURA ='" + Largura + "',ALTURA ='" + Altura + "', ESPECIFICACAO ='" + Especificacao + "' WHERE COD_PRODUTO =" + CodProduto;
-               //   con.ExecutarComando(SQL);
-
-              }
-              public void Apagar()
-              {
-                      con = new ClasseConexao();
-                      SQL = "DELETE FROM PRODUTOS WHERE COD_PRODUTO=" + CodProduto;
-                     // con.ExecutarComando(SQL);
-                      MessageBox.Show("DELETADO COM SUCESSO");
-              }*/
-
     }
 }

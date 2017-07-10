@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjetoTCC"
+        xmlns:local="clr-namespace:ProjetoTCC" Language="pt-BR"
              mc:Ignorable="d"
         Title="MainWindow" Height="768" Width="1366" WindowState="Maximized" WindowStyle="None" MinWidth="800" MinHeight="600" >
 
@@ -170,7 +170,7 @@
                             <DropShadowEffect ShadowDepth="2" BlurRadius="4" RenderingBias="Quality" Color="#FF006DFF"/>
                         </Image.Effect>-->
                     </Image>
-                    <TextBlock Height="25" Margin="24,0,0,0" Text="{DynamicResource strProducts}"></TextBlock>
+                    <TextBlock Height="25" Margin="24,0,0,0" Text="Produtos"></TextBlock>
                 </WrapPanel>
             </Button>
             <!--#endregion-->
@@ -182,7 +182,7 @@
                             <DropShadowEffect ShadowDepth="2" BlurRadius="4" RenderingBias="Quality" Color="#FFDC0000"/>
                         </Image.Effect>-->
                     </Image>
-                    <TextBlock Height="25" Margin="24,0,0,0" Text="{DynamicResource strSuppliers}"></TextBlock>
+                    <TextBlock Height="25" Margin="24,0,0,0" Text="Fornecedores"></TextBlock>
                 </WrapPanel>
             </Button>
             <!--#endregion-->
@@ -194,7 +194,7 @@
                             <DropShadowEffect ShadowDepth="2" BlurRadius="4" RenderingBias="Quality" Color="#FFAF00CE"/>
                         </Image.Effect>-->
                     </Image>
-                    <TextBlock Height="25" Margin="24,0,0,0" Text="{DynamicResource strOrders}"></TextBlock>
+                    <TextBlock Height="25" Margin="24,0,0,0" Text="Entrega"></TextBlock>
                 </WrapPanel>
             </Button>
             <!--#endregion-->
@@ -206,7 +206,7 @@
                             <DropShadowEffect ShadowDepth="2" BlurRadius="4" RenderingBias="Quality" Color="#FFEAFF03"/>
                         </Image.Effect>-->
                     </Image>
-                    <TextBlock Height="25" Margin="24,0,0,0" Text="{DynamicResource strUsers}"></TextBlock>
+                    <TextBlock Height="25" Margin="24,0,0,0" Text="Usuarios"></TextBlock>
                 </WrapPanel>
             </Button>
             <!--#endregion-->
@@ -217,6 +217,12 @@
                 <WrapPanel>
                     <Label Foreground="#FFFFC604" Margin="6,0,0,0" FontSize="25" Content="&#xE719;"/>
                     <TextBlock Margin="20,6,0,0" Text="Caixa"></TextBlock>
+                </WrapPanel>
+            </Button>
+            <Button Visibility="Visible" Name="btnMensagem"  DockPanel.Dock="Top" Click="btnMensagem_Click" >
+                <WrapPanel>
+                    <Label Foreground="Blue" Margin="6,0,0,0" FontSize="25" Content=""/>
+                    <TextBlock Margin="20,6,0,0" Text="Mensagem"></TextBlock>
                 </WrapPanel>
             </Button>
             <!--#endregion-->

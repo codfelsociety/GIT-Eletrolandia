@@ -30,3 +30,11 @@ C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\bin\x64\Release\DAO.pdb
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.dll
 C:\Users\CODFELSOCIETY12\Desktop\TCC 2\BLL\obj\x64\Release\BLL.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\BLL.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\BLL.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\DAO.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\Oracle.DataAccess.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\DAO.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.pdb

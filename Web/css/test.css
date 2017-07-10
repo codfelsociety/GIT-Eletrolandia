@@ -6,4 +6,7 @@
 .center {
     margin:auto;
 }
-
+.cat:hover{
+    background-color: #42dcdc !important;
+    cursor: pointer;
+}

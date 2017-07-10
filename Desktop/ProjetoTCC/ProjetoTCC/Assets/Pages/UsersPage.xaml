@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1366"
+      d:DesignHeight="690" d:DesignWidth="1288"
       Title="SuppliersPage" Background="#ddd" >
     <Grid>
         <Grid.RowDefinitions>
@@ -83,7 +83,7 @@
                     </DockPanel>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="1">
+            <Button x:Name="btnAlterar" Grid.Column="1" Click="btnAlterar_Click">
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../Icons/edit.png"/>
@@ -91,7 +91,7 @@
                     </DockPanel>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="2">
+            <Button x:Name="btnApagar" Grid.Column="2" Click="btnApagar_Click">
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../Icons/delete.png"/>
@@ -99,16 +99,9 @@
                     </DockPanel>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="3">
-                <DockPanel>
-                    <Image Source="../Icons/report.png"/>
-                    <Label Content="{DynamicResource strReport}"/>
-                </DockPanel>
-            </Button>
-            <TextBox Style="{StaticResource txtSearch}" Grid.Column="5" MaxWidth="300" MinWidth="300" Margin="-250,0,60,0" HorizontalAlignment="Right"/>
-            <Button Grid.Column="4" Style="{StaticResource btnSearch}" Content="" MaxWidth="50" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0" Width="50" ></Button>
         </Grid>
-        <Frame Name="InProductPage" Grid.Row="2" ></Frame>
+        <Frame Name="frameUsuario" Grid.Row="2" ></Frame>
+        <Button x:Name="btnCancelar" Margin="437,0,659,4"  BorderThickness="0" Foreground="#006FA3" Visibility="Hidden" FontSize="20" Background="White" Cursor="Hand"  VerticalAlignment="Bottom" Height="50" Content="Cancelar" Grid.Row="2" Click="btnCancelar_Click" />
     </Grid>
 </Page>
 

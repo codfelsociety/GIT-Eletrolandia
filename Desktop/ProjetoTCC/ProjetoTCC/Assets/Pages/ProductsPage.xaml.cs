@@ -53,14 +53,17 @@ namespace ProjetoTCC.Assets.Pages
         }
         private void ApagarProduto()
         {
-            MessageBoxResult r = MessageBox.Show("Você REALMENTE, quer apagar este produto ?", "Preste muita atenção meu caro", MessageBoxButton.YesNo, MessageBoxImage.Error, MessageBoxResult.No);
-            if(r == MessageBoxResult.Yes)
+            try
             {
-                BLL.Produtos prod = new BLL.Produtos();
-                int cod_prod = InProducts.ProductsCover.COD;
-                prod.DeletarProduto(cod_prod, prod.RetornarFrete(cod_prod));
-                InProductPage.NavigationService.Refresh();
-            }
+                MessageBoxResult r = MessageBox.Show("Você REALMENTE, quer apagar esse produto ?", "Preste muita atenção meu caro", MessageBoxButton.YesNo, MessageBoxImage.Error, MessageBoxResult.No);
+                if (r == MessageBoxResult.Yes)
+                {
+                    BLL.Produtos prod = new BLL.Produtos();
+                    int cod_prod = InProducts.ProductsCover.COD;
+                    prod.DeletarProduto(cod_prod, prod.RetornarFrete(cod_prod));
+                    InProductPage.NavigationService.Refresh();
+                }
+            }catch { MessageBox.Show("Selecione o produto antes"); }
         }
 
         private void Report_Click(object sender, RoutedEventArgs e)

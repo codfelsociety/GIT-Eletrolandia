@@ -10,16 +10,16 @@ namespace BLL
         private int _codEndereco;
         private int _codContato;
         private string _nome;
-        private string _cnpj;
-        private string _insEstadual;
+        private long _cnpj;
+        private long _insEstadual;
         private string _descricao;
 
         public int CodFornecedor { get => _codFornecedor; set => _codFornecedor = value; }
         public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
         public int CodContato { get => _codContato; set => _codContato = value; }
         public string Nome { get => _nome; set => _nome = value; }
-        public string Cnpj { get => _cnpj; set => _cnpj = value; }
-        public string InsEstadual { get => _insEstadual; set => _insEstadual = value; }
+        public long Cnpj { get => _cnpj; set => _cnpj = value; }
+        public long InsEstadual { get => _insEstadual; set => _insEstadual = value; }
         public string Descricao { get => _descricao; set => _descricao = value; }
 
         private static string SQL;
@@ -39,28 +39,61 @@ namespace BLL
             cmd.Parameters.Add("p_cod_endereco", OracleDbType.Int32).Value = CodEndereco;
             cmd.Parameters.Add("p_cod_contato", OracleDbType.Int32).Value = CodContato;
             cmd.Parameters.Add("p_nome", OracleDbType.Varchar2).Value = Nome;
-            cmd.Parameters.Add("p_cnpj", OracleDbType.Varchar2).Value = Cnpj;
-            cmd.Parameters.Add("p_estadual", OracleDbType.Varchar2).Value = InsEstadual;
+            cmd.Parameters.Add("p_cnpj", OracleDbType.Int64).Value = Cnpj;
+            cmd.Parameters.Add("p_estadual", OracleDbType.Int64).Value = InsEstadual;
             cmd.Parameters.Add("p_descricao", OracleDbType.Varchar2).Value = Descricao;
             cmd.ExecuteNonQuery();
         }
         public void Alterar()
         {
             ClasseConexao.Conexao();
-            cmd = new OracleCommand("update_fornecedores", ClasseConexao.connection);
+            cmd = new OracleCommand("update_fornecedor", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("p_cod_fornecedor", OracleDbType.Int32).Value = CodFornecedor;
-            cmd.Parameters.Add("p_cod_endereco", OracleDbType.Int32).Value = CodEndereco;
-            cmd.Parameters.Add("p_cod_contato", OracleDbType.Int32).Value = CodContato;
             cmd.Parameters.Add("p_nome", OracleDbType.Varchar2).Value = Nome;
-            cmd.Parameters.Add("p_cnpj", OracleDbType.Varchar2).Value = Cnpj;
-            cmd.Parameters.Add("p_estadual", OracleDbType.Varchar2).Value = InsEstadual;
+            cmd.Parameters.Add("p_cnpj", OracleDbType.Int64).Value = Cnpj;
+            cmd.Parameters.Add("p_estadual", OracleDbType.Int64).Value = InsEstadual;
             cmd.Parameters.Add("p_descricao", OracleDbType.Varchar2).Value = Descricao;
             cmd.ExecuteNonQuery();
         }
         public void Apagar()
         {
+            ClasseConexao.Conexao();
+            cmd = new OracleCommand("DeleteFornecedor", ClasseConexao.connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("p_cod_fornecedor", OracleDbType.Int32).Value = CodFornecedor;
+            cmd.ExecuteNonQuery();
+        }
 
+        public DataTable Consultar()
+        {
+            SQL = @"SELECT forn.cod_fornecedor as cod, forn.nome,forn.cnpj, forn.ins_estadual, forn.descricao,
+                     cidade.nome as cidade,estado.uf, ender.bairro, ender.rua,
+                     ender.numero,ender.cep,cont.telefone, cont.celular, cont.email
+                     FROM Fornecedor forn
+                     JOIN Endereco ender
+                     ON forn.cod_endereco = ender.cod_endereco
+                     JOIN Contato cont
+                     ON forn.cod_contato = cont.cod_contato
+                     JOIN Cidade cidade
+                     ON cidade.id = ender.cidade
+                     JOIN Estado estado
+                     ON estado.id = ender.estado";
+            return ClasseConexao.RetornarDataTable(SQL);
+        }
+
+       public DataTable ConsultarCod()
+        {
+            SQL = $@"SELECT forn.nome,forn.cnpj, forn.ins_estadual, forn.descricao,
+            ender.cep, ender.cidade, ender.estado, ender.cod_endereco, cont.cod_contato, ender.bairro, ender.rua,
+            ender.numero, cont.telefone, cont.celular, cont.email
+            FROM Fornecedor forn
+            JOIN Endereco ender
+            ON forn.cod_endereco = ender.cod_endereco
+            JOIN Contato cont
+            ON forn.cod_contato = cont.cod_contato
+            WHERE cod_fornecedor = {CodFornecedor}";
+            return ClasseConexao.RetornarDataTable(SQL);
         }
     }
 }

@@ -62,8 +62,8 @@ CREATE TABLE fornecedor (
     cod_endereco     NUMBER(8) NOT NULL,
     cod_contato      NUMBER(8) NOT NULL,
     nome             VARCHAR2(50),
-    cnpj             VARCHAR2(15),
-    ins_estadual     VARCHAR2(15),
+    cnpj             NUMBER,
+    ins_estadual     NUMBER(15),
     descricao        VARCHAR2(50),
     CONSTRAINT fornecedor_pk PRIMARY KEY(cod_fornecedor)
 );
@@ -131,7 +131,7 @@ CREATE TABLE cidade(
 CREATE TABLE endereco (
     cod_endereco   NUMBER(8) NOT NULL,
     tipo           NUMBER(1) NOT NULL,
-    cep            VARCHAR2(8),
+    cep            NUMBER(8),
     cidade         NUMBER(11),
     estado         NUMBER(11),
     bairro         VARCHAR2(30),
@@ -139,4 +139,64 @@ CREATE TABLE endereco (
     numero         NUMBER(4),
     complemento    VARCHAR2(50),
     CONSTRAINT endereco_pk PRIMARY KEY ( cod_endereco )
+);
+
+CREATE TABLE usuario(
+    cod_usuario NUMBER(8) NOT NULL,
+    cod_acesso NUMBER(8),
+    cod_sexo NUMBER(1),
+    nome VARCHAR2(50),
+    sobrenome VARCHAR2(50),
+    username VARCHAR2(50),
+    email VARCHAR2(50),
+    senha VARCHAR2(50),
+    dataCadastro DATE,
+    picture BLOB,
+    CONSTRAINT usuario_pk PRIMARY KEY(cod_usuario)
+);
+
+CREATE TABLE sexo(
+    cod_sexo NUMBER(1),
+    descricao VARCHAR2(30),
+    abreviacao VARCHAR2(1),
+    CONSTRAINT sexo_pk PRIMARY KEY(cod_sexo)
+);
+
+CREATE TABLE acesso(
+    cod_acesso NUMBER(8) NOT NULL,
+    descricao VARCHAR2(30),
+    CONSTRAINT acesso_pk PRIMARY KEY(cod_acesso)
+);
+CREATE TABLE venda(
+    cod_venda NUMBER(8) NOT NULL,
+    cod_tipo NUMBER(1),
+    cod_endereco NUMBER(8),
+    cod_contato NUMBER(8),
+    data_venda DATE,
+    preco_frete NUMBER(10,2),
+    nome VARCHAR2(50)
+);
+
+CREATE TABLE pagamento(
+    cod_pagamento NUMBER(8),
+    cod_venda       NUMBER(8),
+    tipo      NUMBER(1),
+    valor           NUMBER(10,2)
+);
+CREATE TABLE venda_produto (
+    cod_venda_produto NUMBER(8) NOT NULL,
+    cod_venda     NUMBER(8) NOT NULL,
+    cod_produto   NUMBER(8) NOT NULL,
+    preco_unit    NUMBER(10,2),
+    quantidade    NUMBER(2),
+    CONSTRAINT venda_produto_pk PRIMARY KEY(cod_venda_produto)
+);
+
+
+CREATE TABLE mensagem (
+    cod_mensagem   NUMBER(8) NOT NULL,
+    mensagem       VARCHAR2(300),
+    nome           VARCHAR2(50),
+    email           VARCHAR2(50),
+    CONSTRAINT mensagem_pk PRIMARY KEY(cod_mensagem)
 );

@@ -56,21 +56,21 @@
         </Style>
     </Page.Resources>
     <Grid>
-        <DataGrid x:Name="dataGrid1" GridLinesVisibility="None" Style="{StaticResource nice}" RowHeaderStyle="{StaticResource rhs}" RowStyle="{StaticResource ok}" CellStyle="{StaticResource Body_Content_DataGrid_Centering}" AutoGenerateColumns="False" FontSize="20" FontFamily="Nirmala UI Semilight"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False">
+        <DataGrid x:Name="dataGrid1" GridLinesVisibility="None" Style="{StaticResource nice}" RowHeaderStyle="{StaticResource rhs}" RowStyle="{StaticResource ok}" CellStyle="{StaticResource Body_Content_DataGrid_Centering}" AutoGenerateColumns="False" FontSize="20" FontFamily="Nirmala UI Semilight"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionChanged="dataGrid1_SelectionChanged">
             <DataGrid.Columns>
-                
-                <DataGridTextColumn IsReadOnly="True" Binding="{Binding COD}" Header="  COD  "/>
-                <DataGridTextColumn IsReadOnly="True" Header="   Nome   "  Binding="{Binding NOME}"/>
-                
-                <DataGridTextColumn IsReadOnly="True" Header="  E-mail  " Binding="{Binding ESTOQUE}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="  Telefone  " Binding="{Binding CATEGORIA}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="   Descricao   " Binding="{Binding FORNECEDOR}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="  Endereço  " Binding="{Binding ESTOQUE_MIN}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="  Cidade/Estado  " Binding="{Binding ESTOQUE_MAX}"/>
-                <DataGridTextColumn IsReadOnly="True" Header="  CNPJ  " Binding="{Binding ESTOQUE_MAX}"/>
-
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding COD}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="Nome" Binding="{Binding NOME}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="CNPJ" Binding="{Binding CNPJ,StringFormat='## ### ### / ####-##'}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="Ins. Estadual" Binding="{Binding INS_ESTADUAL, StringFormat='### ### ### ###'}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Cidade" Binding="{Binding CIDADE}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="UF" Binding="{Binding UF}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Bairro" Binding="{Binding BAIRRO}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="Rua" Binding="{Binding RUA}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Telefone" Binding="{Binding TELEFONE, StringFormat='(##) ####-####'}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="Celular" Binding="{Binding CELULAR , StringFormat='(##) #####-####'}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Email" Binding="{Binding EMAIL}"/>
+                <DataGridTextColumn Foreground="Blue" IsReadOnly="True" Header="Cep" Binding="{Binding CEP , StringFormat={}{0:#####-###}}"/>
             </DataGrid.Columns>
-
         </DataGrid>
     </Grid>
 </Page>

@@ -121,6 +121,15 @@
     <Compile Include="Assets\Pages\InProducts\popupmarca.xaml.cs">
       <DependentUpon>popupmarca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\Pages\InSuppliers\SuppliersUpdate.xaml.cs">
+      <DependentUpon>SuppliersUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Pages\InUsers\UsersUpdate.xaml.cs">
+      <DependentUpon>UsersUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Pages\Mensagem.xaml.cs">
+      <DependentUpon>Mensagem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -128,6 +137,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Page Include="Assets\Locale\App\Resources.pt-BR.xaml">
@@ -178,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Assets\Pages\InSuppliers\SuppliersUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Assets\Pages\InSuppliers\SuppliersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -186,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Assets\Pages\InUsers\UsersUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Assets\Pages\InUsers\UsersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -193,6 +213,10 @@
     <Page Include="Assets\Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Pages\Mensagem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Assets\Pages\OrdersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +241,10 @@
     <Page Include="Assets\Pages\UsersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -317,9 +345,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AditionalControlsWPF\AditionalControlsWPF\AditionalControlsWPF.csproj">
       <Project>{c1586b2e-0e7e-47e6-8abd-4e60fcaa8bfc}</Project>
@@ -360,6 +386,7 @@
     <Resource Include="Assets\Imagens\caixa2.jpg" />
     <Resource Include="Assets\Imagens\caixain.jpg" />
     <Resource Include="Assets\Imagens\default_new_image.jpg" />
+    <Resource Include="logoreduced.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

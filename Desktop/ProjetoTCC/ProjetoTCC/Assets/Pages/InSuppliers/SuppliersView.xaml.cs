@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BLL;
+using System.Text.RegularExpressions;
+
 namespace ProjetoTCC.Assets.Pages.InSuppliers
 {
     /// <summary>
@@ -20,6 +22,7 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
     /// </summary>
     public partial class SuppliersView : Page
     {
+        public static int COD;
         public SuppliersView()
         {
             InitializeComponent();
@@ -34,25 +37,31 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             cbCidade.ItemsSource = Cidade.Carregar(Convert.ToInt32(cbEstado.SelectedValue)).DefaultView;
             cbCidade.SelectedIndex = 0;
         }
-        private void cbEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+        private void Limpar()
         {
-            LoadCidade();
+            txtNome.Text = "";
+            txtBairro.Text = "";
+            txtCep.Text = "";
+            txtCNPJ.Text = "";
+            txtEstadual.Text = "";
+            txtDescricao.Text = "";
+            txtEmail.Text = "";
+            txtRua.Text = "";
+            txtCelular.Text = "";
+            txtTelefone.Text = "";
+            nudNumero.Value = 0;
+            cbEstado.SelectedIndex = 0;
+            txtNome.Focus();
         }
-
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         #region Alterar
         private void AlterarFornecedor()
         {
             Fornecedor forn = new Fornecedor();
-            forn.CodEndereco = CadastrarEndereco();
-            forn.CodContato = CadastrarContato();
             forn.Nome = txtNome.Text;
-            forn.Cnpj = new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray());
-            forn.InsEstadual = new String(txtEstadual.Text.Where(Char.IsNumber).ToArray());
+            forn.Cnpj = Convert.ToInt64(new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray()));
+            forn.InsEstadual = Convert.ToInt64( new String(txtEstadual.Text.Where(Char.IsNumber).ToArray()));
             forn.Descricao = txtDescricao.Text;
             forn.Alterar();
         }
@@ -64,8 +73,8 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             forn.CodEndereco = CadastrarEndereco();
             forn.CodContato = CadastrarContato();
             forn.Nome = txtNome.Text;
-            forn.Cnpj = new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray());
-            forn.InsEstadual = new String(txtEstadual.Text.Where(Char.IsNumber).ToArray());
+            forn.Cnpj = Convert.ToInt64( new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray()));
+            forn.InsEstadual = Convert.ToInt64( new String(txtEstadual.Text.Where(Char.IsNumber).ToArray()));
             forn.Descricao = txtDescricao.Text;
             forn.Cadastrar();
         }
@@ -80,7 +89,7 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             end.Bairro = txtBairro.Text;
             end.Numero = nudNumero.Value;
             end.Rua = txtRua.Text;
-            end.Cep = new String(txtCep.Text.Where(Char.IsNumber).ToArray());
+            end.Cep = Convert.ToInt64(new String(txtCep.Text.Where(Char.IsNumber).ToArray()));
             end.Complemento = "";
             end.Cadastrar();
             return cod;
@@ -90,12 +99,66 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             Contato con = new Contato();
             int cod = con.ProxCodContato();
             con.CodContato = cod;
-            con.Telefone = Convert.ToInt32(new String(txtTelefone.Text.Where(Char.IsNumber).ToArray()));
-            con.Celular = Convert.ToInt32(new String(txtCelular.Text.Where(Char.IsNumber).ToArray()));
+            con.Telefone = Convert.ToInt64(new String(txtTelefone.Text.Where(Char.IsNumber).ToArray()));
+            con.Celular = Convert.ToInt64( new String(txtCelular.Text.Where(Char.IsNumber).ToArray()));
             con.Email = txtEmail.Text;
             con.Cadastrar();
             return cod;
         }
         #endregion Cadastrar
+
+        private void cbEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LoadCidade();
+        }
+        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            if (Validar())
+            {
+                try
+                {
+                    CadastrarFornecedor();
+                    MessageBox.Show("Novo Fornecedor Adicionado", "Everything is fine", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Limpar();
+                }
+                catch { }
+            }
+        }
+        private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            Limpar();
+        }
+
+
+        private bool Validar()
+        {
+            bool r = true;
+            if(txtNome.Text.TrimEnd().TrimStart() == "")
+            {
+                txtNome.BorderThickness = new Thickness(1);
+                txtNome.BorderBrush = Brushes.Red;
+                MessageBox.Show("Digite o nome do fornecedor");
+                r =  false;
+            }
+            else
+            {
+                txtEmail.BorderThickness = new Thickness(0);
+            }
+            if(txtEmail.Text.Trim() != "")
+            {
+                Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+                if(!regex.IsMatch(txtEmail.Text)) {
+                    txtEmail.BorderThickness = new Thickness(1);
+                    txtEmail.BorderBrush = Brushes.Red;
+                    MessageBox.Show("E-mail invalido");
+                    r = false;
+                }
+                else
+                {
+                    txtEmail.BorderThickness = new Thickness(0);
+                }
+            }
+            return r;
+        }
     }
 }

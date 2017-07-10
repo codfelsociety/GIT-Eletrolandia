@@ -13,54 +13,70 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <div id="top_area" class="container-fluid">
-        <div class="row">
-            <div class="container vcenter">
-                <div class=" col-sm-12">
-                    <asp:Image alt="Eletrolandia Logo" CssClass="img-fluid" Style="margin: 15px 0px; float: left;" ImageUrl="~/Images/6bc9b4b4-3c74-4b93-bd7c-3865cf27dc70.jpg" runat="server" />
-                </div>
-                <div class=" col-sm-9">
+<body style="background-color: #444">
+    <form id="form1" runat="server" class="well">
+        <div id="top_area" style="background-image: url(../Images/fundobanner.png)" class="container-fluid">
+            <div class="row">
+                <div class="container vcenter">
+                    <div class=" col-sm-5">
+                        <asp:Image alt="Eletrolandia Logo" CssClass="img-fluid" Style="margin: 0px 0px 0px -60px; float: left; max-width: 400px;" ImageUrl="~/Images/bannereletrolandia.png" runat="server" />
+                    </div>
+                    <div class="col-sm-7 ml-3 mt-3" style="text-align:right;">
+                        <div style="height: 30px; width: 100%; display: block; text-align:right;">
+                            <div style="display: inline-block" >
+                                <asp:Image Style="width: 30px;" runat="server" ImageUrl="~/Images/Icons/login.png" /><span style="color: white;">&nbsp;&nbsp; Login</span>
+                            </div>
+                            <div style="display: inline-block">
+                                <asp:Image Style="width: 30px;" runat="server" ImageUrl="~/Images/Icons/carrinho.png" /><span style="color: white;">&nbsp;&nbsp; Carrinho</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="nav_bar"  class="container-fluid p-0" >
-        <nav  style="background-color:transparent" class="navbar container navbar-toggleable-sm navbar-inverse bg-faded">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a id="mini_logo" class="navbar-brand" href="#">Navbar</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" aria-label="Close" placeholder="Pesquise por um produto">
-                    <button id="btnsearch"  class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                        <img src="Images/Icons/search.svg" alt="Search"/>
-                    </button>
-                </form>
-            </div>
-        </nav>
-    </div>
-    <form id="form1" runat="server">
+        <div id="nav_bar" class="container-fluid p-0">
+            <nav style="background-color: transparent" class="navbar container navbar-toggleable-sm navbar-inverse bg-faded">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+                <a id="mini_logo" class="navbar-brand" href="#">&nbsp;</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <asp:LinkButton CssClass="nav-link" runat="server" CausesValidation="False" PostBackUrl="~/HomePage.aspx">Inicio<span class="sr-only">(current)</span></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton CssClass="nav-link" runat="server" PostBackUrl="~/Contato.aspx" CausesValidation="False">Contato</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton CssClass="nav-link" runat="server" CausesValidation="False" PostBackUrl="~/About.aspx">Sobre</asp:LinkButton>
+                        </li>
+                    </ul>
+
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" style="width: 300px;" aria-label="Close" placeholder="Pesquise por um produto">
+                        <button id="btnsearch" class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+                            <img src="Images/Icons/search.svg" alt="Search" />
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        <div id="footer" style="margin-top: 15px; height: 50px;" class="container-fluid">
+            <div class="container" style="text-align: center">
+                <br />
+
+            </div>
+        </div>
     </form>
     <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
     <script src="js/csNavbar.js"></script>

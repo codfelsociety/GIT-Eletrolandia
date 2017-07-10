@@ -169,19 +169,16 @@ BEGIN
           p_nome, p_cnpj, p_estadual, p_descricao);
   COMMIT;
 END;
-
+commit;
 CREATE OR REPLACE PROCEDURE update_fornecedor(
        p_cod_fornecedor IN fornecedor.cod_fornecedor%TYPE,
-	   p_cod_endereco   IN fornecedor.cod_endereco%TYPE,
-	   p_cod_contato    IN fornecedor.cod_contato%TYPE,
 	   p_nome           IN fornecedor.nome%TYPE,
 	   p_cnpj           IN fornecedor.cnpj%TYPE,
        p_estadual       IN fornecedor.ins_estadual%TYPE,
        p_descricao      IN fornecedor.descricao%TYPE)
 IS
 BEGIN
-  UPDATE fornecedor SET cod_endereco = p_cod_endereco,
-  cod_contato = p_cod_contato, nome = p_nome,
+  UPDATE fornecedor SET  nome = p_nome,
   cnpj = p_cnpj, ins_estadual = p_estadual, descricao = p_descricao
   WHERE cod_fornecedor = p_cod_fornecedor;
   COMMIT;
@@ -244,5 +241,95 @@ IS BEGIN
       UPDATE contato SET telefone = p_telefone,
       celular = p_celular, email = p_email
       WHERE cod_contato = p_cod_contato;
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE DeleteFornecedor (p_cod_fornecedor IN fornecedor.cod_fornecedor%TYPE)
+IS BEGIN
+    DELETE FROM fornecedor WHERE cod_fornecedor = p_cod_fornecedor;
+    DELETE FROM produto_fornecedor WHERE cod_fornecedor = p_cod_fornecedor;
+COMMIT;
+END;
+
+
+CREATE OR REPLACE PROCEDURE insert_usuario (
+p_cod_usuario IN usuario.cod_usuario%TYPE,
+p_cod_acesso IN usuario.cod_acesso%TYPE,
+p_cod_sexo IN usuario.cod_sexo%TYPE,
+p_nome IN usuario.nome%TYPE,
+p_sobrenome IN usuario.sobrenome%TYPE,
+p_username IN usuario.username%TYPE,
+p_email IN usuario.email%TYPE,
+p_senha IN usuario.senha%TYPE,
+p_datacadastro IN Varchar2,
+p_picture IN USUARIO.PICTURE%TYPE)
+IS BEGIN
+INSERT INTO usuario
+VALUES(p_cod_usuario, p_cod_acesso, p_cod_sexo, p_nome, p_sobrenome,
+p_username, p_email, p_senha, TO_DATE(p_datacadastro,'DD/MM/YYYY HH24:MI:SS'), p_picture);
+UPDATE max_seq SET valor = p_cod_usuario WHERE cod_seq = 2;
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE update_usuario (
+p_cod_usuario IN usuario.cod_usuario%TYPE,
+p_cod_acesso IN usuario.cod_acesso%TYPE,
+p_cod_sexo IN usuario.cod_sexo%TYPE,
+p_nome IN usuario.nome%TYPE,
+p_sobrenome IN usuario.sobrenome%TYPE,
+p_username IN usuario.username%TYPE,
+p_email IN usuario.email%TYPE,
+p_senha IN usuario.senha%TYPE,
+p_picture IN usuario.picture%TYPE)
+IS BEGIN
+UPDATE usuario SET cod_acesso = p_cod_acesso, cod_sexo = p_cod_sexo,
+nome = p_nome, sobrenome = p_sobrenome, username = p_username,
+email = p_email, senha = p_senha, 
+picture = p_picture WHERE cod_usuario = p_cod_usuario;
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE delete_usuario(p_cod_usuario IN usuario.cod_usuario%TYPE)
+IS BEGIN
+DELETE FROM usuario WHERE cod_usuario = p_cod_usuario;
+COMMIT;
+END;
+
+
+CREATE OR REPLACE PROCEDURE insert_venda(
+p_cod_venda IN venda.cod_venda%TYPE,
+p_cod_tipo  IN venda.cod_tipo%TYPE,
+p_cod_endereco IN venda.cod_endereco%TYPE,
+p_cod_contato IN venda.cod_contato%TYPE,
+p_data_venda IN VARCHAR2,
+p_preco_frete IN venda.preco_frete%TYPE,
+p_nome IN venda.nome%TYPE,
+p_tipo_pagamento IN pagamento.tipo%TYPE,
+p_valor_pagamento IN pagamento.valor%TYPE)
+IS BEGIN
+INSERT INTO VENDA VALUES(p_cod_venda,p_cod_tipo,
+p_cod_endereco, p_cod_contato, TO_DATE(p_data_venda,'DD/MM/YYYY HH24:MI:SS'),p_preco_frete, p_nome);
+INSERT INTO PAGAMENTO VALUES(seq_pagamento.NEXTVAL, p_cod_venda,
+p_tipo_pagamento, p_valor_pagamento);
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE insert_venda_produto(
+p_cod_venda IN venda_produto.cod_venda%TYPE,
+p_cod_produto IN venda_produto.cod_produto%TYPE,
+p_preco_unit IN venda_produto.preco_unit%TYPE,
+p_quantidade IN venda_produto.quantidade%TYPE)
+IS BEGIN
+INSERT INTO venda_produto VALUES(seq_venda_produto.NEXTVAL, p_cod_venda,
+p_cod_produto, p_preco_unit, p_quantidade);
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE insert_mensagem (
+p_mensagem IN mensagem.mensagem%TYPE,
+p_nome IN mensagem.nome %TYPE,
+p_email IN mensagem.email %TYPE)
+IS BEGIN
+INSERT INTO mensagem VALUES(seq_mensagem.NEXTVAL, p_mensagem, p_nome, p_email);
 COMMIT;
 END;
