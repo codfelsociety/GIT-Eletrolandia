@@ -1,0 +1,11 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Paginas/Modelos/Base.master" AutoEventWireup="true" CodeFile="Produtos.master.cs" Inherits="Paginas_Modelos_Produtos" %>
+
+<asp:Content ID="Head" ContentPlaceHolderID="Head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content" ContentPlaceHolderID="Conteudo" Runat="Server">
+    <div>
+        Barra Lateral
+        <asp:ContentPlaceHolder id="Produtos" runat="server"></asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+

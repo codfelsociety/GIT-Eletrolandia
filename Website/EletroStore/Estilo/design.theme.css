@@ -1,0 +1,31 @@
+﻿
+
+/*Área Superior / Banner Area*/
+#top_area {
+    background-color: #2B2B2B;
+}
+/*Barra de navegação*/
+#nav_bar {
+    background-color: #1d2631;
+}
+
+/*Botão de Pesquisa*/
+#btnsearch {
+    background-color: #276280;
+    border-color: #4da6d3;
+}
+.hidden {
+    display:none;
+}
+
+#footer {
+    background-color: #1d2631;
+    color: white;
+}
+/*Plano de fundo do site
+body {
+   background-image: url(../Images/background.jpg); 
+   background-attachment:fixed;
+   background-size:cover;
+   background-position:center;
+}*/

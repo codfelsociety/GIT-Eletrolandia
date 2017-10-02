@@ -13,41 +13,49 @@ namespace BLL
     {
         private static string SQL;
         private static OracleCommand cmd;
-        private int _codVenda;
-        private int _codTipo;
-        private int _codEndereco;
-        private int _codContato;
+
+        private int _idVenda;
+        private int _idInfo;
+        private int _idCliente;
         private string _dataVenda;
-        private decimal _preco_frete;
-        private string _nome;
-        private int _tipoPagamento;
-        private decimal _valorPagamento;
+        private int _tipo;
 
-        public int CodVenda { get => _codVenda; set => _codVenda = value; }
-        public int CodTipo { get => _codTipo; set => _codTipo = value; }
-        public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
-        public int CodContato { get => _codContato; set => _codContato = value; }
-        public string DataVenda { get => _dataVenda; set => _dataVenda = value; }
-        public decimal Preco_frete { get => _preco_frete; set => _preco_frete = value; }
-        public string Nome { get => _nome; set => _nome = value; }
-        public int TipoPagamento { get => _tipoPagamento; set => _tipoPagamento = value; }
-        public decimal ValorPagamento { get => _valorPagamento; set => _valorPagamento = value; }
+        public int IdVenda { get { return _idVenda; } set { _idVenda = value; } }
+        public int IdInfo { get { return _idInfo; } set { _idInfo = value; } }
+        public int IdCliente { get { return _idCliente; } set { _idCliente = value; } }
+        public string DataVenda { get { return _dataVenda; } set { _dataVenda = value; } }
+        public int Tipo { get { return _tipo; } set { _tipo = value; } }
 
-        private void Cadastrar()
+        private void ProximoIdVenda()
         {
+            SQL = "SELECT SEQ_VENDA.NEXTVAL FROM DUAL";
+            IdVenda =  Convert.ToInt32(ClasseConexao.RetornarDataTable(SQL).Rows[0][0]);
+        }
+
+        public void Add(List<ItemProduto> produtos, string cpf)
+        {
+            ProximoIdVenda();
             ClasseConexao.Conexao();
             cmd = new OracleCommand("insert_venda", ClasseConexao.connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("p_cod_venda", OracleDbType.Int32).Value = CodVenda;
-            cmd.Parameters.Add("p_cod_tipo", OracleDbType.Int32).Value = CodTipo;
-            cmd.Parameters.Add("p_cod_endereco", OracleDbType.Int32).Value = CodEndereco;
-            cmd.Parameters.Add("p_cod_contato", OracleDbType.Int32).Value = CodContato;
-            cmd.Parameters.Add("p_data_venda", OracleDbType.Varchar2).Value = DataVenda;
-            cmd.Parameters.Add("p_preco_frete", OracleDbType.Decimal).Value = Preco_frete;
-            cmd.Parameters.Add("p_nome", OracleDbType.Varchar2).Value = Nome;
-            cmd.Parameters.Add("p_tipo_pagamento", OracleDbType.Int32).Value = TipoPagamento;
-            cmd.Parameters.Add("p_valor_pagamento", OracleDbType.Decimal).Value = ValorPagamento;
+            cmd.Parameters.Add("p_id_venda", OracleDbType.Int32).Value = IdVenda;
+            cmd.Parameters.Add("p_id_tipo", OracleDbType.Int32).Value = 1;
+            cmd.Parameters.Add("p_id_cliente", OracleDbType.Int32).Value = 0;
+            cmd.Parameters.Add("p_id_info", OracleDbType.Int32).Value = 0;
+            cmd.Parameters.Add("p_data_venda", OracleDbType.Varchar2).Value = DateTime.Now;
+
             cmd.ExecuteNonQuery();
+            foreach (ItemProduto item in produtos)
+            {
+                ClasseConexao.Conexao();
+                cmd = new OracleCommand("insert_item_venda", ClasseConexao.connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("p_id_venda", OracleDbType.Int32).Value = IdVenda;
+                cmd.Parameters.Add("p_id_produto", OracleDbType.Int32).Value = item.Id;
+                cmd.Parameters.Add("p_preco_unit", OracleDbType.Decimal).Value = item.Preco;
+                cmd.Parameters.Add("p_quantidade", OracleDbType.Int32).Value = item.Quantidade;
+                cmd.ExecuteNonQuery();
+            }
 
         }
     }

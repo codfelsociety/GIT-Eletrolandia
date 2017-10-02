@@ -21,12 +21,6 @@
         <!--#endregion-->
         <!--#region Resp. Design-->
         <Grid.Resources>
-            <DataTemplate x:Key="cbCult">
-                <WrapPanel Height="24px">
-                    <Image Width="18px" Height="18px" Stretch="Fill" Source="{Binding Photo}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,5,0"/>
-                    <Label Content="{Binding Label}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
-                </WrapPanel>
-            </DataTemplate>
 
             <Style TargetType="Grid">
                 <Setter Property="Grid.Column" Value="1"/>
@@ -40,13 +34,13 @@
                 <Setter Property="HorizontalContentAlignment" Value="Right"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
             </Style>
-            <Style TargetType="ComboBox">
+            <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                 <Setter Property="Height" Value="30px"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
                 <Setter Property="MaxWidth" Value="300px"/>
                 <Setter Property="FontSize" Value="15px"/>
                 <Setter Property="Grid.Column" Value="1"/>
-                <Setter Property="VerticalContentAlignment" Value="Top"/>
+
             </Style>
         </Grid.Resources>
         <!--#endregion-->
@@ -60,8 +54,21 @@
                 <ColumnDefinition Width="0.90*"/>
                 <ColumnDefinition Width="0.05*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox Name="LanguageList" ItemTemplate="{StaticResource cbCult}" SelectedIndex="0"  SelectionChanged="LanguageList_SelectionChanged" />
-            <ComboBox Margin="0,35,0,0"/>
+            <ComboBox Name="LanguageList"  SelectedIndex="0"  SelectionChanged="LanguageList_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Height="24px">
+                            <Image Width="18px" Height="18px" Stretch="Fill" Source="{Binding Photo}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,5,0"/>
+                            <Label Content="{Binding Label}" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" FontSize="15">
+                                <Label.Effect>
+                                    <DropShadowEffect/>
+                                </Label.Effect>
+                            </Label>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox Margin="0,35,0,0" SelectionChanged="ComboBox_SelectionChanged"/>
         </Grid>
     </Grid>
 </Page>

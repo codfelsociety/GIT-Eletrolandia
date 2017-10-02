@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eletroland.appeletrolandia.SeekBarActivity"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_row="0"
+        android:text="Que tecnologia comprar ?"
+        android:textColor="#333"
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:layout_column="0"
+        android:layout_marginTop="30dp"
+        android:layout_height="280dp"
+        android:verticalScrollbarPosition="right"
+        android:layout_row="2"
+        android:paddingBottom="30dp">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_row="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Tamanho"
+                    android:textColor="#444"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:id="@+id/seekBarBateria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:max="3"
+                    android:progress="3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="45dp"
+                    android:text=" A                 A+                 S                  S+"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_marginTop="20dp"
+                android:layout_row="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Velocidade"
+                    android:textColor="#444"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:id="@+id/seekBarVelocidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:max="3"
+                    android:progress="2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="45dp"
+                    android:text=" A                 A+                 S                  S+"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_marginTop="20dp"
+                android:layout_row="3">
+
+                <TextView
+                    android:id="@+id/seekBarMemoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Memória"
+                    android:textColor="#444"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:max="3"
+                    android:progress="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="45dp"
+                    android:text=" A                 A+                 S                  S+"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_column="0"
+                android:layout_marginTop="20dp"
+                android:layout_row="4">
+
+                <TextView
+                    android:id="@+id/seekBarPortabilidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Portabilidade"
+                    android:textColor="#444"
+                    android:textSize="20sp" />
+
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:max="3"
+                    android:progress="0" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="45dp"
+                    android:text=" A                 A+                 S                  S+"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </GridLayout>
+
+    </ScrollView>
+
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_column="0"
+        android:layout_row="9"
+        android:columnCount="2">
+
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:background="#fd8c31"
+            android:onClick="btnVoltar_Click"
+            android:text="@string/strVoltar"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btnMostrar"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="5dp"
+            android:layout_row="1"
+            android:background="#e67112"
+            android:onClick="btnShow_Click"
+            android:text="Mostrar"
+            android:textColor="#fff" />
+
+    </GridLayout>
+</GridLayout>

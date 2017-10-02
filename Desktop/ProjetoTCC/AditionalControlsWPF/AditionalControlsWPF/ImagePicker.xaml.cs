@@ -24,6 +24,41 @@ namespace AditionalControlsWPF
         }
         DataTable dt = new DataTable();
 
+        public ImageSource FirstPicture()
+        {
+            try
+            {
+                return SelectedPaths.Rows[0]["Image"] as ImageSource; 
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public static DependencyProperty LimitProperty = DependencyProperty.Register("Limit", typeof(int), typeof(ImagePicker));
+        public int Limit
+        {
+            get
+            {
+                return (int)GetValue(LimitProperty);
+            }
+            set
+            {
+                SetValue(LimitProperty, value);
+            }
+        }
+        public static DependencyProperty PictureProperty = DependencyProperty.Register("Picture", typeof(ImageSource), typeof(ImagePicker));
+        public ImageSource Picture
+        {
+            get
+            {
+                return (ImageSource)GetValue(PictureProperty);
+            }
+            set
+            {
+                SetValue(PictureProperty, value);
+            }
+        }
         public static DependencyProperty SourceProperty = DependencyProperty.Register("Source", typeof(DataView), typeof(ImagePicker));
         public DataView Source
         {
@@ -50,14 +85,15 @@ namespace AditionalControlsWPF
         }
         public void CarregarSource()
         {
-            foreach (DataRowView r in Source)
+            foreach (DataRowView p in Source)
             {
-                byte[] blob = r[1] as byte[];
-                ImageSource imgSource = LoadImage(blob);
-                dt.Rows.Add(Convert.ToInt32(r[0].ToString()), imgSource);
+                ImageSource imgSource = LoadImage(p[1] as byte[]);
+                dt.Rows.Add(Convert.ToInt32(p[0].ToString()), imgSource);
             }
             listImages.ItemsSource = dt.DefaultView;
             SelectedPaths = dt;
+
+            Picture = FirstPicture();
         }
         private DataTable RemoveDuplicates(DataTable entrada)
         {
@@ -101,24 +137,35 @@ namespace AditionalControlsWPF
         }
         private void AdicionarImagem()
         {
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.Filter = "img| *.bmp; *.jpg; *.png";
-            fd.Multiselect = true;
-            if (fd.ShowDialog() == true)
-            {
-                string[] files = fd.FileNames;
-                foreach (string filename in files)
+            int count = 0;
+            if (SelectedPaths == null) count = 0; else count = SelectedPaths.Rows.Count;
+            
+            if (count < Limit || Limit == 0) {
+                OpenFileDialog fd = new OpenFileDialog();
+                fd.Filter = "img| *.bmp; *.jpg; *.png";
+                fd.Multiselect = true;
+                if (fd.ShowDialog() == true)
                 {
-                    BitmapImage bitmap = new BitmapImage(new Uri(filename));
-                    ImageSource imgSource = bitmap;
-                    i++;
-                    dt.Rows.Add(i, imgSource);
+                    string[] files = fd.FileNames;
+                    foreach (string filename in files)
+                    {
+                        BitmapImage bitmap = new BitmapImage(new Uri(filename));
+                        ImageSource imgSource = bitmap;
+                        i++;
+                        dt.Rows.Add(i, imgSource);
+                    }
                 }
+                listImages.ItemsSource = dt.DefaultView;
+                SelectedPaths = dt;
+                Picture = FirstPicture();
+
             }
-            listImages.ItemsSource = dt.DefaultView;
-            SelectedPaths = dt;
+            else
+            {
+                MessageBox.Show("Limite permitido de imagens: " + Limit.ToString());
+            }
         }
-        private void Rectangle_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed && e.ClickCount == 2)
             {
@@ -151,6 +198,8 @@ namespace AditionalControlsWPF
             dt.Rows.Clear();
             listImages.ItemsSource = dt.DefaultView;
             SelectedPaths = dt;
+            Picture = FirstPicture();
+
         }
         private void labelDeleteAll_MouseDown(object sender, MouseButtonEventArgs e)
         {

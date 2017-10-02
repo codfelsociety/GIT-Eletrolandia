@@ -1,0 +1,34 @@
+﻿<Page x:Class="ProjetoTCC.Assets.Pages.PaginaVendas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages"
+      xmlns:vm="clr-namespace:ProjetoTCC.ViewModel"
+      mc:Ignorable="d" 
+      Language="pt-BR"
+      d:DesignHeight="690" d:DesignWidth="1288" Background="White"
+      Title="PaginaVendas">
+
+    <Page.DataContext>
+        <vm:VendasViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <DataGrid FontSize="25" x:Name="dataGrid"  AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Left" SelectedItem="{Binding VendaSelecionada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Vendas, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="301" Margin="10,70,0,0" VerticalAlignment="Top" Width="1268" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="COD_VENDA" Binding="{Binding ID_VENDA}"/>
+                <DataGridTextColumn  Header="DATA_VENDA" Binding="{Binding DATA_VENDA}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="1288" Fill="#FFF4F4F5"/>
+        <Label x:Name="label" Content="Total Hoje:" HorizontalAlignment="Left" Margin="9,10,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="/ProjetoTCC;component/Fonts/#Lemon/Milk"/>
+        <TextBlock x:Name="textBlock" Text="{Binding TotalHoje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:C}}" HorizontalAlignment="Left" Margin="183,15,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="40" Width="183" FontSize="24"/>
+        <DataGrid FontSize="25" x:Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding ProdutosVenda,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="269" Margin="10,397,0,0" VerticalAlignment="Top" Width="1268" SelectionChanged="dataGrid1_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome" Binding="{Binding NOME}"/>
+                <DataGridTextColumn Header="Preço" Binding="{Binding PRECO_UNIT, StringFormat={}{0:C}}"/>
+                <DataGridTextColumn  Header="Quantidade" Binding="{Binding QUANTIDADE}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

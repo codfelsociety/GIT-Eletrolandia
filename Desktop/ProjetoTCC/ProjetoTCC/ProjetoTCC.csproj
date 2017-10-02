@@ -66,8 +66,10 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,8 +111,11 @@
     <Compile Include="Assets\Pages\CaixaPage.xaml.cs">
       <DependentUpon>CaixaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Pages\InCaixa\CaixaView.xaml.cs">
-      <DependentUpon>CaixaView.xaml</DependentUpon>
+    <Compile Include="Assets\Pages\InCaixa\CaixaPageView.xaml.cs">
+      <DependentUpon>CaixaPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Pages\InCaixa\PaginaDePagamento.xaml.cs">
+      <DependentUpon>PaginaDePagamento.xaml</DependentUpon>
     </Compile>
     <Compile Include="Assets\Pages\InProducts\popupartigo.xaml.cs">
       <DependentUpon>popupartigo.xaml</DependentUpon>
@@ -124,11 +129,16 @@
     <Compile Include="Assets\Pages\InSuppliers\SuppliersUpdate.xaml.cs">
       <DependentUpon>SuppliersUpdate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Pages\InUsers\UsersUpdate.xaml.cs">
-      <DependentUpon>UsersUpdate.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Common\Classes.cs" />
+    <Compile Include="Model\AcessoUsuario.cs" />
+    <Compile Include="Model\StatusUsuario.cs" />
+    <Compile Include="ViewModel\EditUserViewModel.cs" />
+    <Compile Include="ViewModel\WarningViewModel.cs" />
     <Compile Include="Assets\Pages\Mensagem.xaml.cs">
       <DependentUpon>Mensagem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Pages\PaginaVendas.xaml.cs">
+      <DependentUpon>PaginaVendas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -138,10 +148,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="View\Login\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Model\Base.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Assets\SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewModel\Base.cs" />
+    <Compile Include="ViewModel\CaixaViewModel.cs" />
+    <Compile Include="ViewModel\MensagemViewModel.cs" />
+    <Compile Include="ViewModel\PagamentoViewModel.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\AddUserViewModel.cs" />
+    <Compile Include="ViewModel\VendasViewModel.cs" />
+    <Compile Include="View\Usuarios\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Warning\Warning.xaml.cs">
+      <DependentUpon>Warning.xaml</DependentUpon>
+    </Compile>
     <Page Include="Assets\Locale\App\Resources.pt-BR.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,9 +183,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Assets\Pages\InCaixa\CaixaView.xaml">
+    <Page Include="Assets\Pages\InCaixa\CaixaPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Pages\InCaixa\CaixaViewResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Pages\InCaixa\PaginaDePagamento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Assets\Pages\InProducts\popupartigo.xaml">
       <SubType>Designer</SubType>
@@ -198,15 +231,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Assets\Pages\InUsers\UsersCover.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Assets\Pages\InUsers\UsersUpdate.xaml">
+    <Page Include="View\Usuarios\Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Assets\Pages\InUsers\UsersView.xaml">
+    <Page Include="View\Usuarios\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Usuarios\Add.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -218,9 +251,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Assets\Pages\Mensagens\MensagemResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Assets\Pages\OrdersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Pages\PaginaVendas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Assets\Pages\ProductsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -238,15 +279,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Assets\Pages\UsersPage.xaml">
+    <Page Include="View\Usuarios\Menu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="Assets\Recursos\Icones\Icons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\Login\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -272,11 +317,11 @@
     <Compile Include="Assets\Pages\InSuppliers\SuppliersView.xaml.cs">
       <DependentUpon>SuppliersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Pages\InUsers\UsersCover.xaml.cs">
-      <DependentUpon>UsersCover.xaml</DependentUpon>
+    <Compile Include="View\Usuarios\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Pages\InUsers\UsersView.xaml.cs">
-      <DependentUpon>UsersView.xaml</DependentUpon>
+    <Compile Include="View\Usuarios\Add.xaml.cs">
+      <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
     <Compile Include="Assets\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -296,14 +341,34 @@
     <Compile Include="Assets\Pages\SuppliersPage.xaml.cs">
       <DependentUpon>SuppliersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Pages\UsersPage.xaml.cs">
-      <DependentUpon>UsersPage.xaml</DependentUpon>
+    <Compile Include="View\Usuarios\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Produtos.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Assets\Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Styles\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Warning\Warning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -323,7 +388,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Assets\Reports\Report1.rdlc" />
     <None Include="Data\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -335,6 +400,11 @@
     <None Include="Data\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <Resource Include="Assets\Fonts\CaviarDreams.ttf" />
+    <Resource Include="Assets\Fonts\CaviarDreamsBold.ttf" />
+    <Resource Include="Assets\Fonts\GeosansLight.ttf" />
+    <Resource Include="Assets\Fonts\HighSociety.ttf" />
+    <Resource Include="Assets\Fonts\LemonMilk.otf" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ProjetoTCC.Data.DataSet1+DataTable1DataTable.datasource" />
     <None Include="Properties\Settings.settings">
@@ -345,7 +415,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\Pages\InUsers\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AditionalControlsWPF\AditionalControlsWPF\AditionalControlsWPF.csproj">
       <Project>{c1586b2e-0e7e-47e6-8abd-4e60fcaa8bfc}</Project>
@@ -358,6 +430,10 @@
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{b00a8397-8a8d-4541-bb2f-f382d2d9eeb3}</Project>
       <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjetoTCC.Util\Util.csproj">
+      <Project>{902a2dc8-e987-4023-8fb1-1fcc2978c1be}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -374,11 +450,11 @@
     <Resource Include="Assets\Icons\report.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="moderngreenplus.png" />
-    <Resource Include="neonzinho.png" />
+    <Resource Include="Assets\Icons\moderngreenplus.png" />
+    <Resource Include="Assets\Imagens\neonzinho.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="cancelar_icone.png" />
+    <Resource Include="Assets\Icons\cancelar_icone.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Imagens\supplier.jpg" />
@@ -386,18 +462,21 @@
     <Resource Include="Assets\Imagens\caixa2.jpg" />
     <Resource Include="Assets\Imagens\caixain.jpg" />
     <Resource Include="Assets\Imagens\default_new_image.jpg" />
-    <Resource Include="logoreduced.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+    <Resource Include="Assets\Imagens\logoreduced.png" />
+    <SplashScreen Include="Assets\Imagens\logo3-t.png" />
+    <Resource Include="Assets\Recursos\Icones\x.png" />
+    <Resource Include="Assets\Icons\Ok_icon.png" />
+    <Content Include="Assets\SqlServerTypes\readme.htm" />
+    <Content Include="Assets\SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+    <Content Include="Assets\SqlServerTypes\x64\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+    <Content Include="Assets\SqlServerTypes\x86\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+    <Content Include="Assets\SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

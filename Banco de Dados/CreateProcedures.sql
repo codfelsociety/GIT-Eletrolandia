@@ -13,8 +13,7 @@ CREATE OR REPLACE PROCEDURE insert_produto(
        p_online IN PRODUTOS.ON_LINE%TYPE,
        p_limitado IN PRODUTOS.LIMITADO%TYPE,
        p_data_cadastro IN VARCHAR2)
-IS
-BEGIN
+IS BEGIN
   INSERT INTO produtos 
   VALUES (p_cod_produto, p_cod_artigo,p_cod_marca, p_cod_frete, p_cod_barras, p_nome,
   p_descricao, p_estoque, p_estoque_min, p_estoque_max, p_ativo, TO_DATE(p_data_cadastro,'DD/MM/YYYY HH24:MI:SS'),
@@ -297,31 +296,45 @@ END;
 
 
 CREATE OR REPLACE PROCEDURE insert_venda(
-p_cod_venda IN venda.cod_venda%TYPE,
-p_cod_tipo  IN venda.cod_tipo%TYPE,
-p_cod_endereco IN venda.cod_endereco%TYPE,
-p_cod_contato IN venda.cod_contato%TYPE,
-p_data_venda IN VARCHAR2,
-p_preco_frete IN venda.preco_frete%TYPE,
-p_nome IN venda.nome%TYPE,
-p_tipo_pagamento IN pagamento.tipo%TYPE,
-p_valor_pagamento IN pagamento.valor%TYPE)
+p_id_venda IN venda.id_venda%TYPE,
+p_id_tipo  IN venda.id_tipo%TYPE,
+p_id_cliente IN venda.id_cliente%TYPE,
+p_id_info IN venda.id_info%TYPE,
+p_data_venda IN VARCHAR2)
 IS BEGIN
-INSERT INTO VENDA VALUES(p_cod_venda,p_cod_tipo,
-p_cod_endereco, p_cod_contato, TO_DATE(p_data_venda,'DD/MM/YYYY HH24:MI:SS'),p_preco_frete, p_nome);
-INSERT INTO PAGAMENTO VALUES(seq_pagamento.NEXTVAL, p_cod_venda,
-p_tipo_pagamento, p_valor_pagamento);
+INSERT INTO VENDA VALUES(p_id_venda, p_id_tipo,
+p_id_cliente, p_id_info, TO_DATE(p_data_venda,'DD/MM/YYYY HH24:MI:SS'));
 COMMIT;
 END;
 
-CREATE OR REPLACE PROCEDURE insert_venda_produto(
-p_cod_venda IN venda_produto.cod_venda%TYPE,
-p_cod_produto IN venda_produto.cod_produto%TYPE,
-p_preco_unit IN venda_produto.preco_unit%TYPE,
-p_quantidade IN venda_produto.quantidade%TYPE)
+CREATE OR REPLACE PROCEDURE insert_item_venda(
+p_id_venda IN item_venda.id_venda%TYPE,
+p_id_produto IN item_venda.id_produto%TYPE,
+p_preco_unit IN item_venda.preco_unit%TYPE,
+p_quantidade IN item_venda.quantidade%TYPE)
 IS BEGIN
-INSERT INTO venda_produto VALUES(seq_venda_produto.NEXTVAL, p_cod_venda,
-p_cod_produto, p_preco_unit, p_quantidade);
+INSERT INTO item_venda VALUES(p_id_venda,
+p_id_produto, p_preco_unit, p_quantidade);
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE insert_pagamento(
+p_id_venda IN pagamento.id_venda%TYPE,
+p_tipo IN pagamento.tipo%TYPE,
+p_valor IN pagamento.valor%TYPE)
+IS BEGIN
+INSERT INTO pagamento 
+VALUES(p_id_venda, p_tipo, p_valor);
+COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE insert_info_venda(
+p_id_info IN info_venda.id_info%TYPE,
+p_nome IN info_venda.nome%TYPE,
+p_cpf IN info_venda.cpf%TYPE)
+IS BEGIN
+INSERT INTO info_venda
+VALUES(p_id_info, p_nome, p_cpf);
 COMMIT;
 END;
 

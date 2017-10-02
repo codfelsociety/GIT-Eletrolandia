@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AditionalControlsWPF"
+              x:Name="nudupdown"
              mc:Ignorable="d" d:DesignHeight="40" d:DesignWidth="400">
-
-    <Grid x:Name="Grid1" MouseWheel="Grid_MouseWheel" Loaded="Grid1_Loaded">
+    <Grid x:Name="Grid1" Loaded="Grid1_Loaded" MouseWheel="Grid1_MouseWheel">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*" />
@@ -16,8 +16,8 @@
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="txtValue" BorderThickness="0" Padding="15,0,0,0" DataObject.Pasting="TextBoxPasting"  Grid.Column="0" VerticalContentAlignment="Center" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Text}"  FontSize="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=FontSize}" Grid.RowSpan="2" Foreground="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Foreground}" PreviewTextInput="txtValue_PreviewTextInput" TextChanged="txtValue_TextChanged" />
+        <TextBox x:Name="txtValue" BorderThickness="0" Padding="15,0,0,0" Grid.Column="0" VerticalContentAlignment="Center" Text="{Binding Value, ElementName=nudupdown}" FontSize="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=FontSize}" Grid.RowSpan="2" Foreground="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Foreground}" PreviewTextInput="txtValue_PreviewTextInput"  />
         <Button x:Name="btnIncrease" Grid.Column="1" Grid.Row="0" Foreground="#444" FontSize="10" Background="#ccc" Content="▲" BorderThickness="0" Cursor="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Cursor}" Click="btnIncrease_Click"  />
-        <Button x:Name="btnDecrease" Grid.Column="1" Grid.Row="1" Foreground="DarkGray" FontSize="10" Content="▼" BorderThickness="0" Cursor="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Cursor}"    Click="btnDecrease_Click" />
+        <Button x:Name="btnDecrease" Grid.Column="1" Grid.Row="1" Foreground="DarkGray" FontSize="10" Content="▼" BorderThickness="0" Cursor="{Binding RelativeSource={RelativeSource AncestorType=UserControl},Path=Cursor}" Click="btnDecrease_Click" />
     </Grid>
 </UserControl>

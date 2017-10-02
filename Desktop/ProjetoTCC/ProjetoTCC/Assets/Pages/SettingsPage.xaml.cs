@@ -33,5 +33,10 @@ namespace ProjetoTCC.Assets.Pages
             string b = a.Culture.ToString();
             App.SelectCulture(b);
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

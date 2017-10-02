@@ -1,0 +1,5 @@
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\Release\ProjetoTCC.Util.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\Release\ProjetoTCC.Util.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Release\Util.csprojResolveAssemblyReference.cache
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Release\ProjetoTCC.Util.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Release\ProjetoTCC.Util.pdb

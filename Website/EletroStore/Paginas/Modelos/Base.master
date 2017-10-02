@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="Paginas_Modelos_Base" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../Estilo/bootstrap.css" rel="stylesheet" />
+    <link href="../../Estilo/design.theme.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="Head" runat="server" />
+</head>
+<body>
+    <form id="form" runat="server">
+        <div id="top_area" style="background-image: url(../../Imagens/fundobanner.png)" class="container-fluid">
+            <div class="row">
+                <div class="container vcenter">
+                    <div class=" col-sm-5">
+                        <asp:Image alt="Eletrolandia Logo" CssClass="img-fluid" Style="margin: 0px 0px 0px -60px; float: left; max-width: 400px;" ImageUrl="~/Imagens/bannereletrolandia.png" runat="server" />
+                    </div>
+                    <div class="col-sm-7 ml-3 mt-3" style="text-align: right;">
+                        <div style="height: 30px; width: 100%; display: block; text-align: right;">
+                            <div style="display: inline-block">
+                                <asp:Image Style="width: 30px;" runat="server" ImageUrl="~/Imagens/Icones/login.png" /><span style="color: white;">&nbsp;&nbsp; Login</span>
+                            </div>
+                            <div style="display: inline-block">
+                                <asp:Image Style="width: 30px;" runat="server" ImageUrl="~/Imagens/Icones/carrinho.png" /><span style="color: white;">&nbsp;&nbsp; Carrinho</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="Conteudo" runat="server" />
+        </div>
+    </form>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

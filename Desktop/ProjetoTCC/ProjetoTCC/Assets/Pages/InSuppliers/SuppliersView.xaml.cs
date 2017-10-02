@@ -34,7 +34,7 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
         }
         public void LoadCidade()
         {
-            cbCidade.ItemsSource = Cidade.Carregar(Convert.ToInt32(cbEstado.SelectedValue)).DefaultView;
+            cbCidade.ItemsSource = Cidade.Carregar(System.Convert.ToInt32(cbEstado.SelectedValue)).DefaultView;
             cbCidade.SelectedIndex = 0;
         }
 
@@ -60,8 +60,8 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
         {
             Fornecedor forn = new Fornecedor();
             forn.Nome = txtNome.Text;
-            forn.Cnpj = Convert.ToInt64(new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray()));
-            forn.InsEstadual = Convert.ToInt64( new String(txtEstadual.Text.Where(Char.IsNumber).ToArray()));
+            forn.Cnpj = System.Convert.ToInt64(new String(txtCNPJ.Text.Where(char.IsNumber).ToArray()));
+            forn.InsEstadual = System.Convert.ToInt64( new String(txtEstadual.Text.Where(char.IsNumber).ToArray()));
             forn.Descricao = txtDescricao.Text;
             forn.Alterar();
         }
@@ -73,8 +73,8 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             forn.CodEndereco = CadastrarEndereco();
             forn.CodContato = CadastrarContato();
             forn.Nome = txtNome.Text;
-            forn.Cnpj = Convert.ToInt64( new String(txtCNPJ.Text.Where(Char.IsNumber).ToArray()));
-            forn.InsEstadual = Convert.ToInt64( new String(txtEstadual.Text.Where(Char.IsNumber).ToArray()));
+            forn.Cnpj = System.Convert.ToInt64( new String(txtCNPJ.Text.Where(char.IsNumber).ToArray()));
+            forn.InsEstadual = System.Convert.ToInt64( new String(txtEstadual.Text.Where(char.IsNumber).ToArray()));
             forn.Descricao = txtDescricao.Text;
             forn.Cadastrar();
         }
@@ -83,13 +83,13 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             Endereco end = new Endereco();
             int cod = end.ProxCodEndereco();
             end.CodEndereco = cod;
-            end.Cidade = Convert.ToInt32(cbCidade.SelectedValue);
-            end.Estado = Convert.ToInt32(cbEstado.SelectedValue);
+            end.Cidade = System.Convert.ToInt32(cbCidade.SelectedValue);
+            end.Estado = System.Convert.ToInt32(cbEstado.SelectedValue);
             end.Tipo = 1;
             end.Bairro = txtBairro.Text;
             end.Numero = nudNumero.Value;
             end.Rua = txtRua.Text;
-            end.Cep = Convert.ToInt64(new String(txtCep.Text.Where(Char.IsNumber).ToArray()));
+            end.Cep = System.Convert.ToInt64(new String(txtCep.Text.Where(char.IsNumber).ToArray()));
             end.Complemento = "";
             end.Cadastrar();
             return cod;
@@ -99,8 +99,8 @@ namespace ProjetoTCC.Assets.Pages.InSuppliers
             Contato con = new Contato();
             int cod = con.ProxCodContato();
             con.CodContato = cod;
-            con.Telefone = Convert.ToInt64(new String(txtTelefone.Text.Where(Char.IsNumber).ToArray()));
-            con.Celular = Convert.ToInt64( new String(txtCelular.Text.Where(Char.IsNumber).ToArray()));
+            con.Telefone = System.Convert.ToInt64(new String(txtTelefone.Text.Where(char.IsNumber).ToArray()));
+            con.Celular = System.Convert.ToInt64( new String(txtCelular.Text.Where(char.IsNumber).ToArray()));
             con.Email = txtEmail.Text;
             con.Cadastrar();
             return cod;

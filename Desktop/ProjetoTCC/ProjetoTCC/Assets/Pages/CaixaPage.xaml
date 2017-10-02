@@ -5,39 +5,85 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="690" d:DesignWidth="1288" Background="White"
-      Title="CaixaPage">
-
+           d:DesignHeight="690" d:DesignWidth="1288"
+      Title="ProductsPage" Background="#ddd" >
     <Grid>
-
-        <Image Source="/ProjetoTCC;component/Assets/Imagens/caixa2.jpg" Stretch="UniformToFill"/>
-        <Rectangle>
-            <Rectangle.Fill>
-                <SolidColorBrush Color="#FF6A6607" Opacity="0.7"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button x:Name="buttonAbrirCaixa"  BorderThickness="0" HorizontalAlignment="Left" FontSize="30" Margin="148,158,0,0" VerticalAlignment="Top" Width="298" Height="106" Click="buttonAbrirCaixa_Click" >
-            <Button.Effect>
-                <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="29"/>
-            </Button.Effect>
-            <Button.Background>
-                <SolidColorBrush Color="White" Opacity="0.8"/>
-            </Button.Background>
-            <Button.Content>
-                <Label FontFamily="Agency FB" FontSize="36" Foreground="#FF212121">
-                    Abrir Caixa
-                </Label>
-            </Button.Content>
-        </Button>
-        <Button x:Name="buttonValorCaixa"  BorderThickness="0" HorizontalAlignment="Left" FontSize="30" Margin="478,158,0,0" VerticalAlignment="Top" Width="298" Height="106" >
-            <Button.Effect>
-                <DropShadowEffect Color="White" ShadowDepth="0" BlurRadius="29"/>
-            </Button.Effect>
-            <Button.Background>
-                <SolidColorBrush Color="White" Opacity="0.8"/>
-            </Button.Background>
-            <Label FontFamily="Agency FB" FontSize="36" Foreground="#FF212121" Content="Valor Caixa"/>
-        </Button>
-        <Frame Visibility="Hidden" Name="frCaixa"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" MinHeight="25" MaxHeight="45"/>
+            <RowDefinition Height="0.01*" MaxHeight="1"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Button" BasedOn="{StaticResource defaultButton}">
+                <Setter Property="Background" Value="#F1F1F1"/>
+                <Setter Property="Foreground" Value="#2E2E2E"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#F9F9F9"/>
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+                <Style.Resources>
+                    <Style TargetType="Image">
+                        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+                        <Setter Property="Width" Value="20"/>
+                        <Setter Property="Margin" Value="3,0,0,0"/>
+                        <Setter Property="DockPanel.Dock" Value="Left"/>
+                        <Setter Property="MinWidth" Value="25"/>
+                    </Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#2B2B2B"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="DockPanel.Dock" Value="Right"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+            <Style x:Key="btnSearch" TargetType="Button" BasedOn="{StaticResource defaultButton}">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Margin" Value="0,0,6,0"/>
+                <Setter Property="MaxHeight" Value="30"/>
+                <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+                <Setter Property="Foreground" Value="#2E2E2E"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#C8C8C8"/>
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="txtSearch" TargetType="TextBox">
+                <Setter Property="MaxHeight" Value="30"/>
+                <Setter Property="Padding" Value="6,6,6,6"/>
+                <Setter Property="Foreground" Value="#777"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="6,0,0,0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="BorderBrush" Value="#ccc"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="FontFamily" Value="Calibri Light"/>
+            </Style>
+        </Grid.Resources>
+        <Rectangle Grid.Row="0" Fill="#F1F1F1"/>
+        <Rectangle Grid.Row="1" Fill="#CEC1C1"/>
+        <Rectangle Grid.Row="2" Fill="#DBDBDB"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="150" Width="0.20*"/>
+                <ColumnDefinition MaxWidth="150" Width="0.15*"/>
+                <ColumnDefinition MaxWidth="150" Width="0.15*"/>
+                <ColumnDefinition MaxWidth="150" Width="0.15*"/>
+                <ColumnDefinition  Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnAdd" Grid.Column="0" Click="btnAdd_Click">
+                <Button.Content>
+                    <DockPanel>
+                        <Image Source="../Icons/plus.png"/>
+                        <Label Content="Nova Venda"/>
+                    </DockPanel>
+                </Button.Content>
+            </Button>
+        </Grid>
+        <Frame Name="frame" Grid.Row="2" ></Frame>
     </Grid>
 </Page>

@@ -42,36 +42,36 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                 txtCodBarras.Text = r[0].ToString();
                 txtName.Text = r[1].ToString();
                 edtDescricao.Text = r[2].ToString();
-                nudEstoque.Value = Convert.ToInt32(r[3].ToString());
-                nudEstoqueMin.Value = Convert.ToInt32(r[4].ToString());
-                nudEstoqueMax.Value = Convert.ToInt32(r[5].ToString());
-                int Ativo = Convert.ToInt32(r[6].ToString());
+                nudEstoque.Value = System.Convert.ToInt32(r[3].ToString());
+                nudEstoqueMin.Value = System.Convert.ToInt32(r[4].ToString());
+                nudEstoqueMax.Value = System.Convert.ToInt32(r[5].ToString());
+                int Ativo = System.Convert.ToInt32(r[6].ToString());
                 if (Ativo == 1)
                     chkAtivo.IsChecked = true;
-                int Limitado = Convert.ToInt32(r[8].ToString());
+                int Limitado = System.Convert.ToInt32(r[8].ToString());
                 if (Limitado == 1)
                     chkLimitado.IsChecked = true;
-                int Online = Convert.ToInt32(r[7].ToString());
+                int Online = System.Convert.ToInt32(r[7].ToString());
                 if (Online == 1)
                     chkOnline.IsChecked = true;
-                txtData.Text = Convert.ToDateTime(r[9]).ToString();
+                txtData.Text = System.Convert.ToDateTime(r[9]).ToString();
                 LoadCategoria();
-                cbxCategoria.SelectedValue = Convert.ToInt32(r[11]);
+                cbxCategoria.SelectedValue = System.Convert.ToInt32(r[11]);
                 LoadArtigo();
-                cbxArtigo.SelectedValue = Convert.ToInt32(r[10]);
+                cbxArtigo.SelectedValue = System.Convert.ToInt32(r[10]);
                 PopulateEspecifications();
                 LoadMarca();
-                cbxMarca.SelectedValue = Convert.ToInt32(r[12]);
-                txtCusto.Number = Convert.ToDecimal(r[13]);
-                txtPreco.Number = Convert.ToDecimal(r[14]);
+                cbxMarca.SelectedValue = System.Convert.ToInt32(r[12]);
+                txtCusto.Number = System.Convert.ToDecimal(r[13]);
+                txtPreco.Number = System.Convert.ToDecimal(r[14]);
                 txtPeso.Text = r[15].ToString();
                 txtAltura.Text = r[16].ToString();
                 txtComprimento.Text = r[17].ToString();
                 txtLargura.Text = r[18].ToString();
-                int Fragil = Convert.ToInt32(r[19].ToString());
+                int Fragil = System.Convert.ToInt32(r[19].ToString());
                 if (Fragil == 1)
                     chkFragil.IsChecked = true;
-                int FreteGratis = Convert.ToInt32(r[20].ToString());
+                int FreteGratis = System.Convert.ToInt32(r[20].ToString());
                 if (FreteGratis == 1)
                     rbFreteSim.IsChecked = true;
                 else
@@ -84,11 +84,11 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                     if (ctr is ComboBox)
                     {
                         string name = ctr.Name;
-                        int cod_ESPEC = Convert.ToInt32(ctr.Name.Substring(2, name.Length - 2));
+                        int cod_ESPEC = System.Convert.ToInt32(ctr.Name.Substring(2, name.Length - 2));
                         (ctr as ComboBox).SelectedValue = prod.RetornarPreValor(cod_ESPEC, COD);
                     }
                 }
-                FRETE = Convert.ToInt32(r[21]);
+                FRETE = System.Convert.ToInt32(r[21]);
             }
         }
         public void LoadMarca()
@@ -327,16 +327,16 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         private void PopulateEspecifications()
         {
             SpecPanel.Children.Clear();
-            int cod_Artigo_Selecionado = Convert.ToInt32(cbxArtigo.SelectedValue);
+            int cod_Artigo_Selecionado = System.Convert.ToInt32(cbxArtigo.SelectedValue);
             Produtos.CarregarEspecs(cod_Artigo_Selecionado);
             foreach (DataRow row in Produtos.dtEspecs.Rows)
             {
                 Label lbl = new Label();
                 lbl.Content = row[1].ToString().ToUpper() + ":";
                 SpecPanel.Children.Add(lbl);
-                if (Convert.ToInt32(row["TIPO"]) == 1)
+                if (System.Convert.ToInt32(row["TIPO"]) == 1)
                 {
-                    Produtos.CarregarPreEspecValues(Convert.ToInt32(row["COD_ESPEC"]));
+                    Produtos.CarregarPreEspecValues(System.Convert.ToInt32(row["COD_ESPEC"]));
                     ComboBox cbx = new ComboBox();
                     cbx.Name = "cb" + (row[0].ToString());
                     cbx.ItemsSource = Produtos.dtPreEspecs.DefaultView;
@@ -353,10 +353,10 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         private int SalvarFrete()
         {
             Frete frete = new Frete();
-            frete.Peso = Convert.ToDouble(txtPeso.Text);
-            frete.Altura = Convert.ToDouble(txtAltura.Text);
-            frete.Comprimento = Convert.ToDouble(txtComprimento.Text);
-            frete.Largura = Convert.ToDouble(txtLargura.Text);
+            frete.Peso = System.Convert.ToDouble(txtPeso.Text);
+            frete.Altura = System.Convert.ToDouble(txtAltura.Text);
+            frete.Comprimento = System.Convert.ToDouble(txtComprimento.Text);
+            frete.Largura = System.Convert.ToDouble(txtLargura.Text);
             frete.IsFree = (rbFreteSim.IsChecked == true) ? 1 : 0;
             frete.IsFragile = (chkFragil.IsChecked == true) ? 1 : 0;
             int codFrete = 0;
@@ -378,8 +378,8 @@ namespace ProjetoTCC.Assets.Pages.InProducts
         {
             prod.CodProduto = COD;
             prod.CodArtigo = (int)cbxArtigo.SelectedValue;
-            prod.CodMarca = Convert.ToInt32(cbxMarca.SelectedValue);
-            prod.CodBarras = Convert.ToInt32(txtCodBarras.Text);
+            prod.CodMarca = System.Convert.ToInt32(cbxMarca.SelectedValue);
+            prod.CodBarras = System.Convert.ToInt32(txtCodBarras.Text);
             prod.Nome = txtName.Text;
             prod.Limitado = (chkLimitado.IsChecked == true) ? 1 : 0;
             prod.Online = (chkOnline.IsChecked == true) ? 1 : 0;
@@ -425,9 +425,9 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             {
                 if (ctr is ComboBox)
                 {
-                    int cod_PRE = Convert.ToInt32(((ComboBox)ctr).SelectedValue);
+                    int cod_PRE = System.Convert.ToInt32(((ComboBox)ctr).SelectedValue);
                     string name = ((ComboBox)ctr).Name;
-                    int cod_ESPEC = Convert.ToInt32(((ComboBox)ctr).Name.Substring(2, name.Length - 2));
+                    int cod_ESPEC = System.Convert.ToInt32(((ComboBox)ctr).Name.Substring(2, name.Length - 2));
                     prod.CadastrarEspecs(cod_ESPEC, cod_PRE);
                 }
             }

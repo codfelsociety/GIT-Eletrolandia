@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppEletrolandia</string>
+    <string name="strSeekBar">Seek Bar</string>
+    <string name="strImageSwitcher">Image Switcher</string>
+    <string name="strSurfaceView">Surface View</string>
+    <string name="strVoltar">Voltar</string>
+    <string name="strProximo">Proximo</string>
+</resources>

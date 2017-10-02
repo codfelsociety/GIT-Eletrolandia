@@ -96,14 +96,8 @@
                 <Setter Property="Foreground" Value="#3B3B3B"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
             </Style>
-            <Style TargetType="ComboBox">
-                <Setter Property="Padding" Value="4"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="Background" Value="{StaticResource LightGrey}"/>
-                <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="15"/>
-                <Setter Property="Foreground" Value="#3B3B3B"/>
-                <Setter Property="Height" Value="27"/>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+                <Setter Property="Height" Value="30"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
             </Style>
             <Style TargetType="aditionalControls:NumericUpDown">
@@ -175,24 +169,20 @@
                             <!--#endregion-->
                             <!--#region Category-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,133,10,0" >Categoria</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,133,19,0"/>
-                            <ComboBox x:Name="cbxCategoria" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,135,21,0" SelectionChanged="cbxCategoria_SelectionChanged" SelectedIndex="1" DropDownOpened="cbxCategoria_DropDownOpened"></ComboBox>
+                            <ComboBox x:Name="cbxCategoria" Grid.Column="8" Grid.ColumnSpan="10" Margin="0,133,19,0" SelectionChanged="cbxCategoria_SelectionChanged" SelectedIndex="1" DropDownOpened="cbxCategoria_DropDownOpened"></ComboBox>
                             <!--#endregion-->
                             <!--#region Article-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,172,10,0" >Artigo</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,172,19,0"/>
-                            <ComboBox x:Name="cbxArtigo" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,174,21,0"  SelectionChanged="cbxArtigo_SelectionChanged" DropDownOpened="cbxArtigo_DropDownOpened">
+                            <ComboBox x:Name="cbxArtigo" Grid.Column="8" Grid.ColumnSpan="10" Margin="0,172,19,0"  SelectionChanged="cbxArtigo_SelectionChanged" DropDownOpened="cbxArtigo_DropDownOpened">
                             </ComboBox>
                             <!--#endregion-->
                             <!--#region Provider-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,211,10,0" >Fornecedor</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="11" Margin="0,211,12,0"/>
-                            <aditionalControls:MultiSelectComboBox x:Name="cbxFornecedor" Height="27" VerticalAlignment="Top" Grid.Column="8" Grid.ColumnSpan="11" Margin="2,213,14,0" Loaded="cbxFornecedor_Loaded"></aditionalControls:MultiSelectComboBox>
+                            <aditionalControls:MultiSelectComboBox x:Name="cbxFornecedor" Height="30" VerticalAlignment="Top" Grid.Column="8" Grid.ColumnSpan="11" Margin="0,213,12,0" Loaded="cbxFornecedor_Loaded"></aditionalControls:MultiSelectComboBox>
                             <!--#endregion-->
                             <!--#region Brand-->
                             <Label Grid.Column="1" Grid.ColumnSpan="7" Margin="0,250,10,0" >Marca</Label>
-                            <Rectangle Grid.Column="8" Grid.ColumnSpan="10" Margin="0,250,19,0"/>
-                            <ComboBox x:Name="cbxMarca" Grid.Column="8" Grid.ColumnSpan="10" Margin="2,252,21,0" SelectionChanged="cbxMarca_SelectionChanged" DropDownOpened="cbxMarca_DropDownOpened"></ComboBox>
+                            <ComboBox x:Name="cbxMarca" Grid.Column="8" Grid.ColumnSpan="10" Margin="0,250,19,0" SelectionChanged="cbxMarca_SelectionChanged" DropDownOpened="cbxMarca_DropDownOpened"></ComboBox>
                             <!--#endregion-->
                             <Rectangle x:Name="recValores" Style="{StaticResource SplitRectangle}" Margin="1.5,289,3,3" Fill="#B8FFC0" Height="86" Grid.ColumnSpan="18" Grid.Column="1"/>
                             <!--#region Cost-->
@@ -325,7 +315,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid.Resources>
                                 <Style TargetType="Rectangle"></Style>
-                                <Style TargetType="ComboBox"></Style>
+                                <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}"></Style>
                                 <Style TargetType="Label">
                                     <Setter Property="FontFamily" Value="Calibri Light"/>
                                 </Style>
@@ -373,16 +363,14 @@
                                 </ScrollViewer.Style>
                                 <WrapPanel x:Name="SpecPanel" Height="{Binding ElementName=MyScroll, Path=ViewportHeight}" Width="400">
                                     <WrapPanel.Resources>
-                                        <Style TargetType="ComboBox">
+                                        <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                                             <Setter Property="Width" Value="200"/>
                                             <Setter Property="Height" Value="30"/>
                                             <Setter Property="Margin" Value="0,7,0,0"/>
-                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
                                             <Setter Property="HorizontalAlignment" Value="Right"/>
                                             <Setter Property="DisplayMemberPath" Value="VALOR"/>
                                             <Setter Property="SelectedValuePath" Value="COD_PRE"/>
                                             <Setter Property="SelectedIndex" Value="0"/>
-                                            <Setter Property="Padding" Value="6,3,0,0"/>
                                         </Style>
                                         <Style TargetType="TextBox">
                                             <Setter Property="Width" Value="200"/>

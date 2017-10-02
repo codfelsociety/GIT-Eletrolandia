@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppEletrolandia</string>
+    <string name="strImageSwitcher" translatable="false">Image Switcher</string>
+    <string name="strProximo">Next</string>
+    <string name="strSeekBar">Seek Bar</string>
+    <string name="strSurfaceView">Surface View</string>
+    <string name="strVoltar">Back</string>
+</resources>

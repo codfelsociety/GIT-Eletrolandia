@@ -38,8 +38,8 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             foreach (DataRow r in dt.Rows)
             {
                 string nome = r[0].ToString();
-                decimal custo = Convert.ToDecimal(r[1]);
-                decimal preco = Convert.ToDecimal(r[2]);
+                decimal custo = System.Convert.ToDecimal(r[1]);
+                decimal preco = System.Convert.ToDecimal(r[2]);
                 dadosRelatorio.Add(new DataSet1.DataTable1DataTable() { Nome =nome , Custo = custo, Preco = preco });
             }
 

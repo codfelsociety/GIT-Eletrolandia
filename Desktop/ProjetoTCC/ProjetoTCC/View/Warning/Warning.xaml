@@ -1,0 +1,28 @@
+﻿<Window x:Class="ProjetoTCC.View.Warning.Warning"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoTCC.View.Warning"
+        mc:Ignorable="d" Background="Transparent"
+        Title="Warning" Height="166" Width="345" WindowStartupLocation="CenterScreen"  WindowStyle="None" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="0" CaptionHeight="50" />
+    </WindowChrome.WindowChrome>
+    <Grid Margin="10" Background="White">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="6" ShadowDepth="0" Color="#FF727272"/>
+        </Grid.Effect>
+        <Rectangle Fill="#FF41CB8C" Height="40" VerticalAlignment="Top"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="82" Margin="5,45,0,0"  VerticalAlignment="Top" Width="80" Source="/ProjetoTCC;component/Assets/Icons/Ok_icon.png">
+        </Image>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="86,70,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="28" Width="225" FontSize="18" FontFamily="Segoe UI Semilight" Foreground="#FF727272"/>
+        <Label x:Name="lblTitle" Content="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="7,4,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" Foreground="#FFE9FFEF" Width="308" Height="36"/>
+
+        <Rectangle Fill="#FF336C6A" Height="40" VerticalAlignment="Top" Margin="281,0,0,0"/>
+        <Label x:Name="label1" Content="{Binding TimeCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="287,2,-3,0" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="37" Width="41"/>
+        <Rectangle Fill="#FFC0DCC9" HorizontalAlignment="Left" RadiusX="6" RadiusY="6" Height="29" Margin="264,108,0,0" VerticalAlignment="Top" Width="47" MouseDown="Rectangle_MouseDown"/>
+        <TextBlock x:Name="label" Text="Ok"  HorizontalAlignment="Right" TextAlignment="Right" Margin="0,111,25,0" VerticalAlignment="Top" Height="21" Width="28" FontSize="16" Background="{x:Null}"  Foreground="#FF196663" FontFamily="/ProjetoTCC;component/Assets/Fonts/#Lemon/Milk" MouseDown="label_MouseDown"/>
+
+    </Grid>
+</Window>

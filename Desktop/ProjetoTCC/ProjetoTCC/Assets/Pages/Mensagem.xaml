@@ -3,24 +3,76 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:ProjetoTCC.ViewModel"
       xmlns:local="clr-namespace:ProjetoTCC.Assets.Pages"
       mc:Ignorable="d"
-      Title="Mensagem" Height="644" Width="1288">
+      Title="Mensagem" Height="690" Width="1288">
 
-    <Grid Background="White">
-        <DataGrid x:Name="dtMensagem"  FontSize="21" HorizontalAlignment="Left" CanUserAddRows="False" AutoGenerateColumns="False" Height="486" Margin="10,88,0,0" VerticalAlignment="Top" Width="1268" SelectionChanged="dtMensagem_SelectionChanged">
+    <Page.DataContext>
+        <vm:MensagemViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Mensagens/MensagemResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="WhiteSmoke">
+        <Rectangle HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="1288">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF179589" Offset="0"/>
+                    <GradientStop Color="#FF152F4D" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <DataGrid x:Name="dtMensagem" SelectedItem="{Binding MensagemSelecionada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource nice}" FontSize="21" HorizontalAlignment="Left" CanUserAddRows="False" AutoGenerateColumns="False" Height="579" Margin="10,99,0,0" VerticalAlignment="Top" Width="528" SelectionChanged="dtMensagem_SelectionChanged" BorderBrush="#FF293399" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn FontSize="22" IsReadOnly="True" Header="  COD " Binding="{Binding COD_MENSAGEM}"/>
                 <DataGridTextColumn FontSize="22" Foreground="Blue"  IsReadOnly="True" Header="  NOME " Binding="{Binding NOME}"/>
-                <DataGridTextColumn FontSize="22"  IsReadOnly="True" Header="  MENSAGEM " Binding="{Binding MENSAGEM}"/>
-                <DataGridTextColumn FontSize="22"  Foreground="Blue"   IsReadOnly="True" Header="  EMAIL  " Binding="{Binding EMAIL}"/>
-                <DataGridTextColumn FontSize="22"    Header=" RESPOSTA                                                                  " />
-
+                <DataGridTemplateColumn IsReadOnly="True" Width="250" Header="  MENSAGEM ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock VerticalAlignment="Center" 
+                           TextWrapping="Wrap"
+                                    TextAlignment="Justify"
+                           Text="{Binding MENSAGEM}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Responder" FontSize="25" HorizontalAlignment="Left" Margin="1095,579,0,0" VerticalAlignment="Top" Width="183" Height="55" BorderBrush="{x:Null}" Background="#FF7AFF48"/>
-        <Label Content="Mensagens" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Height="73" Width="228" VerticalContentAlignment="Center" FontSize="36" Background="{x:Null}" Foreground="#FF143A89"/>
+        <Button Content="Responder" FontSize="25" HorizontalAlignment="Left" Margin="547,623,0,0" VerticalAlignment="Top" Width="731" Height="55" BorderBrush="#FF31A446" Foreground="White" Background="#FF3BDA7C" Command="{Binding Confirmar}"/>
+        <Label Content="Mensagens" HorizontalAlignment="Left" Margin="14,14,0,0" VerticalAlignment="Top" Height="66" Width="228" VerticalContentAlignment="Center" FontSize="48" Background="{x:Null}" Foreground="White" FontFamily="/ProjetoTCC;component/Fonts/#HighSociety">
+            <Label.Effect>
+                <DropShadowEffect Color="White" ShadowDepth="0"/>
+            </Label.Effect>
+        </Label>
+        <Grid HorizontalAlignment="Left" Height="511" Margin="547,99,0,0" VerticalAlignment="Top" Width="731" Background="#FF91C7BB">
+            <TextBox x:Name="textBox" IsEnabled="False" HorizontalAlignment="Left" Padding="10,0,0,0" VerticalContentAlignment="Center" Height="46" Margin="103,10,0,0" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="618" FontSize="24" BorderBrush="{x:Null}" Foreground="Black" FontFamily="Segoe UI Semibold"/>
+            <Label x:Name="label" Content="E-mail: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.342,1" FontSize="24" Foreground="White">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Padding="10,0,0,0" VerticalContentAlignment="Center" Height="46" Margin="117,64,0,0" TextWrapping="Wrap" Text="{Binding Assunto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="604" FontSize="24" BorderBrush="{x:Null}"/>
+            <Label x:Name="label_Copy" Content="Assunto: " HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.342,1" FontSize="24" Foreground="White">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <TextBox x:Name="textBox_Copy1" AcceptsReturn="True" HorizontalAlignment="Left" Padding="20" TextAlignment="Justify"  Height="383" Margin="10,118,0,0" TextWrapping="Wrap" Text="{Binding Conteudo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="711" FontSize="24" BorderBrush="{x:Null}"/>
+        </Grid>
+
 
     </Grid>
 </Page>

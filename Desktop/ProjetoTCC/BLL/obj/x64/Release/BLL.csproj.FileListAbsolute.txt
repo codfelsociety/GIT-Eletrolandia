@@ -38,3 +38,5 @@ D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\DAO.pdb
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.csprojResolveAssemblyReference.cache
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\obj\x64\Release\BLL.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\ProjetoTCC.Util.dll
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\BLL\bin\x64\Release\ProjetoTCC.Util.pdb

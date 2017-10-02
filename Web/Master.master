@@ -15,7 +15,7 @@
 </head>
 <body style="background-color: #444">
     <form id="form1" runat="server" class="well">
-        <div id="top_area" style="background-image: url(../Images/fundobanner.png)" class="container-fluid">
+        <div id="top_area" style="background-image: url(/Images/fundobanner.png)" class="container-fluid">
             <div class="row">
                 <div class="container vcenter">
                     <div class=" col-sm-5">

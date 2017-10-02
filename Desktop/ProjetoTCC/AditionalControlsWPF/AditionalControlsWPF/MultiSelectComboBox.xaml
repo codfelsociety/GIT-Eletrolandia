@@ -18,7 +18,7 @@
                     <ControlTemplate TargetType="ContentControl">
                         <Grid Background="{TemplateBinding Background}" x:Name="dgColumnHeader">
                             <Border x:Name="border" BorderBrush="Black" BorderThickness="0,0,0,0" Grid.ColumnSpan="1">
-                                <Rectangle x:Name="RemoveRec"  Fill="#0F779B" Margin="2,-1,-1,6" RadiusX="0"  >
+                                <Rectangle x:Name="RemoveRec"  Fill="#2D00FFDE" Margin="2,-1,-1,2" RadiusX="0"  >
                                     <Rectangle.Style>
                                         <Style TargetType="{x:Type Rectangle}">
                                             <Setter Property="Fill" Value="{DynamicResource ContentOutofFocusBrush}"></Setter>
@@ -42,23 +42,52 @@
     <Grid MouseDown="Grid_MouseDown">
         <Grid Background="White">
             <ComboBox x:Name="cb" Loaded="cb_Loaded" SelectionChanged="cb_SelectionChanged" />
-            <ListView x:Name="lv" Background="#eaeaea" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  BorderThickness="0" Margin="0,0,30,0">
+            <ListView x:Name="lv" Padding="-2" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  BorderThickness="0" Margin="2,1,30,1">
+                <ListView.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFEEEEEE" Offset="0.62"/>
+                        <GradientStop/>
+                    </LinearGradientBrush>
+                </ListView.Background>
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel />
+                        <WrapPanel  />
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
 
                 <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid x:Name="Grid2" Height="{Binding Path=ActualHeight, ElementName= uc}" Background="Transparent"  Margin="-3,0,-3,0">
+                    <DataTemplate >
+                        <Grid x:Name="Grid2" Height="{Binding Path=ActualHeight, ElementName= uc}" Background="Transparent"  Margin="-4,0,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.7*" />
                                 <ColumnDefinition Width="0.3*" />
                             </Grid.ColumnDefinitions>
-                            <Rectangle Height="{Binding Path=ActualHeight, ElementName=Grid2}" VerticalAlignment="Top" Fill="#1493BE"  Margin="-1,-1,0,5" Grid.ColumnSpan="2"/>
-                            <TextBlock Text="{Binding Texto}" FontSize="14"  Grid.Column="0" HorizontalAlignment="Left"  Margin="5,3,5,0"/>
-                            <Grid x:Name="Grid3" Cursor="Hand" Height="{Binding ElementName=Grid2, Path=ActualHeight}" MouseDown="RemoveItem_MouseDown" Width="{Binding ElementName=Grid3, Path=ActualHeight}" Grid.Column="1" >
+                            <Rectangle Height="{Binding Path=ActualHeight, ElementName=Grid2}" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                <RotateTransform Angle="47.726" CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FF05918B" Offset="0"/>
+                                        <GradientStop Color="#FF1C579E" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding Texto, FallbackValue=Odebrecht}" FontSize="16" Foreground="White"  Grid.Column="0" HorizontalAlignment="Left"  Margin="5,4,5,0"/>
+                            <Grid x:Name="Grid3" Cursor="Hand"  Height="{Binding ElementName=Grid2, Path=ActualHeight}" MouseDown="RemoveItem_MouseDown" Width="{Binding ElementName=Grid3, Path=ActualHeight}" Grid.Column="1" >
                                 <ContentControl Style="{StaticResource MouseOverContentControlStyle}">
                                     <TextBlock Foreground="White" Margin="2,0,0,5" FontSize="12" FontFamily="Calibri Light" Text="X"></TextBlock>
                                 </ContentControl>

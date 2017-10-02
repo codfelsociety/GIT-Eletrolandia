@@ -23,23 +23,12 @@ namespace ProjetoTCC.Assets.Pages
         public CaixaPage()
         {
             InitializeComponent();
+            frame.NavigationService.Navigate(new InCaixa.CaixaPageView(null));
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void buttonAbrirCaixa_Click(object sender, RoutedEventArgs e)
-        {
-            frCaixa.Visibility = Visibility.Visible;
-            InCaixa.CaixaView c = new InCaixa.CaixaView();
-            frCaixa.Navigate(c);
         }
     }
 }

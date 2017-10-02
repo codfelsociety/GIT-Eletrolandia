@@ -16,3 +16,5 @@ D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalC
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Release\AditionalControlsWPF.g.resources
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Release\AditionalControlsWPF.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Release\AditionalControlsWPF.pdb
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Release\RestrictedTextBox.g.cs
+D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Release\RestrictedTextBox.baml

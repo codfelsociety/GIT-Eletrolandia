@@ -6,9 +6,6 @@ CREATE TABLE produtos (
     cod_barras         NUMBER(8),
     nome               VARCHAR2(50) NOT NULL,
     descricao          VARCHAR2(200) DEFAULT 'Produto sem descrição',
-    estoque            NUMBER(8) NOT NULL,
-    estoque_min        NUMBER(8) DEFAULT 1,
-    estoque_max        NUMBER(8) DEFAULT 100,
     ativo              NUMBER(1) DEFAULT 1 NOT NULL,
     data_cadastro      DATE DEFAULT SYSDATE NOT NULL ,
     on_line            NUMBER(1),
@@ -16,11 +13,20 @@ CREATE TABLE produtos (
     CONSTRAINT produtos_pk PRIMARY KEY(cod_produto)
 );
 
+CREATE TABLE estoque (
+    cod_prod           NUMBER(8) NOT NULL,
+    data_cadastro      DATE DEFAULT SYSDATE NOT NULL,
+    estoque            NUMBER(8) NOT NULL,
+    estoque_min        NUMBER(8) DEFAULT 1,
+    estoque_max        NUMBER(8) DEFAULT 100
+);
+
 CREATE TABLE categoria (
     cod_categoria   NUMBER(8) NOT NULL,
     descricao       VARCHAR2(50) NOT NULL,
     CONSTRAINT categoria_pk PRIMARY KEY(cod_categoria)
 );
+
 CREATE TABLE artigo (
     cod_artigo   NUMBER(8) NOT NULL,
     cod_categoria      NUMBER(8) NOT NULL,
@@ -142,19 +148,19 @@ CREATE TABLE endereco (
 );
 
 CREATE TABLE usuario(
-    cod_usuario NUMBER(8) NOT NULL,
-    cod_acesso NUMBER(8),
-    cod_sexo NUMBER(1),
+    id NUMBER(8) NOT NULL,
+    cargo NUMBER(8),
+    sexo NUMBER(1),
     nome VARCHAR2(50),
     sobrenome VARCHAR2(50),
     username VARCHAR2(50),
     email VARCHAR2(50),
     senha VARCHAR2(50),
     dataCadastro DATE,
-    picture BLOB,
-    CONSTRAINT usuario_pk PRIMARY KEY(cod_usuario)
+    foto BLOB,
+    status NUMBER(1),
+    CONSTRAINT usuario_pk PRIMARY KEY(id)
 );
-
 CREATE TABLE sexo(
     cod_sexo NUMBER(1),
     descricao VARCHAR2(30),
@@ -168,28 +174,31 @@ CREATE TABLE acesso(
     CONSTRAINT acesso_pk PRIMARY KEY(cod_acesso)
 );
 CREATE TABLE venda(
-    cod_venda NUMBER(8) NOT NULL,
-    cod_tipo NUMBER(1),
-    cod_endereco NUMBER(8),
-    cod_contato NUMBER(8),
+    id_venda NUMBER(8) NOT NULL,
+    id_tipo NUMBER(1) NOT NULL,
+    id_cliente NUMBER(8),
+    id_info NUMBER(15),
     data_venda DATE,
-    preco_frete NUMBER(10,2),
-    nome VARCHAR2(50)
+    CONSTRAINT venda_pk PRIMARY KEY(id_venda)
+);
+
+CREATE TABLE item_venda (
+    id_venda     NUMBER(8) NOT NULL,
+    id_produto   NUMBER(8) NOT NULL,
+    preco_unit    NUMBER(10,2),
+    quantidade    NUMBER(2)
 );
 
 CREATE TABLE pagamento(
-    cod_pagamento NUMBER(8),
-    cod_venda       NUMBER(8),
-    tipo      NUMBER(1),
-    valor           NUMBER(10,2)
+    id_venda NUMBER(8),
+    tipo NUMBER(1), /*1= Fisica 2 = Online*/
+    valor NUMBER(10,2)
 );
-CREATE TABLE venda_produto (
-    cod_venda_produto NUMBER(8) NOT NULL,
-    cod_venda     NUMBER(8) NOT NULL,
-    cod_produto   NUMBER(8) NOT NULL,
-    preco_unit    NUMBER(10,2),
-    quantidade    NUMBER(2),
-    CONSTRAINT venda_produto_pk PRIMARY KEY(cod_venda_produto)
+
+CREATE TABLE info_venda(
+    id_info NUMBER(8)NOT NULL,
+    nome VARCHAR2(50),
+    cpf NUMBER(11)
 );
 
 
