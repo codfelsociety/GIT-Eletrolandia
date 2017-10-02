@@ -15,17 +15,18 @@ using System.Windows.Shapes;
 using BLL;
 using System.Data;
 
-namespace ProjetoTCC.Assets.Pages.InUsers
-{
+namespace ProjetoTCC.View.Usuarios
+{                                                                                                                                               
     /// <summary>
     /// Interaction logic for UsersCover.xaml
     /// </summary>
-    public partial class UsersCover : Page
+    public partial class Home : Page
     {
-        public UsersCover()
+        public Home()
         {
             InitializeComponent();
-            icUsuarios.ItemsSource = Usuario.RetornarUsuarioInterface().DefaultView;
+            this.DataContext = new  ViewModel.UserHomeViewModel();
+            //icUsuarios.ItemsSource = Usuario.RetornarUsuarioInterface().DefaultView;
         }
         private void listViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

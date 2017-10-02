@@ -28,16 +28,16 @@ namespace BLL
         private DataTable _picture;
 
 
-        public int CodUsuario { get => _codUsuario; set => _codUsuario = value; }
-        public string Nome { get => _nome; set => _nome = value; }
-        public string Sobrenome { get => _sobrenome; set => _sobrenome = value; }
-        public int Acesso { get => _acesso; set => _acesso = value; }
-        public string DataCadastro { get => _dataCadastro; set => _dataCadastro = value; }
-        public string Senha { get => _senha; set => _senha = value; }
-        public string Email { get => _email; set => _email = value; }
-        public int Sexo { get => _sexo; set => _sexo = value; }
-        public string Username { get => _username; set => _username = value; }
-        public DataTable Picture { get => _picture; set => _picture = value; }
+        public int CodUsuario { get { return _codUsuario; } set { _codUsuario = value; } }
+        public string Nome { get { return _nome; } set { _nome = value; } }
+        public string Sobrenome { get { return _sobrenome; } set { _sobrenome = value; } }
+        public int Acesso { get { return _acesso; } set { _acesso = value; } }
+        public string DataCadastro { get { return _dataCadastro; } set { _dataCadastro = value; } }
+        public string Senha { get { return _senha; } set { _senha = value; } }
+        public string Email { get { return _email; } set { _email = value; } }
+        public int Sexo { get { return _sexo; } set { _sexo = value; } }
+        public string Username { get { return _username; } set { _username = value; } }
+        public DataTable Picture { get { return _picture; } set { _picture = value; } }
 
         public void Cadastrar()
         {

@@ -7,6 +7,7 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Collections.Generic;
 #endregion Imports
 namespace ProjetoTCC.Assets.Pages.InProducts
 {
@@ -78,17 +79,27 @@ namespace ProjetoTCC.Assets.Pages.InProducts
                     rbFreteNao.IsChecked = true;
                 LoadFornecedor();
                 cbxFornecedor.SelectedItems = prod.PreCarregar()[1];
-                imagepicker.Source = prod.PreCarregar()[2].DefaultView;
+                DataTable imgs = prod.PreCarregar()[2];
+                if (imgs != null)
+                {
+                    List<byte[]> list = new List<byte[]>();
+                    foreach (DataRow row in imgs.Rows)
+                    {
+                        list.Add(row[0] as byte[]);
+                    }
+                    imagepicker.Source = list;
+
+                }
                 foreach (Control ctr in SpecPanel.Children)
                 {
                     if (ctr is ComboBox)
                     {
                         string name = ctr.Name;
-                        int cod_ESPEC = System.Convert.ToInt32(ctr.Name.Substring(2, name.Length - 2));
+                        int cod_ESPEC = Convert.ToInt32(ctr.Name.Substring(2, name.Length - 2));
                         (ctr as ComboBox).SelectedValue = prod.RetornarPreValor(cod_ESPEC, COD);
                     }
                 }
-                FRETE = System.Convert.ToInt32(r[21]);
+                FRETE = Convert.ToInt32(r[21]);
             }
         }
         public void LoadMarca()
@@ -391,7 +402,14 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             prod.Fornecedores = cbxFornecedor.SelectedItems;
             prod.Custo = txtCusto.Number;
             prod.Preco = txtPreco.Number;
-            prod.ImagemProduto = imagepicker.SelectedPaths;
+            DataTable dtimg = new DataTable();
+            dtimg.Columns.Add("cod", typeof(int));
+            dtimg.Columns.Add("img", typeof(byte[]));
+            foreach(byte[] img in imagepicker.Source)
+            {
+                dtimg.Rows.Add(COD, img);
+            }
+            prod.ImagemProduto = dtimg;
             prod.AtualizarProduto();
             CadastrarEspecificacoes();
             SalvarFrete();
@@ -415,7 +433,14 @@ namespace ProjetoTCC.Assets.Pages.InProducts
             prod.Fornecedores = cbxFornecedor.SelectedItems;
             prod.Custo = txtCusto.Number;
             prod.Preco = txtPreco.Number;
-            prod.ImagemProduto = imagepicker.SelectedPaths;
+            DataTable dtimg = new DataTable();
+            dtimg.Columns.Add("cod", typeof(int));
+            dtimg.Columns.Add("img", typeof(byte[]));
+            foreach (byte[] img in imagepicker.Source)
+            {
+                dtimg.Rows.Add(COD, img);
+            }
+            prod.ImagemProduto = dtimg;
             CadastrarEspecificacoes();
             prod.Cadastrar();
         }

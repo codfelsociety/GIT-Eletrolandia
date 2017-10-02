@@ -131,9 +131,12 @@
     </Compile>
     <Compile Include="Common\Classes.cs" />
     <Compile Include="Model\AcessoUsuario.cs" />
+    <Compile Include="Model\ItemVenda.cs" />
     <Compile Include="Model\StatusUsuario.cs" />
-    <Compile Include="ViewModel\EditUserViewModel.cs" />
-    <Compile Include="ViewModel\WarningViewModel.cs" />
+    <Compile Include="Model\Venda.cs" />
+    <Compile Include="ViewModel\Vendas\HomeVendaViewModel.cs" />
+    <Compile Include="ViewModel\Others\EditUserViewModel.cs" />
+    <Compile Include="ViewModel\Notifications\WarningViewModel.cs" />
     <Compile Include="Assets\Pages\Mensagem.xaml.cs">
       <DependentUpon>Mensagem.xaml</DependentUpon>
     </Compile>
@@ -148,21 +151,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Notifications\QuestionViewModel.cs" />
+    <Compile Include="ViewModel\Usuarios\UserHomeViewModel.cs" />
+    <Compile Include="ViewModel\Usuarios\UserMenuViewModel.cs" />
     <Compile Include="View\Login\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Base.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Assets\SqlServerTypes\Loader.cs" />
-    <Compile Include="ViewModel\Base.cs" />
-    <Compile Include="ViewModel\CaixaViewModel.cs" />
-    <Compile Include="ViewModel\MensagemViewModel.cs" />
-    <Compile Include="ViewModel\PagamentoViewModel.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\AddUserViewModel.cs" />
-    <Compile Include="ViewModel\VendasViewModel.cs" />
-    <Compile Include="View\Usuarios\Edit.xaml.cs">
-      <DependentUpon>Edit.xaml</DependentUpon>
+    <Compile Include="ViewModel\Others\Base.cs" />
+    <Compile Include="ViewModel\Others\CaixaViewModel.cs" />
+    <Compile Include="ViewModel\Others\MensagemViewModel.cs" />
+    <Compile Include="ViewModel\Others\PagamentoViewModel.cs" />
+    <Compile Include="ViewModel\Others\RelayCommand.cs" />
+    <Compile Include="ViewModel\Usuarios\UserViewModel.cs" />
+    <Compile Include="ViewModel\Others\VendasViewModel.cs" />
+    <Compile Include="View\Usuarios\Manage.xaml.cs">
+      <DependentUpon>Manage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Vendas\VendasHome.xaml.cs">
+      <DependentUpon>VendasHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Warning\Question.xaml.cs">
+      <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Warning\Warning.xaml.cs">
       <DependentUpon>Warning.xaml</DependentUpon>
@@ -231,15 +243,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Usuarios\Edit.xaml">
+    <Page Include="Assets\Styles\ScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Usuarios\Manage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Usuarios\Home.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Usuarios\Add.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -320,9 +332,6 @@
     <Compile Include="View\Usuarios\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Usuarios\Add.xaml.cs">
-      <DependentUpon>Add.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Assets\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -362,6 +371,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Assets\Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Vendas\VendasHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Warning\Question.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -466,6 +483,11 @@
     <SplashScreen Include="Assets\Imagens\logo3-t.png" />
     <Resource Include="Assets\Recursos\Icones\x.png" />
     <Resource Include="Assets\Icons\Ok_icon.png" />
+    <Resource Include="Assets\Imagens\avt-default.jpg" />
+    <Resource Include="Assets\Imagens\avatar.jpeg" />
+    <Resource Include="Assets\Imagens\avatar.jpg" />
+    <Resource Include="Assets\Imagens\bluecircle.png" />
+    <Resource Include="Assets\Icons\warning.png" />
     <Content Include="Assets\SqlServerTypes\readme.htm" />
     <Content Include="Assets\SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

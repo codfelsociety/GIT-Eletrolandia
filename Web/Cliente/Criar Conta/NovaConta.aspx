@@ -11,6 +11,7 @@
                 <h4 style="text-align:center">Cadastro de alguém</h4>
             </div>
         </div>
+
         <div style="margin:auto; max-width: 600px;" class="container-fluid">
             <div class="row mb-1">
                 <div class="col-2">

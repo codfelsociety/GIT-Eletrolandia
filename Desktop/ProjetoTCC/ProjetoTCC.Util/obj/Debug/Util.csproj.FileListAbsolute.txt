@@ -3,3 +3,8 @@ D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\Debug\Proje
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\Util.csprojResolveAssemblyReference.cache
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\ProjetoTCC.Util.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\ProjetoTCC.Util.pdb
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\Debug\ProjetoTCC.Util.dll
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\Debug\ProjetoTCC.Util.pdb
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\Util.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\ProjetoTCC.Util.dll
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\Debug\ProjetoTCC.Util.pdb

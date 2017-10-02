@@ -13,8 +13,8 @@ namespace BLL
         private int _id;
         private int _nome;
 
-        public int ID { get => _id; set => _id = value; }
-        public int Nome { get => _nome; set => _nome = value; }
+        public int ID { get { return _id; } set { _id = value; } }
+        public int Nome { get { return _nome; } set { _nome = value; } }
 
 
         public static DataTable Carregar()

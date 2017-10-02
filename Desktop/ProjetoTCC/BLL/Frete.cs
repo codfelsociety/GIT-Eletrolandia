@@ -16,13 +16,13 @@ namespace BLL
         private int _isFree;
         private int _isFragile;
 
-        public int CodFrete { get => _codFrete; set => _codFrete = value; }
-        public double Peso { get => _peso; set => _peso = value; }
-        public double Altura { get => _altura; set => _altura = value; }
-        public double Comprimento { get => _comprimento; set => _comprimento = value; }
-        public double Largura { get => _largura; set => _largura = value; }
-        public int IsFree { get => _isFree; set => _isFree = value; }
-        public int IsFragile { get => _isFragile; set => _isFragile = value; }
+        public int CodFrete { get { return _codFrete; }set { _codFrete = value; } }
+        public double Peso { get { return _peso; }set { _peso = value; } }
+        public double Altura { get { return _altura; }set { _altura = value; } }
+        public double Comprimento { get { return _comprimento; }set { _comprimento = value; } }
+        public double Largura { get { return _largura; }set { _largura = value; } }
+        public int IsFree { get { return _isFree; }set { _isFree = value; } }
+        public int IsFragile { get { return _isFragile; }set { _isFragile = value; } }
 
         public void Cadastrar()
         {

@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjetoTCC.View.Warning.Question"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoTCC.View.Warning"
+          mc:Ignorable="d" Background="Transparent"
+        Title="Warning" Height="178" Width="370.333" WindowStartupLocation="CenterScreen"  WindowStyle="None" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="0" GlassFrameThickness="0" CaptionHeight="50" />
+    </WindowChrome.WindowChrome>
+    <Grid Margin="10" Background="White">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="6" ShadowDepth="0" Color="#FF727272"/>
+        </Grid.Effect>
+        <Rectangle Fill="#FFD65B3F" Height="40" VerticalAlignment="Top"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="57" Margin="14,57,0,0"  VerticalAlignment="Top" Width="56" Source="/ProjetoTCC;component/Assets/Icons/warning.png">
+        </Image>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="96,72,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Question, FallbackValue='Deseja fazer isso ou aquilo ?', Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="28" Width="244" FontSize="18" FontFamily="Segoe UI Semilight" Foreground="#FF727272"/>
+        <Label x:Name="lblTitle" Content="{Binding Title, FallbackValue=Atenção, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="7,4,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" Foreground="#FFE9FFEF" Width="308" Height="36"/>
+
+        <Rectangle Fill="#FF6C3333" Height="40" VerticalAlignment="Top" Margin="310,0,0,0"/>
+        <Label x:Name="label1" Content="{Binding TimeCount, FallbackValue=10s, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="312,2,-3,0" VerticalAlignment="Top" FontSize="18" Foreground="White" Height="37" Width="41"/>
+        <Rectangle Fill="#FFDCC0C0" HorizontalAlignment="Left" RadiusX="6" RadiusY="6" Height="29" Margin="291,121,0,0" VerticalAlignment="Top" Width="49" MouseDown="Rectangle_MouseDown"/>
+        <TextBlock x:Name="label" Text="Sair"  HorizontalAlignment="Right" TextAlignment="Right" Margin="0,124,18,0" VerticalAlignment="Top" Height="21" Width="34" FontSize="16" Background="{x:Null}"  Foreground="#FF661919" FontFamily="/ProjetoTCC;component/Assets/Fonts/#Lemon/Milk" MouseDown="label_MouseDown"/>
+        <Button x:Name="resp2" Content="{Binding Resp2}"   HorizontalAlignment="Right" Style="{StaticResource defaultButton}"  Margin="0,121,66,0" VerticalAlignment="Top" Height="29" Width="90" FontSize="16" Background="#FFD8D8D8"  Foreground="#FF704A4A" FontFamily="Segoe UI Semibold" MouseDown="label_MouseDown" Click="resp2_Click" />
+        <Button x:Name="resp1" Content="{Binding Resp1}"   HorizontalAlignment="Right" Style="{StaticResource defaultButton}"  Margin="0,121,163,0" VerticalAlignment="Top" Height="29" Width="91" FontSize="16" Background="#FFD8D8D8"  Foreground="#FF704A4A" FontFamily="Yu Gothic UI Semibold" MouseDown="label_MouseDown" Click="resp1_Click" />
+
+    </Grid>
+</Window>

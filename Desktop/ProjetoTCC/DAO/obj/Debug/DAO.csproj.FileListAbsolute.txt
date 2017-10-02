@@ -20,3 +20,9 @@ D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\bin\Debug\pt-BR\Microsoft.
 D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\Debug\DAO.dll
 D:\Documentos\Visual Studio 2017\Projects\Projeto\DAO\obj\Debug\DAO.pdb
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\Debug\DAO.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\Debug\DAO.pdb
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\Debug\DAO.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\Debug\DAO.pdb

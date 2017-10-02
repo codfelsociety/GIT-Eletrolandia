@@ -22,3 +22,6 @@ D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\bin\Debug\DAO.pdb
 D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.dll
 D:\Documentos\Visual Studio 2017\Projects\Projeto\BLL\obj\Debug\BLL.pdb
+E:\Sistemas\Desktop\ProjetoTCC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\BLL\obj\Debug\BLL.dll
+E:\Sistemas\Desktop\ProjetoTCC\BLL\obj\Debug\BLL.pdb

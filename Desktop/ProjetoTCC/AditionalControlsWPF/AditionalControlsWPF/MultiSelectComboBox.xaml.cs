@@ -166,8 +166,8 @@ namespace AditionalControlsWPF
         public static DependencyProperty SelectedItemsProperty = DependencyProperty.Register("SelectedItems", typeof(DataTable), typeof(MultiSelectComboBox), new PropertyMetadata(OnSelectedItemsCallBack));
         public DataTable SelectedItems
         {
-            get => (DataTable)GetValue(SelectedItemsProperty);
-            set => SetValue(SelectedItemsProperty, value);
+            get { return (DataTable)GetValue(SelectedItemsProperty); }
+            set { SetValue(SelectedItemsProperty, value); }
         }
         private static void OnSelectedItemsCallBack(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {

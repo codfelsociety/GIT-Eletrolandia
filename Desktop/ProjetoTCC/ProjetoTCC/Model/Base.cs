@@ -21,15 +21,17 @@ namespace ProjetoTCC.Model
         sid = "XE";
         static string strConexao = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={host})(PORT={port})))(CONNECT_DATA=(SID={sid})));User ID={user};Password={password}";
         public static OracleConnection connection = new OracleConnection(strConexao);
-        public static void Open()
+        public static OracleConnection Open()
         {
             try
             {
                 if (connection.State == ConnectionState.Closed)connection.Open();
+                return connection;
             }
             catch (OracleException ex)
             {
                 MessageBox.Show(ex.Message);
+                return connection;
             }
         }
         public static void Close()
@@ -48,7 +50,7 @@ namespace ProjetoTCC.Model
         }
     }
 
-    public class Procedure
+    /*public class Procedure
     {
         /// <summary>
         /// Converte o tipo comum type para um tipo aceito pelo Oracle especificamente 
@@ -112,7 +114,7 @@ namespace ProjetoTCC.Model
             }
         }
     }
-
+    */
     public class Consulta
     {
 
@@ -217,8 +219,37 @@ namespace ProjetoTCC.Model
 
         public static int ShowNextId(string tablename)
         {
-            string Query = "SELECT last from max WHERE tablename ='" + tablename + "'" ;
-            return Convert.ToInt32(DataTable(Query).Rows[0][0]) + 1;
+            int idUs = 0;
+            try
+            {
+                string Query = "SELECT last from max WHERE tablename ='" + tablename + "'";
+                idUs = Convert.ToInt32(DataTable(Query).Rows[0][0]);
+                return idUs + 1;
+            }
+            catch (Exception ex)
+            {
+                return 1;
+            }
+        }
+
+       
+    }
+    public class Procedure
+    {
+        OracleCommand cmd;
+        public Procedure(string nome)
+        {
+            cmd = new OracleCommand(nome, Connection.Open());
+            cmd.CommandType = CommandType.StoredProcedure;
+        }
+        public void Add(string columnName, OracleDbType type, object  value )
+        {
+            cmd.Parameters.Add(columnName, type).Value = value;
+        }
+        public void Execute()
+        {
+            cmd.ExecuteNonQuery();
+            Connection.Close();
         }
     }
 }

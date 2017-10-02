@@ -1,0 +1,5 @@
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\x64\Debug\ProjetoTCC.Util.dll
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\bin\x64\Debug\ProjetoTCC.Util.pdb
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\x64\Debug\Util.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\x64\Debug\ProjetoTCC.Util.dll
+E:\Sistemas\Desktop\ProjetoTCC\ProjetoTCC.Util\obj\x64\Debug\ProjetoTCC.Util.pdb

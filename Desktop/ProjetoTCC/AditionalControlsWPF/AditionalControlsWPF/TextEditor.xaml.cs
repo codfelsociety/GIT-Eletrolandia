@@ -73,8 +73,8 @@ namespace AditionalControlsWPF
         public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(TextEditor), new PropertyMetadata(OnTextCallBack));
         public string Text
         {
-            get => (string)GetValue(TextProperty);
-            set => SetValue(TextProperty, value);
+            get {return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
         }
         private static void OnTextCallBack(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {

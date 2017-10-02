@@ -21,15 +21,15 @@ namespace BLL
         private int _numero;
         private string _complemento;
 
-        public int CodEndereco { get => _codEndereco; set => _codEndereco = value; }
-        public int Tipo { get => _tipo; set => _tipo = value; }
-        public long Cep { get => _cep; set => _cep = value; }
-        public int Cidade { get => _cidade; set => _cidade = value; }
-        public int Estado { get => _estado; set => _estado = value; }
-        public string Bairro { get => _bairro; set => _bairro = value; }
-        public string Rua { get => _rua; set => _rua = value; }
-        public int Numero { get => _numero; set => _numero = value; }
-        public string Complemento { get => _complemento; set => _complemento = value; }
+        public int CodEndereco { get { return _codEndereco; } set { _codEndereco = value; } }
+        public int Tipo { get { return _tipo; } set { _tipo = value; } }
+        public long Cep { get { return _cep; } set { _cep = value; } }
+        public int Cidade { get { return _cidade; } set { _cidade = value; } }
+        public int Estado { get { return _estado; } set { _estado = value; } }
+        public string Bairro { get { return _bairro; } set { _bairro = value; } }
+        public string Rua { get { return _rua; } set { _rua = value; } }
+        public int Numero { get { return _numero; } set { _numero = value; } }
+        public string Complemento { get { return _complemento; } set { _complemento = value; } }
 
         private static OracleCommand cmd;
         private string SQL;

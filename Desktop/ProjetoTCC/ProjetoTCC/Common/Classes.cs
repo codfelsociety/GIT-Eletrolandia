@@ -144,5 +144,21 @@ namespace ProjetoTCC.Common
             n.Show();
         }
 
+        /// <summary>
+        /// 1 - If the first answer have been clicked and 2 - if the 2nd one;
+        /// </summary>
+        public static int Ask(string question,string title, string resp1, string resp2, int duration)
+        {
+            View.Warning.Question q = new View.Warning.Question(title, question, duration, resp1, resp2);
+            if ((bool)q.ShowDialog()) return 1; else return 2;
+        }
+
+        public static int Ask(string question,  string resp1, string resp2 )
+        {
+            View.Warning.Question q = new View.Warning.Question("Atenção",  question, 7, resp1, resp2);
+            q.ShowDialog();
+            return q.Result;
+        }
+
     }
 }

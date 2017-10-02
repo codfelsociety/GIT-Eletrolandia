@@ -23,46 +23,15 @@ namespace ProjetoTCC.View.Usuarios
         public Menu()
         {
             InitializeComponent();
-            frameUsuario.Navigate(new Uri("View/Usuarios/Home.xaml", UriKind.Relative));
+            DataContext = new ViewModel.UserMenuViewModel(frameUsuario.NavigationService);
 
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            btnCancelar.Visibility = Visibility.Visible;
-            frameUsuario.NavigationService.Navigate(new Add());
-        }
 
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            frameUsuario.Navigate(new Uri("View/Usuarios/Home.xaml", UriKind.Relative));
-            btnCancelar.Visibility = Visibility.Hidden;
-        }
-
-        private void btnAlterar_Click(object sender, RoutedEventArgs e)
-        {
-            btnCancelar.Visibility = Visibility.Visible;
-            int code = 61;
-            frameUsuario.Navigate(new Edit(code));
-        }
-
-        private void btnApagar_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult r = MessageBox.Show("Confirmar exclusão de usuário ?", "Preste muita atenção meu caro", MessageBoxButton.YesNo, MessageBoxImage.Exclamation, MessageBoxResult.No);
-            if (r == MessageBoxResult.Yes)
-            {
-                try
-                {
-                    BLL.Usuario user = new BLL.Usuario();
-                   // user.CodUsuario = InUsers.UsersCover.COD;
-                    user.Apagar();
-                    frameUsuario.Refresh();
-                }
-                catch
-                {
-                    MessageBox.Show("Você deve selecionar um usuário antes de tentar apagar...");
-                }
-            }
-        }
     }
+
+ 
+
+     
+    
 }

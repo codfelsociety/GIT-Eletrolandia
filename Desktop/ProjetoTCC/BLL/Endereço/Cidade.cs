@@ -14,9 +14,9 @@ namespace BLL
         private string nome;
         private int _estado;
 
-        public int Id { get => _id; set => _id = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public int Estado { get => _estado; set => _estado = value; }
+        public int Id { get { return _id; }set { _id = value; } }
+        public string Nome { get { return nome; }set { nome = value; } }
+        public int Estado { get { return _estado; }set { _estado = value; } }
 
         public static DataTable Carregar(int estado)
         {

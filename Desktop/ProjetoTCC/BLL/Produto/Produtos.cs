@@ -335,7 +335,7 @@ namespace BLL
                         ON prodf.cod_fornecedor = forn.cod_fornecedor
                         where prodf.cod_prod ={CodProduto}";
             p.Add(ClasseConexao.RetornarDataTable(SQL));
-            SQL = $@"SELECT img.COD_PRODUTO, img.imagem
+            SQL = $@"SELECT  img.imagem
                         FROM IMAGEM_PRODUTO img
                         WHERE img.COD_PRODUTO = {CodProduto}";
             p.Add(ClasseConexao.RetornarDataTable(SQL));

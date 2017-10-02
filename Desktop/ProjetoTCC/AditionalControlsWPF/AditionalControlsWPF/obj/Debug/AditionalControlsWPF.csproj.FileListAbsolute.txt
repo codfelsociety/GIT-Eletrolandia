@@ -55,3 +55,14 @@ D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\D
 D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.g.resources
 D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
 D:\Documentos\SUPREME\ProjectTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\ImagePicker.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\MultiSelectComboBox.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\NumericUpDown.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\RestrictedTextBox.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\TextEditor.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.cache
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF_MarkupCompile.lref
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.dll
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\Debug\AditionalControlsWPF.pdb

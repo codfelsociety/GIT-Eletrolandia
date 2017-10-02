@@ -12,7 +12,8 @@
                 <ResourceDictionary Source="Assets/Locale/App/Resources.xaml" />  
                 <ResourceDictionary Source="Assets/Styles/ComboBox.xaml"/>  
                 <ResourceDictionary Source="Assets/Recursos/Icones/Icons.xaml"/> 
-                <ResourceDictionary Source="Assets/Styles/Buttons.xaml"/>  
+                <ResourceDictionary Source="Assets/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="Assets/Styles/ScrollBar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <!--#endregion Dicionários de Idiomas-->
             <!--#region Configurações Internas Gerais de Interface-->

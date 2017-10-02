@@ -4,17 +4,17 @@
 library
 C#
 .cs
-D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\
+E:\Sistemas\Desktop\ProjetoTCC\AditionalControlsWPF\AditionalControlsWPF\obj\x64\Debug\
 AditionalControlsWPF
 none
 false
 DEBUG;TRACE
 
-6-443193417
+7-776272958
 
-141190247972
+15-161774339
 17-227209337
-ImagePicker.xaml;MultiSelectComboBox.xaml;NumericUpDown.xaml;RestrictedTextBox.xaml;TextEditor.xaml;Themes\Generic.xaml;
+ImagePicker.xaml;MultiSelectComboBox.xaml;NumericUpDown.xaml;PicturePicker.xaml;RestrictedTextBox.xaml;TextEditor.xaml;Themes\Generic.xaml;
 
 False
 

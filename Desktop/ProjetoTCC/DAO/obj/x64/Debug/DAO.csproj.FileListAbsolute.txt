@@ -50,3 +50,17 @@ D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\bin\x64\Debug\pt-BR\Microso
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
 D:\Desktop\GITHUB-Repositorio\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.pdb
+E:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
+E:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb
+F:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.dll
+F:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\DAO.pdb
+F:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\Oracle.DataAccess.dll
+F:\Sistemas\Desktop\ProjetoTCC\DAO\bin\x64\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+F:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.csprojResolveAssemblyReference.cache
+F:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.dll
+F:\Sistemas\Desktop\ProjetoTCC\DAO\obj\x64\Debug\DAO.pdb

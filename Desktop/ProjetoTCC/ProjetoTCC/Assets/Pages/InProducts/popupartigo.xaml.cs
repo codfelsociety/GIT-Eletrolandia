@@ -16,9 +16,9 @@ namespace ProjetoTCC.Assets.Pages.InProducts
 
         
         private string _categoria;
-        public string Categoria { get => _categoria; set => _categoria = value; }
+        public string Categoria { get { return _categoria; } set { _categoria = value; }}
         private int _codCategoria;
-        public int CodCategoria { get => _codCategoria; set => _codCategoria = value; }
+        public int CodCategoria { get { return _codCategoria; } set { _codCategoria = value; }}
         int i = 0;
 
         

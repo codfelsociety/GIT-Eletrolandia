@@ -75,33 +75,33 @@
                 <ColumnDefinition MaxWidth="150" Width="0.15*"/>
                 <ColumnDefinition  Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button Name="btnAdd" Grid.Column="0" Click="btnAdd_Click">
+            <Button Name="btnAdd" Grid.Column="0" Command="{Binding Adicionar}">
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../../Assets/Icons/plus.png"/>
-                        <Label Content="{DynamicResource strAdd}"/>
+                        <Label Content="Adicionar"/>
                     </DockPanel>
                 </Button.Content>
             </Button>
-            <Button x:Name="btnAlterar" Grid.Column="1" Click="btnAlterar_Click">
+            <Button x:Name="btnAlterar" Grid.Column="1" Command="{Binding Editar}">
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../../Assets/Icons/edit.png"/>
-                        <Label Content="{DynamicResource strEdit}"/>
+                        <Label Content="Editar"/>
                     </DockPanel>
                 </Button.Content>
             </Button>
-            <Button x:Name="btnApagar" Grid.Column="2" Click="btnApagar_Click">
+            <Button x:Name="btnApagar" Grid.Column="2" Command="{Binding Apagar}" HorizontalAlignment="Left" Width="121">
                 <Button.Content>
                     <DockPanel>
                         <Image Source="../../Assets/Icons/delete.png"/>
-                        <Label Content="{DynamicResource strDelete}"/>
+                        <Label Content="Deletar"/>
                     </DockPanel>
                 </Button.Content>
             </Button>
         </Grid>
-        <Frame Name="frameUsuario" Grid.Row="2" ></Frame>
-        <Button x:Name="btnCancelar" Margin="437,0,659,4"  BorderThickness="0" Foreground="#006FA3" Visibility="Hidden" FontSize="20" Background="White" Cursor="Hand"  VerticalAlignment="Bottom" Height="50" Content="Cancelar" Grid.Row="2" Click="btnCancelar_Click" />
+        <Frame Name="frameUsuario" Grid.Row="2"  ></Frame>
+
     </Grid>
 </Page>
 

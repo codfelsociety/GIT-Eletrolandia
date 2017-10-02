@@ -322,7 +322,7 @@
                             </Grid.Resources>
                             <Rectangle Style="{StaticResource SplitRectangle}" Margin="0" Height="1060"  Grid.Column="0" Grid.ColumnSpan="20"/>
 
-                            <aditionalControls:ImagePicker x:Name="imagepicker" Height="130" Grid.ColumnSpan="20" Margin="7,8,7,0" VerticalAlignment="Top"/>
+                            <aditionalControls:PicturePicker x:Name="imagepicker" Limit="6" Height="130" Grid.ColumnSpan="20" Margin="7,8,7,0" VerticalAlignment="Top"/>
 
                             <!--Título "Especificações" -->
                             <Rectangle Fill="#FF747474" >

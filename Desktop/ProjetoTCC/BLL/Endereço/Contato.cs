@@ -16,10 +16,10 @@ namespace BLL
         private long _celular;
         private string _email;
 
-        public int CodContato { get => _codContato; set => _codContato = value; }
-        public long Telefone { get => _telefone; set => _telefone = value; }
-        public long Celular { get => _celular; set => _celular = value; }
-        public string Email { get => _email; set => _email = value; }
+        public int CodContato { get { return _codContato; } set { _codContato = value; } }
+        public long Telefone { get { return _telefone; } set { _telefone = value; } }
+        public long Celular { get { return _celular; } set { _celular = value; } }
+        public string Email { get { return _email; } set { _email = value; } }
 
         private static OracleCommand cmd;
         private string SQL;
